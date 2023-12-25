@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" host="povly.beget.tech" id="f1b00357-1887-4c1a-9594-15f2bcaf31d8" port="22" nameFormat="DESCRIPTIVE" username="povly_1" useOpenSSHConfig="true" />
+    </configs>
+  </component>
+</project>

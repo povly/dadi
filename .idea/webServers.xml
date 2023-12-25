@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="f0c37a12-e178-4385-a851-4391df198852" name="dadi - povly">
+        <fileTransfer rootFolder="/home/p/povly" accessType="SFTP" host="povly.beget.tech" port="22" sshConfigId="f1b00357-1887-4c1a-9594-15f2bcaf31d8" sshConfig="povly_1@povly.beget.tech:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,82 @@
+@import "../../functions/placeholder"
+.rent
+  padding-top: 64px
+  padding-bottom: 72px
+  &__subtitle
+    font-size: 24px
+    margin-bottom: 13px
+  &__title
+    font-size: 55px
+    margin-bottom: 28px
+  &__item
+    mask-image: url("#rent__item")
+    padding: 94px 124px 96px 43.5px
+    color: #000
+    &-end
+      display: block
+      max-width: max-content
+      text-align: right
+      margin-right: 34px
+      margin-top: 7px
+      font-size: 20px
+      margin-left: auto
+    &-top
+      z-index: 2
+      right: 13px
+      top: 4.5px
+      color: #000
+      font-size: 20px
+  &__form
+    max-width: 991px
+    border-radius: 100px
+    height: 79px
+    background: var(--c2)
+  &__input
+    height: 100%
+    .p-select
+      width: 100%
+      border: none
+      padding-bottom: 0
+      height: 100%
+      &__current
+        padding-right: 36px
+        padding-left: 18px
+        height: 100%
+        &-item
+          font-size: 20px
+      &__abs
+        &-item
+          padding-left: 18px
+          padding-right: 18px
+    input, button
+      height: 100%
+      width: 100%
+      border: none
+      outline: none
+      color: #000
+      +placeholder
+        color: #000
+    input
+      font-size: 20px
+      border-right: 1px solid rgba(40, 40, 40, 0.46)
+    button
+      background: var(--c3)
+      color: var(--c2)
+      border-radius: 0 100px 100px 0
+    &-svg
+      top: 50%
+      transform: translateY(-50%)
+      right: 27px
+      z-index: 1
+    &:nth-child(1)
+      width: 228px
+      padding-left: 39px
+    &:nth-child(2)
+      width: 218px
+      padding-left: 24px
+    &:nth-child(3)
+      width: 222px
+      select
+        padding-left: 17px
+    &:nth-child(4)
+      width: calc(100% - 228px - 218px - 222px)
