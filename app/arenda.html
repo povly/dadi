@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/parts/swiper.css">
     <link rel="stylesheet" href="css/flatpickr.min.css">
     <link rel="stylesheet" href="css/parts/nouislider.css">
-    <link rel="stylesheet" href="css/parts/main.css?time=19145744457584686576">
+    <link rel="stylesheet" href="css/parts/main.css?time=0670">
   </head>
   <body class="relative font-manrope text-c1 bg-c2 text-normal">
     <header class="header">
@@ -354,13 +354,23 @@
               </div>
             </div>
             <div class="filters__top-right flex flex-ai-center">
-              <div class="filters__sort flex flex-ai-center">
-                <div class="filters__sort-svg"><svg width="20" height="23" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <div class="filters__sort">
+                <div class="p-select relative">
+                  <div class="p-select__current flex flex-ai-center flex-j-between">
+                    <input type="hidden" name="sort" value="Cначала новые">
+                    <div class="p-select__current-item">Cначала новые</div>
+                    <div class="p-select__current-arrow"><svg width="20" height="23" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M15.8536 0.146447C15.6583 -0.0488155 15.3417 -0.0488155 15.1464 0.146447L11.9645 3.32843C11.7692 3.52369 11.7692 3.84027 11.9645 4.03553C12.1597 4.2308 12.4763 4.2308 12.6716 4.03553L15.5 1.20711L18.3284 4.03553C18.5237 4.2308 18.8403 4.2308 19.0355 4.03553C19.2308 3.84027 19.2308 3.52369 19.0355 3.32843L15.8536 0.146447ZM16 21.5V0.5H15V21.5H16Z" fill="black"/>
 <path d="M3.64645 22.3536C3.84171 22.5488 4.15829 22.5488 4.35355 22.3536L7.53553 19.1716C7.7308 18.9763 7.7308 18.6597 7.53553 18.4645C7.34027 18.2692 7.02369 18.2692 6.82843 18.4645L4 21.2929L1.17157 18.4645C0.976311 18.2692 0.659728 18.2692 0.464466 18.4645C0.269204 18.6597 0.269204 18.9763 0.464466 19.1716L3.64645 22.3536ZM4.5 22V1H3.5V22H4.5Z" fill="black"/>
 </svg>
+                    </div>
+                  </div>
+                  <div class="p-select__abs absolute flex flex-col">
+                    <div class="p-select__abs-item active" data-value="Cначала новые">Cначала новые</div>
+                    <div class="p-select__abs-item" data-value="Сначала дешевле">Сначала дешевле</div>
+                    <div class="p-select__abs-item" data-value="Сначала дороже">Сначала дороже</div>
+                  </div>
                 </div>
-                <div class="filters__sort-title">Cначала новые</div>
               </div>
               <div class="filters__coub active cursor-pointer"><svg width="28" height="27" viewBox="0 0 28 27" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect x="15.4708" y="0.798828" width="11.7007" height="10.6423" rx="0.5" stroke="#156B7F"/>
@@ -1695,6 +1705,6 @@
     <script src="js/libs/nouislider.min.js"></script>
     <script src="js/libs/ScrollTrigger.min.js"></script>
     <script src="js/libs/gsap.min.js"></script>
-    <script src="js/libs/main.js?time=5045584777447457959"></script>
+    <script src="js/libs/main.js?time=4579"></script>
   </body>
 </html>
