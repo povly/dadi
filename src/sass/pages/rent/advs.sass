@@ -5,14 +5,26 @@
     &__title
       margin-bottom: 3px
       font-size: 60px
+      z-index: 2
   &__subtitle
+    z-index: 2
     font-size: 24px
     margin-bottom: 45px
   &__items
     gap: 40px
   &__item
-    will-change: backdrop-filter
-    backdrop-filter: blur(31.5px)
+    z-index: 1
+    &::before
+      content: ''
+      position: absolute
+      will-change: backdrop-filter
+      backdrop-filter: blur(31.5px)
+      width: 100vw
+      height: 100vh
+      left: 50%
+      top: -40px
+      transform: translateX(-50%)
+      z-index: -1
     &:nth-child(6)
       .advs__item
         &-title
