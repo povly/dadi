@@ -241,6 +241,14 @@ document.addEventListener("DOMContentLoaded", () => {
                                 longhand: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
                             },
                         },
+                        onChange: function(selectedDates, dateStr, instance) {
+                            const _element = instance.element;
+                            if (_element.getAttribute('name') === 'start'){
+                                const parent = _element.closest('.rent__form');
+                                const end = parent.querySelector('input[name="end"]');
+                                end._flatpickr.set('minDate',dateStr);
+                            }
+                        },
                     });
                     const svg = input.querySelector(".rent__input-svg");
                     svg.addEventListener('click', ()=>{
