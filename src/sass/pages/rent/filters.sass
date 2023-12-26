@@ -19,3 +19,21 @@
       width: 59px
       padding-bottom: 0
       border: 0
+  &__coub
+    &.active
+      rect
+        fill: var(--c5)
+  &__map
+    picture
+      &:nth-child(2)
+        display: none
+    &.active
+      picture
+        &:nth-child(1)
+          display: none
+        &:nth-child(2)
+          display: flex
+  &__content, &__content-map
+    display: none
+    &.active
+      display: flex

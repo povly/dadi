@@ -362,21 +362,24 @@
                 </div>
                 <div class="filters__sort-title">Cначала новые</div>
               </div>
-              <div class="filters__coub"><svg width="28" height="27" viewBox="0 0 28 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="14.9707" y="0.298828" width="12.7007" height="11.6423" rx="1" fill="#156B7F"/>
-<rect x="14.9707" y="15.1172" width="12.7007" height="11.6423" rx="1" fill="#156B7F"/>
-<rect x="0.15332" y="15.1172" width="12.7007" height="11.6423" rx="1" fill="#156B7F"/>
-<rect x="0.15332" y="0.298828" width="12.7007" height="11.6423" rx="1" fill="#156B7F"/>
+              <div class="filters__coub active cursor-pointer"><svg width="28" height="27" viewBox="0 0 28 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="15.4708" y="0.798828" width="11.7007" height="10.6423" rx="0.5" stroke="#156B7F"/>
+<rect x="15.4708" y="15.6172" width="11.7007" height="10.6423" rx="0.5" stroke="#156B7F"/>
+<rect x="0.65332" y="15.6172" width="11.7007" height="10.6423" rx="0.5" stroke="#156B7F"/>
+<rect x="0.65332" y="0.798828" width="11.7007" height="10.6423" rx="0.5" stroke="#156B7F"/>
 </svg>
               </div>
-              <div class="filters__map">
+              <div class="filters__map cursor-pointer">
                     <picture>
                       <source type="image/webp" srcset="img/rent/filters/map.webp"><img width="38" height="38" src="img/rent/filters/map.png" alt="" loading="lazy">
+                    </picture>
+                    <picture>
+                      <source type="image/webp" srcset="img/rent/filters/map_active.webp"><img width="38" height="38" src="img/rent/filters/map_active.png" alt="" loading="lazy">
                     </picture>
               </div>
             </div>
           </form>
-          <div class="filters__content flex flex-wrap">
+          <div class="filters__content flex flex-wrap active">
             <div class="p-card p-card_filter">
               <div class="p-card_filter__image relative"><a class="img_cover img_full" href="#!">
                   <div class="swiper">
@@ -1025,6 +1028,9 @@
                   <div class="p-card_filter__price-right">или 4.500 в сутки</div>
                 </div></a>
             </div>
+          </div>
+          <div class="filters__content-map">
+            <div class="filters__content-map-item" id="map"></div>
           </div>
         </div>
       </div>
@@ -1479,6 +1485,7 @@
 <path d="M0.5 18.5V284.953C0.5 294.913 8.5873 302.979 18.5466 302.953L1141.05 300.046C1150.97 300.021 1159 291.969 1159 282.047V74.8498C1159 64.9675 1151.03 56.9332 1141.15 56.8504L818.849 54.1496C808.967 54.0668 801 46.0325 801 36.1502V18.5C801 8.55888 792.941 0.5 783 0.5H18.5C8.55887 0.5 0.5 8.55888 0.5 18.5Z" fill="#C4C4C4"/>
 </mask>
 </svg>
+<script async src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY ></script>
     </main>
     <footer class="footer text-c2">
       <div class="container margin-center">

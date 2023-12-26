@@ -143,10 +143,39 @@ document.addEventListener("DOMContentLoaded", () => {
                 },
             });
 
-
-
         })
     }
+
+
+    const filters = document.querySelectorAll('.filters');
+    if (filters[0]){
+        filters.forEach((filter)=>{
+            const btnCoub = filter.querySelector('.filters__coub');
+            const btnMap = filter.querySelector('.filters__map');
+
+            const content = filter.querySelector('.filters__content');
+            const map = filter.querySelector('.filters__content-map');
+
+            btnCoub.addEventListener('click', ()=>{
+                btnCoub.classList.add('active');
+                content.classList.add('active');
+                map.classList.remove('active');
+                btnMap.classList.remove('active');
+            })
+
+            btnMap.addEventListener('click', ()=>{
+                btnCoub.classList.remove('active');
+                content.classList.remove('active');
+                map.classList.add('active');
+                btnMap.classList.add('active');
+            })
+        })
+    }
+
+    // const map = new Map(document.getElementById('map'), {
+    //     center: {lat: -34.397, lng: 150.644},
+    //     zoom: 8
+    // });
 
     const reviews = document.querySelectorAll('.reviews__swiper');
     if (reviews[0]) {
