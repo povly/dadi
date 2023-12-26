@@ -161,6 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 content.classList.add('active');
                 map.classList.remove('active');
                 btnMap.classList.remove('active');
+                ScrollTrigger.refresh();
             })
 
             btnMap.addEventListener('click', ()=>{
@@ -168,6 +169,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 content.classList.remove('active');
                 map.classList.add('active');
                 btnMap.classList.add('active');
+                ScrollTrigger.refresh();
             })
         })
     }
