@@ -182,16 +182,18 @@ main
                     .filters__map.cursor-pointer
                         +picture('img/rent/filters/map.png', 'img/rent/filters/map', false, '', 38, 38, '', '')
                         +picture('img/rent/filters/map_active.png', 'img/rent/filters/map_active', false, '', 38, 38, '', '')
-            .filters__content.flex.flex-wrap.active
-                include ../../components/filterCard
-                include ../../components/filterCard
-                include ../../components/filterCard
-                include ../../components/filterCard
-                include ../../components/filterCard
-                include ../../components/filterCard
-                include ../../components/filterCard
-                include ../../components/filterCard
-                include ../../components/filterCard
+            .filters__content.active
+                .filters__content-block.flex.flex-wrap.active
+                    include ../../components/filterCard
+                    include ../../components/filterCard
+                    include ../../components/filterCard
+                    include ../../components/filterCard
+                    include ../../components/filterCard
+                    include ../../components/filterCard
+                    include ../../components/filterCard
+                    include ../../components/filterCard
+                    include ../../components/filterCard
+                .filters__content-load.margin-center.text-c3.text-underline.text-500 Загрузить <span>18</span> из 103
             .filters__content-map
                 .filters__content-map-item#map
     .advs.overflow-hidden
