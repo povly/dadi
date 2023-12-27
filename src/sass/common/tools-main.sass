@@ -118,6 +118,19 @@ iframe
   left: -1000%
   position: absolute
 
-.flatpickr-day.selected
-  background: var(--c5)
-  border-color: var(--c5)
+.flatpickr-day
+  &.selected, &.startRange.startRange, &.endRange.endRange
+    background: var(--c5)
+    border-color: var(--c5)
+.flatpickr-months .flatpickr-prev-month:hover svg, .flatpickr-months .flatpickr-next-month:hover svg
+  fill: var(--c3)
+.flatpickr-day.flatpickr-disabled, .flatpickr-day.flatpickr-disabled:hover
+  color: #CBCBCB
+  text-decoration: line-through
+.flatpickr-innerContainer
+  padding-top: 20px
+.flatpickr-current-month
+  padding-top: 3px
+
+.sticky
+  position: sticky

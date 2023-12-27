@@ -1,0 +1,262 @@
+.rent
+  &-single
+    padding-top: 58px
+    padding-bottom: 60px
+    &__link
+      margin-bottom: 13px
+    &__title
+      font-size: 35px
+      margin-bottom: 13px
+    &__top
+      margin-bottom: 31px
+      gap: 34px
+      &-lot
+        color: #646464
+      &-svg
+        svg
+          width: 100%
+    &__row
+      gap: 41px
+    &__left
+      width: 720px
+    &__right
+      width: calc(100% - 720px - 41px)
+      top: 20px
+      &-item
+        border-radius: 14px
+        border: 0.5px solid #808080
+        background: var(--c2)
+        box-shadow: 9px 8px 16px 0px rgba(0, 0, 0, 0.09)
+        padding: 24px 38px 67px
+        margin-bottom: 34px
+      &-date
+        color: #777
+        margin-bottom: 26px
+        font-size: 14px
+      &-input
+        input
+          display: none
+        .flatpickr-calendar
+          box-shadow: none
+    &__subitem
+      border-radius: 24px
+      border: 0.5px solid #808080
+      background: var(--c2)
+      box-shadow: 9px 8px 16px 0px rgba(0, 0, 0, 0.09)
+      padding: 43px 40px 44px 37px
+    &__images
+      grid-template-columns: 474px 230px
+      grid-template-rows: 151px 151px
+      gap: 10px 17px
+      grid-template-areas: "a b" "a c"
+      margin-bottom: 35px
+    &__image
+      &:nth-child(1)
+        grid-area: a
+      &:nth-child(2)
+        grid-area: b
+      &:nth-child(3)
+        grid-area: c
+    &__price
+      font-size: 20.64px
+      margin-bottom: 16px
+      span
+        font-weight: 500
+      del
+        color: #777
+        text-decoration-thickness: 1px
+      ins
+        text-decoration: none
+        margin-left: 8px
+        color: var(--c5)
+    &__cols
+      padding-left: 16px
+      margin-bottom: 30px
+    &__col
+      padding-top: 20px
+      &-item
+        width: 131px
+        &:nth-child(2)
+          border-left: 0.5px solid #777
+          padding-left: 30px
+        &_select
+          width: 100%
+      &-title
+        font-size: 10px
+        margin-bottom: 3px
+      &-date
+        font-size: 12.865px
+    &__select
+      &.active
+        .rent-single__select-abs
+          display: block
+      &-title
+        font-size: 10.136px
+      &-abs
+        top: calc(100% + 10px)
+        display: none
+        border-radius: 6px
+        border: 0.5px solid grey
+        background: var(--c2)
+        box-shadow: 9px 8px 16px 0 rgba(0,0,0,.09)
+        padding: 16px
+        cursor: default
+      &-close
+        padding: 10px 0
+        margin-top: 20px
+        user-select: none
+      &-subtitle
+        font-size: 15px
+        margin-bottom: 5px
+      &-subdesc
+        font-size: 13px
+    &__button
+      margin-bottom: 38px
+      .p-btn
+        width: 100%
+        font-size: 16px
+    &__end
+      &-item
+        padding-top: 18px
+        &_last
+          border-top: 0.5px solid #777
+          padding-top: 30.5px
+          margin-top: 20px
+      &-title, &-subprice
+        font-size: 15.39px
+      &-span
+        color: #6E6E6E
+        margin-left: 5px
+        font-weight: 400
+    &__quantity
+      &-item
+        border: 1px solid #B0B0B0
+        width: 32px
+        height: 32px
+        cursor: pointer
+        border-radius: 100%
+        &:hover
+          border-color: var(--c1)
+        svg
+          width: 10px
+          height: 10px
+      &-input
+        user-select: none
+        input
+          user-select: none
+          width: 30px
+          border: none
+          outline: none
+          text-align: center
+          font-size: 16px
+    &__tabs
+      gap: 19px
+    &__tab
+      &-tops
+        background: #F5F7F9
+      &-top
+        font-size: 20px
+        color: #CFCFCF
+        padding: 2px 13px
+        border: 1px solid #808080
+        cursor: pointer
+        &:not(:first-child)
+          margin-left: -1px
+        &:first-child
+          border-radius: 5px 0 0 5px
+        &:last-child
+          border-radius: 0 5px 5px 0
+        &.active, &:hover
+          background: var(--c5)
+          color: var(--c2)
+          border-color: var(--c5)
+      &-content
+        display: none
+        &.active
+          display: block
+    &__day
+      margin-bottom: 15px
+      gap: 69px
+      font-size: 25px
+      &-right
+        color: #777
+    &__desc
+      margin-bottom: 35px
+    &__list
+      margin-bottom: 116px
+      gap: 13px
+      &-li
+        display: none
+        gap: 14px
+        &.active
+          display: flex
+        &_first
+          width: 316px
+        &_second
+          width: 262px
+        &_third
+          width: calc(100% - 316px - 13px - 13px - 262px)
+        &_more
+          font-size: 20px
+          line-height: 1.2
+          cursor: pointer
+          width: max-content
+          display: flex
+    &__rules
+      &-title
+        font-size: 55px
+        margin-bottom: 26px
+      &-tabs
+        gap: 28px
+        margin-bottom: 32px
+      &-tab
+        padding-bottom: 12px
+        font-size: 19px
+        color: #BFBFBF
+        font-weight: 500
+        position: relative
+        cursor: pointer
+        &.active
+          color: var(--c1)
+          svg
+            opacity: 1
+        svg
+          position: absolute
+          top: 100%
+          left: 0
+          width: 100%
+          opacity: 0
+          height: 2px
+      &-content
+        display: none
+        &.active
+          display: block
+      &-btn
+        height: 58px
+    &__advs
+      gap: 14px 20px
+      margin-bottom: 30px
+      &-item
+        width: calc(100% / 2 - 20px / 2)
+        gap: 18px
+        border-radius: 14px
+        padding: 9px 14px
+      &-svg
+        width: 41px
+        height: 41px
+        border-radius: 100%
+        flex-shrink: 0
+      &-title
+        font-size: 16px
+        line-height: 118.6%
+    &__form
+      height: 390px
+      border-radius: 14px
+      padding: 40px 35px
+      background-color: #F5F7F9
+      &-btn
+        width: 296px
+        margin-bottom: 20px
+      &-subtitle
+        font-size: 22px
+        max-width: 333px

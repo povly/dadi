@@ -15,6 +15,14 @@
   &-card
     height: 417px
     border-radius: 11px
+    &_back
+      .p-card__abs
+        opacity: 1
+        z-index: 5
+    &__abs
+      &-link
+        font-size: 24px
+        max-width: 230px
     &_filter
       background: #F5F7F9
       border-radius: 14px
@@ -79,7 +87,7 @@
       .p-card
         &__abs
           opacity: 1
-          z-index: 1
+          z-index: 5
     &_second
       .p-card
         &__title
@@ -163,6 +171,7 @@
           picture
             display: block
     &__square
+      flex-shrink: 0
       width: 14px
       height: 14px
       border-radius: 1px

@@ -220,6 +220,140 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     }
 
+    const _locale = {
+        firstDayOfWeek: 1,
+        weekdays: {
+            shorthand: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+            longhand: ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'],
+        },
+        months: {
+            shorthand: ['Янв', 'Фев', 'Март', 'Апр', 'Май', 'Июнь', 'Июль', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
+            longhand: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+        },
+    };
+
+    const rentSingles = document.querySelectorAll('.rent-single');
+    if (rentSingles[0]){
+        rentSingles.forEach((rentSingle)=>{
+            const startDate = rentSingle.querySelector('.rent-single__right-date_start');
+            const endDate = rentSingle.querySelector('.rent-single__right-date_end');
+            const startDateCol = rentSingle.querySelector('.rent-single__col-date_start');
+            const endDateCol = rentSingle.querySelector('.rent-single__col-date_end');
+            const input = rentSingle.querySelector('.rent-single__right-input input');
+            const ft = flatpickr(input, {
+                minDate: "today",
+                mode: "range",
+                inline: true,
+                dateFormat: 'd.m.Y',
+                locale: _locale,
+                onChange: function(selectedDates, dateStr, instance) {
+                    const _options = {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric"
+                    };
+                    if (selectedDates[0]){
+                        startDate.textContent = selectedDates[0].toLocaleDateString('ru', _options);
+                        startDateCol.textContent = selectedDates[0].toLocaleDateString('ru');
+                    }
+                    if (selectedDates[1]){
+                        endDate.textContent = selectedDates[1].toLocaleDateString('ru', _options);
+                        endDateCol.textContent = selectedDates[1].toLocaleDateString('ru');
+                    } else {
+                        endDate.textContent = selectedDates[0].toLocaleDateString('ru', _options);
+                        endDateCol.textContent = selectedDates[0].toLocaleDateString('ru');
+                    }
+                },
+            });
+
+            const selects = rentSingle.querySelectorAll('.rent-single__select');
+            if (selects[0]){
+                selects.forEach((select)=>{
+                    const current = select.querySelector('.rent-single__select-current');
+                    current.addEventListener('click', (e)=>{
+                        resetEvent(e);
+                        select.classList.toggle('active');
+                    })
+                    const close = select.querySelector('.rent-single__select-close');
+                    close.addEventListener('click', (e)=>{
+                        resetEvent(e);
+                        select.classList.remove('active');
+                    })
+                })
+            }
+
+            const quantities = rentSingle.querySelectorAll('.rent-single__quantity');
+            if (quantities[0]){
+                quantities.forEach((quantity)=>{
+                    const minus = quantity.querySelector('.rent-single__quantity-minus');
+                    const plus = quantity.querySelector('.rent-single__quantity-plus');
+                    const input = quantity.querySelector('.rent-single__quantity-input input');
+
+                    minus.addEventListener('click', (e)=>{
+                        resetEvent(e);
+                        let value = parseInt(input.value);
+
+                        if (value <= 0){
+                            input.value = 0;
+                        } else {
+                            value--;
+                            input.value = value;
+                        }
+                    })
+
+                    plus.addEventListener('click', (e)=>{
+                        resetEvent(e);
+                        let value = parseInt(input.value);
+
+                        value++;
+                        input.value = value;
+                    })
+                })
+            }
+
+            const lists = rentSingle.querySelectorAll('.rent-single__list');
+            if (lists[0]){
+                lists.forEach((list)=>{
+                    const count = list.dataset.count;
+                    const items = list.querySelectorAll('.rent-single__list-li');
+                    const more = list.querySelector('.rent-single__list-li_more');
+                    more.addEventListener('click', ()=>{
+                        const status = list.dataset.status;
+                        items.forEach((item, index)=>{
+                            if (count <= index){
+                                item.classList.toggle('active');
+                            }
+                        })
+                        if (status === 'true'){
+                            list.dataset.status = 'false';
+                            more.textContent = more.dataset.textHide;
+                        }
+                        if (status === 'false'){
+                            list.dataset.status = 'true';
+                            more.textContent = more.dataset.textShow;
+                        }
+                    })
+                })
+            }
+
+            const rules = rentSingle.querySelectorAll('.rent-single__rules');
+            if (rules[0]){
+                rules.forEach((rule)=>{
+                    const tabs = rule.querySelectorAll('.rent-single__rules-tab');
+                    const contents = rule.querySelectorAll('.rent-single__rules-content');
+                    tabs.forEach((tab, index)=>{
+                        tab.addEventListener('click', ()=>{
+                            removeActiveElement(rule, '.rent-single__rules-tab.active', 'active');
+                            removeActiveElement(rule, '.rent-single__rules-content.active', 'active');
+                            tab.classList.add('active');
+                            contents[index].classList.add('active');
+                        })
+                    })
+                })
+            }
+        })
+    }
+
     const rents = document.querySelectorAll('.rent');
     if (rents[0]) {
         rents.forEach((rent)=>{
@@ -230,17 +364,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     const fp = flatpickr(_input, {
                         minDate: "today",
                         dateFormat: 'd.m.Y',
-                        locale: {
-                            firstDayOfWeek: 1,
-                            weekdays: {
-                                shorthand: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
-                                longhand: ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'],
-                            },
-                            months: {
-                                shorthand: ['Янв', 'Фев', 'Март', 'Апр', 'Май', 'Июнь', 'Июль', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
-                                longhand: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
-                            },
-                        },
+                        locale: _locale,
                         onChange: function(selectedDates, dateStr, instance) {
                             const _element = instance.element;
                             if (_element.getAttribute('name') === 'start'){
