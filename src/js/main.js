@@ -193,6 +193,16 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     }
 
+    const articleItems = document.querySelectorAll('.article-items');
+    if (articleItems[0]) {
+        articleItems.forEach((article) => {
+            const swiper = new Swiper(article.querySelector('.swiper'), {
+                slidesPerView: 'auto',
+                spaceBetween: 41,
+            });
+        })
+    }
+
     const bests = document.querySelectorAll('.best__swiper');
     if (bests[0]) {
         bests.forEach((best) => {
