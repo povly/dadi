@@ -7,7 +7,7 @@ mixin pCheckboxSecond(name, title)
     label.p-checkboxes__item.flex
         input(type="checkbox" name=name value=title)
         span.p-checkboxes__item-title=title
-mixin pRadioSecond(name, title)
+mixin pRadioSecond(name, title, checked)
     label.p-checkboxes__item.flex
-        input(type="radio" name=name value=title)
+        input(type="radio" name=name value=title checked=checked)
         span.p-checkboxes__item-title=title

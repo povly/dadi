@@ -8,6 +8,8 @@
       gap: 20px
   &__main
     gap: 16px
+    &-title
+      font-size: 22px
   &__sort
     margin-right: 14px
     .p-select
@@ -16,6 +18,8 @@
       &__current
         gap: 11.5px
         flex-direction: row-reverse
+        &-item
+          font-size: 20px
   &__content
     &-block
       gap: 20px 45px
@@ -26,11 +30,19 @@
       cursor: pointer
     .p-card
       width: calc(100% / 3 - 30px)
+  &__currency, &__m
+    .p-select
+      padding-bottom: 0
+      border: 0
+      &__current
+        &-item
+          font-size: 20px
   &__currency
     .p-select
       width: 59px
-      padding-bottom: 0
-      border: 0
+  &__m
+    .p-select
+      width: 81px
   &__coub
     &.active
       rect

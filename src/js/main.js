@@ -366,10 +366,14 @@ document.addEventListener("DOMContentLoaded", () => {
             if (subitem){
                 const row = subitem.closest('.rent-single__row');
                 const item = rentSingle.querySelector('.rent-single__right-item');
+                let end = row.offsetHeight - subitem.offsetHeight - parseInt(window.getComputedStyle(subitem).top);
+                if (item){
+                    end = end - item.offsetHeight - parseInt(window.getComputedStyle(item).marginBottom);
+                }
                 ScrollTrigger.create({
                     trigger: subitem,
                     start: "top top",
-                    end: `+=${row.offsetHeight - subitem.offsetHeight - item.offsetHeight - parseInt(window.getComputedStyle(item).marginBottom) - parseInt(window.getComputedStyle(subitem).top)}px`,
+                    end: `+=${end}px`,
                     pin: true,
                 });
             }
@@ -409,27 +413,102 @@ document.addEventListener("DOMContentLoaded", () => {
     if (filterRanges[0]){
         filterRanges.forEach((filterRange)=>{
             const slider = filterRange.querySelector('.modal_filter__range-main');
-            const sliderMin = parseFloat(filterRange.dataset.min);
-            const sliderMax = parseFloat(filterRange.dataset.max);
-            const min = filterRange.querySelector('input[name*="min"]');
-            const max = filterRange.querySelector('input[name*="max"]');
-            var inputs = [min, max];
-            noUiSlider.create(slider, {
-                start: [
-                    sliderMin,
-                    sliderMax
-                ],
-                connect: true,
-                range: {
-                    'min': sliderMin,
-                    'max': sliderMax
-                },
-                tooltips: true,
-            });
+            let sliderMin = parseFloat(filterRange.dataset.min);
+            let sliderMax = parseFloat(filterRange.dataset.max);
+            let string = filterRange.dataset.string;
+            if (string){
+                string = JSON.parse(string);
+                let start = filterRange.dataset.start;
+                let end = filterRange.dataset.end;
+                var format = {
+                    to: function(value) {
+                        return string[Math.round(value)];
+                    },
+                    from: function (value) {
+                        return string.indexOf(value);
+                    }
+                };
 
-            slider.noUiSlider.on('update', function (values, handle) {
-                inputs[handle].value = values[handle];
-            });
+                noUiSlider.create(slider, {
+                    start: [start, end],
+                    range: { min: 0, max: string.length - 1 },
+                    step: 1,
+                    tooltips: true,
+                    format: format,
+                });
+            } else {
+                const type = filterRange.dataset.type;
+                const min = filterRange.querySelector('input[name*="min"]');
+                const max = filterRange.querySelector('input[name*="max"]');
+                var inputs = [min, max];
+
+
+                if (type && type === 'int'){
+                    noUiSlider.create(slider, {
+                        start: [
+                            sliderMin,
+                            sliderMax
+                        ],
+                        step: 1,
+                        range: {
+                            'min': sliderMin,
+                            'max': sliderMax
+                        },
+                        tooltips: {
+                            to: function(numericValue) {
+                                return numericValue.toFixed(0);
+                            }
+                        },
+                    });
+                } else {
+                    noUiSlider.create(slider, {
+                        start: [
+                            sliderMin,
+                            sliderMax
+                        ],
+                        range: {
+                            'min': sliderMin,
+                            'max': sliderMax
+                        },
+                        tooltips: true,
+                    });
+                }
+
+                slider.noUiSlider.on('update', function (values, handle) {
+                    inputs[handle].value = values[handle];
+                });
+            }
+        })
+    }
+
+    const filterItemsChanges = document.querySelectorAll('.modal_filter__item_change');
+    if (filterItemsChanges[0]){
+        filterItemsChanges.forEach((filterItemsChange)=>{
+            const checkboxes = filterItemsChange.querySelectorAll('.p-checkboxes__item');
+            const ranges = filterItemsChange.querySelectorAll('.modal_filter__range-content');
+            if (checkboxes[0]){
+                checkboxes.forEach((checkbox, index)=>{
+                    checkbox.addEventListener('click', ()=>{
+                        removeActiveElement(filterItemsChange, '.modal_filter__range-content.active', 'active');
+                        ranges[index].classList.add('active');
+                    })
+                })
+            }
+        })
+    }
+    const filterItemsAreas = document.querySelectorAll('.modal_filter__price-item_area');
+    if (filterItemsAreas[0]){
+        filterItemsAreas.forEach((filterItemsArea)=>{
+            const checkboxes = filterItemsArea.querySelectorAll('.p-checkboxes__item');
+            const items = filterItemsArea.querySelectorAll('.modal_filter__area-item');
+            if (checkboxes[0]){
+                checkboxes.forEach((checkbox, index)=>{
+                    checkbox.addEventListener('click', ()=>{
+                        removeActiveElement(filterItemsArea, '.modal_filter__area-item.active', 'active');
+                        items[index].classList.add('active');
+                    })
+                })
+            }
         })
     }
 

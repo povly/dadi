@@ -73,18 +73,30 @@ main
                                         +pCheckboxSecond('room[]', '4+')
                                 .modal_filter__item
                                     .modal_filter__price-row.flex
-                                        .modal_filter__price-item
+                                        .modal_filter__price-item.modal_filter__item_change
                                             .modal_filter__price-top.flex
                                                 .modal_filter__price-title.text-500.text-c5 Стоимость в месяц
                                                 .modal_filter__price-currency.flex
                                                     .p-checkboxes.p-checkboxes_second.flex
-                                                        +pRadioSecond('currency', '₽')
-                                                        +pRadioSecond('currency', '$')
-                                                        +pRadioSecond('currency', '€')
-                                            .modal_filter__range.modal_filter__price-input(data-min="6.419" data-max="78.251")
-                                                .modal_filter__range-main
-                                                input(type="hidden" name="price_min")
-                                                input(type="hidden" name="price_max")
+                                                        +pRadioSecond('currency', '₽', true)
+                                                        +pRadioSecond('currency', '$', false)
+                                                        +pRadioSecond('currency', '€', false)
+                                            .modal_filter__range-contents
+                                                .modal_filter__range-content.active
+                                                    .modal_filter__range.modal_filter__price-input(data-min="6.419" data-max="78.251")
+                                                        .modal_filter__range-main
+                                                        input(type="hidden" name="price_rub_min")
+                                                        input(type="hidden" name="price_rub_max")
+                                                .modal_filter__range-content
+                                                    .modal_filter__range.modal_filter__price-input(data-min="8.419" data-max="100.251")
+                                                        .modal_filter__range-main
+                                                        input(type="hidden" name="price_dollar_min")
+                                                        input(type="hidden" name="price_dollar_max")
+                                                .modal_filter__range-content
+                                                    .modal_filter__range.modal_filter__price-input(data-min="3.419" data-max="67.251")
+                                                        .modal_filter__range-main
+                                                        input(type="hidden" name="price_euro_min")
+                                                        input(type="hidden" name="price_euro_max")
                                         .modal_filter__price-item
                                             .modal_filter__price-top.flex
                                                 .modal_filter__price-title.text-500.text-c5 Спальни

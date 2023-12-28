@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/parts/swiper.css">
     <link rel="stylesheet" href="css/flatpickr.min.css">
     <link rel="stylesheet" href="css/parts/nouislider.css">
-    <link rel="stylesheet" href="css/parts/main.css?time=06457775474568770">
+    <link rel="stylesheet" href="css/parts/main.css?time=373">
   </head>
   <body class="relative font-manrope text-c1 bg-c2 text-normal">
     <header class="header">
@@ -102,7 +102,7 @@
                 </div>
                 <div class="filters__main-title">Фильтры</div>
               </div>
-              <div class="modal modal_filter">
+              <div class="modal modal_filter active">
                 <div class="modal__content relative">
                   <div class="modal__close absolute">
                         <picture>
@@ -112,60 +112,14 @@
                   <div class="modal_filter__reset absolute text-underline cursor-pointer">Сбросить фильтры</div>
                   <div class="modal_filter__items flex relative flex-col">
                     <div class="modal_filter__item">
-                      <div class="modal_filter__item-title text-500 text-c5">Тип недвижимости</div>
-                      <div class="p-checkboxes flex flex-wrap">
-                            <label class="p-checkboxes__item flex">
-                              <input type="checkbox" name="type[]" value="Любая"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">Любая</span>
-                            </label>
-                            <label class="p-checkboxes__item flex">
-                              <input type="checkbox" name="type[]" value="Таунхаусы"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">Таунхаусы</span>
-                            </label>
-                            <label class="p-checkboxes__item flex">
-                              <input type="checkbox" name="type[]" value="Виллы"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">Виллы</span>
-                            </label>
-                            <label class="p-checkboxes__item flex">
-                              <input type="checkbox" name="type[]" value="Апартаменты"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">Апартаменты</span>
-                            </label>
-                            <label class="p-checkboxes__item flex">
-                              <input type="checkbox" name="type[]" value="Дуплексы"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">Дуплексы</span>
-                            </label>
-                            <label class="p-checkboxes__item flex">
-                              <input type="checkbox" name="type[]" value="Пентхаусы"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">Пентхаусы</span>
-                            </label>
-                            <label class="p-checkboxes__item flex">
-                              <input type="checkbox" name="type[]" value="Квартиры в отелях"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">Квартиры в отелях</span>
-                            </label>
-                      </div>
-                    </div>
-                    <div class="modal_filter__item">
-                      <div class="modal_filter__item-title text-500 text-c5">Комнаты</div>
-                      <div class="p-checkboxes p-checkboxes_second flex flex-wrap">
-                            <label class="p-checkboxes__item flex">
-                              <input type="checkbox" name="room[]" value="Студия"><span class="p-checkboxes__item-title">Студия</span>
-                            </label>
-                            <label class="p-checkboxes__item flex">
-                              <input type="checkbox" name="room[]" value="1"><span class="p-checkboxes__item-title">1</span>
-                            </label>
-                            <label class="p-checkboxes__item flex">
-                              <input type="checkbox" name="room[]" value="2"><span class="p-checkboxes__item-title">2</span>
-                            </label>
-                            <label class="p-checkboxes__item flex">
-                              <input type="checkbox" name="room[]" value="3"><span class="p-checkboxes__item-title">3</span>
-                            </label>
-                            <label class="p-checkboxes__item flex">
-                              <input type="checkbox" name="room[]" value="4+"><span class="p-checkboxes__item-title">4+</span>
-                            </label>
-                      </div>
-                    </div>
-                    <div class="modal_filter__item">
                       <div class="modal_filter__price-row flex">
-                        <div class="modal_filter__price-item">
+                        <div class="modal_filter__price-item modal_filter__item_change">
                           <div class="modal_filter__price-top flex">
                             <div class="modal_filter__price-title text-500 text-c5">Стоимость в месяц</div>
                             <div class="modal_filter__price-currency flex">
                               <div class="p-checkboxes p-checkboxes_second flex">
                                     <label class="p-checkboxes__item flex">
-                                      <input type="radio" name="currency" value="₽"><span class="p-checkboxes__item-title">₽</span>
+                                      <input type="radio" name="currency" value="₽" checked><span class="p-checkboxes__item-title">₽</span>
                                     </label>
                                     <label class="p-checkboxes__item flex">
                                       <input type="radio" name="currency" value="$"><span class="p-checkboxes__item-title">$</span>
@@ -176,107 +130,107 @@
                               </div>
                             </div>
                           </div>
-                          <div class="modal_filter__range modal_filter__price-input" data-min="6.419" data-max="78.251">
-                            <div class="modal_filter__range-main"></div>
-                            <input type="hidden" name="price_min">
-                            <input type="hidden" name="price_max">
+                          <div class="modal_filter__range-contents">
+                            <div class="modal_filter__range-content active">
+                              <div class="modal_filter__range modal_filter__price-input" data-min="6.419" data-max="78.251">
+                                <div class="modal_filter__range-main"></div>
+                                <input type="hidden" name="price_rub_min">
+                                <input type="hidden" name="price_rub_max">
+                              </div>
+                            </div>
+                            <div class="modal_filter__range-content">
+                              <div class="modal_filter__range modal_filter__price-input" data-min="8.419" data-max="100.251">
+                                <div class="modal_filter__range-main"></div>
+                                <input type="hidden" name="price_dollar_min">
+                                <input type="hidden" name="price_dollar_max">
+                              </div>
+                            </div>
+                            <div class="modal_filter__range-content">
+                              <div class="modal_filter__range modal_filter__price-input" data-min="3.419" data-max="67.251">
+                                <div class="modal_filter__range-main"></div>
+                                <input type="hidden" name="price_euro_min">
+                                <input type="hidden" name="price_euro_max">
+                              </div>
+                            </div>
                           </div>
                         </div>
+                        <div class="modal_filter__price-item modal_filter__price-item_area">
+                          <div class="modal_filter__price-top flex">
+                            <div class="modal_filter__price-title text-500 text-c5">Общая площадь</div>
+                            <div class="modal_filter__price-currency flex">
+                              <div class="p-checkboxes p-checkboxes_second flex">
+                                    <label class="p-checkboxes__item flex">
+                                      <input type="radio" name="area" value="м2" checked><span class="p-checkboxes__item-title">м2</span>
+                                    </label>
+                                    <label class="p-checkboxes__item flex">
+                                      <input type="radio" name="area" value="фут2"><span class="p-checkboxes__item-title">фут2</span>
+                                    </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="modal_filter__area">
+                            <div class="modal_filter__area-item active">
+                              <div class="modal_filter__area-subitems flex">
+                                <div class="modal_filter__area-subitem flex">
+                                  <div class="modal_filter__area-left">От</div>
+                                  <div class="modal_filter__area-input">
+                                    <input type="text" name="area_min">
+                                  </div>
+                                  <div class="modal_filter__area-right">м2</div>
+                                </div>
+                                <div class="modal_filter__area-subitem flex">
+                                  <div class="modal_filter__area-left">До</div>
+                                  <div class="modal_filter__area-input">
+                                    <input type="text" name="area_max">
+                                  </div>
+                                  <div class="modal_filter__area-right">м2</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="modal_filter__area-item">
+                              <div class="modal_filter__area-subitems flex">
+                                <div class="modal_filter__area-subitem flex">
+                                  <div class="modal_filter__area-left">От</div>
+                                  <div class="modal_filter__area-input">
+                                    <input type="text" name="fut_min">
+                                  </div>
+                                  <div class="modal_filter__area-right">фут2</div>
+                                </div>
+                                <div class="modal_filter__area-subitem flex">
+                                  <div class="modal_filter__area-left">До</div>
+                                  <div class="modal_filter__area-input">
+                                    <input type="text" name="fut_max">
+                                  </div>
+                                  <div class="modal_filter__area-right">фут2</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal_filter__item">
+                      <div class="modal_filter__price-row flex">
                         <div class="modal_filter__price-item">
                           <div class="modal_filter__price-top flex">
-                            <div class="modal_filter__price-title text-500 text-c5">Спальни</div>
+                            <div class="modal_filter__price-title text-500 text-c5">Количество комнат</div>
                           </div>
-                          <div class="modal_filter__range modal_filter__bedrooms" data-min="1" data-max="3">
+                          <div class="modal_filter__range modal_filter__bedrooms" data-min="1" data-max="10" data-type="int">
                             <div class="modal_filter__range-main"></div>
                             <input type="hidden" name="bedrooms_min">
                             <input type="hidden" name="bedrooms_max">
                           </div>
                         </div>
-                      </div>
-                    </div>
-                    <div class="modal_filter__item">
-                      <div class="modal_filter__item-title text-500 text-c5">Местоположение</div>
-                      <div class="p-checkboxes flex flex-wrap">
-                            <label class="p-checkboxes__item flex">
-                              <input type="checkbox" name="place[]" value="Высокий этаж"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">Высокий этаж</span>
-                            </label>
-                            <label class="p-checkboxes__item flex">
-                              <input type="checkbox" name="place[]" value="Близко к метро"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">Близко к метро</span>
-                            </label>
-                            <label class="p-checkboxes__item flex">
-                              <input type="checkbox" name="place[]" value="Вид на канал"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">Вид на канал</span>
-                            </label>
-                            <label class="p-checkboxes__item flex">
-                              <input type="checkbox" name="place[]" value="Средний этаж"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">Средний этаж</span>
-                            </label>
-                            <label class="p-checkboxes__item flex">
-                              <input type="checkbox" name="place[]" value="Вид на город"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">Вид на город</span>
-                            </label>
-                            <label class="p-checkboxes__item flex">
-                              <input type="checkbox" name="place[]" value="Вид на парк"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">Вид на парк</span>
-                            </label>
-                            <label class="p-checkboxes__item flex">
-                              <input type="checkbox" name="place[]" value="Низкий этаж"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">Низкий этаж</span>
-                            </label>
-                            <label class="p-checkboxes__item flex">
-                              <input type="checkbox" name="place[]" value="Вид на море"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">Вид на море</span>
-                            </label>
-                            <label class="p-checkboxes__item flex">
-                              <input type="checkbox" name="place[]" value="Вид на Бурдж-Халифа"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">Вид на Бурдж-Халифа</span>
-                            </label>
-                            <label class="p-checkboxes__item flex">
-                              <input type="checkbox" name="place[]" value="Близко к пляжу"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">Близко к пляжу</span>
-                            </label>
-                      </div>
-                    </div>
-                    <div class="modal_filter__item">
-                      <div class="modal_filter__item-title text-500 text-c5">Удобства</div>
-                      <div class="p-checkboxes flex flex-wrap">
-                            <label class="p-checkboxes__item flex">
-                              <input type="checkbox" name="ydobstva[]" value="Wi-Fi"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">Wi-Fi</span>
-                            </label>
-                            <label class="p-checkboxes__item flex">
-                              <input type="checkbox" name="ydobstva[]" value="Фен"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">Фен</span>
-                            </label>
-                            <label class="p-checkboxes__item flex">
-                              <input type="checkbox" name="ydobstva[]" value="Микроволновая печь"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">Микроволновая печь</span>
-                            </label>
-                            <label class="p-checkboxes__item flex">
-                              <input type="checkbox" name="ydobstva[]" value="TV"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">TV</span>
-                            </label>
-                            <label class="p-checkboxes__item flex">
-                              <input type="checkbox" name="ydobstva[]" value="Кофемашина"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">Кофемашина</span>
-                            </label>
-                            <label class="p-checkboxes__item flex">
-                              <input type="checkbox" name="ydobstva[]" value="Посудомоечная машина"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">Посудомоечная машина</span>
-                            </label>
-                            <label class="p-checkboxes__item flex">
-                              <input type="checkbox" name="ydobstva[]" value="Кондиционер"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">Кондиционер</span>
-                            </label>
-                            <label class="p-checkboxes__item flex">
-                              <input type="checkbox" name="ydobstva[]" value="Парковочное место"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">Парковочное место</span>
-                            </label>
-                            <label class="p-checkboxes__item flex">
-                              <input type="checkbox" name="ydobstva[]" value="Стиральная машина"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">Стиральная машина</span>
-                            </label>
-                            <label class="p-checkboxes__item flex">
-                              <input type="checkbox" name="ydobstva[]" value="Ванна"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">Ванна</span>
-                            </label>
-                            <label class="p-checkboxes__item flex">
-                              <input type="checkbox" name="ydobstva[]" value="Балкон"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">Балкон</span>
-                            </label>
-                            <label class="p-checkboxes__item flex">
-                              <input type="checkbox" name="ydobstva[]" value="Общий бассейн"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">Общий бассейн</span>
-                            </label>
-                            <label class="p-checkboxes__item flex">
-                              <input type="checkbox" name="ydobstva[]" value="Душ"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">Душ</span>
-                            </label>
-                            <label class="p-checkboxes__item flex">
-                              <input type="checkbox" name="ydobstva[]" value="Фитнес-зал"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">Фитнес-зал</span>
-                            </label>
-                            <label class="p-checkboxes__item flex">
-                              <input type="checkbox" name="ydobstva[]" value="Детская площадка"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">Детская площадка</span>
-                            </label>
+                        <div class="modal_filter__price-item">
+                          <div class="modal_filter__price-top flex">
+                            <div class="modal_filter__price-title text-500 text-c5">Срок сдачи</div>
+                          </div>
+                          <div class="modal_filter__range modal_filter__due_date" data-string="[&quot;Сдан&quot;,&quot;5&quot;,&quot;15&quot;, &quot;235&quot;]" data-start="Сдан" data-end="235" data-type="int">
+                            <div class="modal_filter__range-main"></div>
+                            <input type="hidden" name="due_date_min">
+                            <input type="hidden" name="due_date_max">
+                          </div>
+                        </div>
                       </div>
                     </div>
                     <div class="modal_filter__item">
@@ -298,7 +252,10 @@
                               <input type="checkbox" name="raioni[]" value="Arjan"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">Arjan</span>
                             </label>
                             <label class="p-checkboxes__item flex">
-                              <input type="checkbox" name="raioni[]" value="Arjan"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">Arjan</span>
+                              <input type="checkbox" name="raioni[]" value="Business Bay"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">Business Bay</span>
+                            </label>
+                            <label class="p-checkboxes__item flex">
+                              <input type="checkbox" name="raioni[]" value="Downtown"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">Downtown</span>
                             </label>
                             <label class="p-checkboxes__item flex">
                               <input type="checkbox" name="raioni[]" value="Jebel Ali"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">Jebel Ali</span>
@@ -330,6 +287,55 @@
                       </div>
                     </div>
                     <div class="modal_filter__item">
+                      <div class="modal_filter__item-title text-500 text-c5">Удобства</div>
+                      <div class="p-checkboxes flex flex-wrap">
+                            <label class="p-checkboxes__item flex">
+                              <input type="checkbox" name="ydobstva[]" value="Вид на море"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">Вид на море</span>
+                            </label>
+                            <label class="p-checkboxes__item flex">
+                              <input type="checkbox" name="ydobstva[]" value="Вид на парк"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">Вид на парк</span>
+                            </label>
+                            <label class="p-checkboxes__item flex">
+                              <input type="checkbox" name="ydobstva[]" value="Вид на канал"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">Вид на канал</span>
+                            </label>
+                            <label class="p-checkboxes__item flex">
+                              <input type="checkbox" name="ydobstva[]" value="Вид на Бурдж-Халифа"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">Вид на Бурдж-Халифа</span>
+                            </label>
+                            <label class="p-checkboxes__item flex">
+                              <input type="checkbox" name="ydobstva[]" value="Близко к пляжу"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">Близко к пляжу</span>
+                            </label>
+                            <label class="p-checkboxes__item flex">
+                              <input type="checkbox" name="ydobstva[]" value="Детская площадка"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">Детская площадка</span>
+                            </label>
+                            <label class="p-checkboxes__item flex">
+                              <input type="checkbox" name="ydobstva[]" value="Вид на город"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">Вид на город</span>
+                            </label>
+                            <label class="p-checkboxes__item flex">
+                              <input type="checkbox" name="ydobstva[]" value="Близко к метро"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">Близко к метро</span>
+                            </label>
+                            <label class="p-checkboxes__item flex">
+                              <input type="checkbox" name="ydobstva[]" value="Вид на канал"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">Вид на канал</span>
+                            </label>
+                            <label class="p-checkboxes__item flex">
+                              <input type="checkbox" name="ydobstva[]" value="Бассейн"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">Бассейн</span>
+                            </label>
+                      </div>
+                    </div>
+                    <div class="modal_filter__item modal_filter__item_finishing">
+                      <div class="modal_filter__item-title text-500 text-c5">Отделка</div>
+                      <div class="p-checkboxes flex flex-wrap">
+                            <label class="p-checkboxes__item flex">
+                              <input type="checkbox" name="finishing[]" value="Полностью меблированная"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">Полностью меблированная</span>
+                            </label>
+                            <label class="p-checkboxes__item flex">
+                              <input type="checkbox" name="finishing[]" value="Частично меблированная"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">Частично меблированная</span>
+                            </label>
+                            <label class="p-checkboxes__item flex">
+                              <input type="checkbox" name="finishing[]" value="Не меблированная"><span class="p-checkboxes__item-square"></span><span class="p-checkboxes__item-title">Не меблированная</span>
+                            </label>
+                      </div>
+                    </div>
+                    <div class="modal_filter__item">
                       <button class="p-btn flex flex-ai-center flex-j-center text-500" type="submit">Применить фильтры</button>
                     </div>
                   </div>
@@ -349,6 +355,22 @@
                     <div class="p-select__abs-item active" data-value="RUB">RUB</div>
                     <div class="p-select__abs-item" data-value="$">$</div>
                     <div class="p-select__abs-item" data-value="BYN">BYN</div>
+                  </div>
+                </div>
+              </div>
+              <div class="filters__m">
+                <div class="p-select relative">
+                  <div class="p-select__current flex flex-ai-center flex-j-between">
+                    <input type="hidden" name="type" value="кв. м">
+                    <div class="p-select__current-item">кв. м</div>
+                    <div class="p-select__current-arrow"><svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.5 10L0.870834 0.25H12.1292L6.5 10Z" fill="#282828"/>
+</svg>
+                    </div>
+                  </div>
+                  <div class="p-select__abs absolute flex flex-col">
+                    <div class="p-select__abs-item active" data-value="кв. м">кв. м</div>
+                    <div class="p-select__abs-item" data-value="км. фут">км. фут</div>
                   </div>
                 </div>
               </div>
@@ -1708,6 +1730,6 @@
     <script src="js/libs/nouislider.min.js"></script>
     <script src="js/libs/ScrollTrigger.min.js"></script>
     <script src="js/libs/gsap.min.js"></script>
-    <script src="js/libs/main.js?time=457544565467779568"></script>
+    <script src="js/libs/main.js?time=67967967"></script>
   </body>
 </html>
