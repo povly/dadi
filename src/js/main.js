@@ -55,6 +55,9 @@ document.addEventListener("DOMContentLoaded", () => {
                             text += checkboxes[item].querySelector('.p-checkboxes__item-title').textContent;
                         }
                     })
+                    if (!activeIndexs.length){
+                        text = select.dataset.textDefault;
+                    }
                     return text;
                 }
                 checkboxes.forEach((checkbox, index)=>{
@@ -853,6 +856,29 @@ document.addEventListener("DOMContentLoaded", () => {
                 paused: false,
                 speed: 1.5
             });
+        })
+    }
+
+    const devs = document.querySelectorAll('.devs');
+    if (devs[0]){
+        devs.forEach((dev)=>{
+            const items = dev.querySelectorAll('.devs__item');
+            items.forEach((item)=>{
+                if (item.classList.contains('devs__item_reverse')){
+                    const loop = horizontalLoop(item.querySelectorAll("picture"), {
+                        repeat: -1,
+                        paused: false,
+                        speed: 1.2,
+                        reversed: true
+                    });
+                } else {
+                    const loop = horizontalLoop(item.querySelectorAll("picture"), {
+                        repeat: -1,
+                        paused: false,
+                        speed: 1.2
+                    });
+                }
+            })
         })
     }
 
