@@ -361,6 +361,18 @@ document.addEventListener("DOMContentLoaded", () => {
                     })
                 })
             }
+
+            const subitem = rentSingle.querySelector('.rent-single__subitem');
+            if (subitem){
+                const row = subitem.closest('.rent-single__row');
+                const item = rentSingle.querySelector('.rent-single__right-item');
+                ScrollTrigger.create({
+                    trigger: subitem,
+                    start: "top top",
+                    end: `+=${row.offsetHeight - subitem.offsetHeight - item.offsetHeight - parseInt(window.getComputedStyle(item).marginBottom) - parseInt(window.getComputedStyle(subitem).top)}px`,
+                    pin: true,
+                });
+            }
         })
     }
 
