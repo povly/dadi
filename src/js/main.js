@@ -230,6 +230,10 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     }
 
+    function morph(int, array) {
+        return (array = array || ['товар', 'товара', 'товаров']) && array[(int % 100 > 4 && int % 100 < 20) ? 2 : [2, 0, 1, 1, 1, 2][(int % 10 < 5) ? int % 10 : 5]];
+    }
+
     const _locale = {
         firstDayOfWeek: 1,
         weekdays: {
@@ -299,16 +303,25 @@ document.addEventListener("DOMContentLoaded", () => {
                     const plus = quantity.querySelector('.rent-single__quantity-plus');
                     const input = quantity.querySelector('.rent-single__quantity-input input');
 
+                    const select = quantity.closest('.rent-single__select');
+                    const title = select.querySelector('.rent-single__select-title');
+                    const texts = JSON.parse(quantity.dataset.texts);
+
+                    function setTitle(int){
+                        title.textContent = int + ' ' + morph(int, texts);
+                    }
+
                     minus.addEventListener('click', (e)=>{
                         resetEvent(e);
                         let value = parseInt(input.value);
 
-                        if (value <= 0){
-                            input.value = 0;
+                        if (value <= 1){
+                            input.value = 1;
                         } else {
                             value--;
                             input.value = value;
                         }
+                        setTitle(input.value);
                     })
 
                     plus.addEventListener('click', (e)=>{
@@ -317,6 +330,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                         value++;
                         input.value = value;
+                        setTitle(input.value);
                     })
                 })
             }
@@ -376,6 +390,24 @@ document.addEventListener("DOMContentLoaded", () => {
                     end: `+=${end}px`,
                     pin: true,
                 });
+            }
+
+
+            const tabs = rentSingle.querySelectorAll('.rent-single__tabs');
+            if (tabs[0]){
+                tabs.forEach((tab)=>{
+                    const tops = tab.querySelectorAll('.rent-single__tab-top');
+                    const days = tab.querySelectorAll('.rent-single__day');
+                    tops.forEach((top, index)=>{
+                        top.addEventListener('click', ()=>{
+                            removeActiveElement(tab, '.rent-single__tab-top.active', 'active')
+                            removeActiveElement(tab, '.rent-single__day.active', 'active')
+
+                            top.classList.add('active');
+                            days[index].classList.add('active');
+                        })
+                    })
+                })
             }
         })
     }

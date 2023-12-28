@@ -70,30 +70,46 @@
         margin-left: 8px
         color: var(--c5)
     &__cols
-      padding-left: 16px
       margin-bottom: 30px
+      border-radius: 6px
+      border: 1px solid var(--c5)
     &__col
-      padding-top: 20px
+      width: 100%
       &-item
-        width: 131px
+        width: 50%
+        padding-top: 11px
+        padding-bottom: 12px
+        &:nth-child(1)
+          padding-left: 18px
         &:nth-child(2)
-          border-left: 0.5px solid #777
-          padding-left: 30px
+          border-left: 0.5px solid var(--c5)
+          padding-left: 27px
         &_select
+          padding: 0
           width: 100%
+          border-top: 0.5px solid var(--c5)
+          &:nth-child(n)
+            padding: 0
+          .rent-single__select
+            padding: 26px 21px 12px 18px
+          .rent-single__col-title
+            left: 0
+            top: -15px
       &-title
-        font-size: 10px
+        font-size: 11px
         margin-bottom: 3px
       &-date
-        font-size: 12.865px
+        font-size: 14px
     &__select
       &.active
         .rent-single__select-abs
           display: block
       &-title
-        font-size: 10.136px
+        font-size: 14px
+        text-transform: uppercase
       &-abs
-        top: calc(100% + 10px)
+        top: 100%
+        left: 0
         display: none
         border-radius: 6px
         border: 0.5px solid grey
@@ -110,6 +126,8 @@
         margin-bottom: 5px
       &-subdesc
         font-size: 13px
+      &-arrow
+        transform: translateY(-5px)
     &__button
       margin-bottom: 38px
       .p-btn
@@ -175,11 +193,14 @@
         &.active
           display: block
     &__day
+      display: none
       margin-bottom: 15px
       gap: 69px
       font-size: 25px
       &-right
         color: #777
+      &.active
+        display: flex
     &__desc
       margin-bottom: 35px
     &__list

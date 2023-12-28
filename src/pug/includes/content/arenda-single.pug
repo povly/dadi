@@ -36,9 +36,16 @@ main
                             .rent-single__tab-top €
                         .rent-single__tab-contents
                             .rent-single__tab-content.active
-                                .rent-single__day.flex.flex-wrap
-                                    .rent-single__day-left 100.000 р в месяц
-                                    .rent-single__day-right 4.500 в сутки, от 5 суток
+                                .rent-single__days
+                                    .rent-single__day.flex.flex-wrap.active
+                                        .rent-single__day-left 100.000 р в месяц
+                                        .rent-single__day-right 4.500 в сутки, от 5 суток
+                                    .rent-single__day.flex.flex-wrap
+                                        .rent-single__day-left 1090$ в месяц
+                                        .rent-single__day-right 49$ в сутки, от 5 суток
+                                    .rent-single__day.flex.flex-wrap
+                                        .rent-single__day-left 987€ в месяц
+                                        .rent-single__day-right 45€ в сутки, от 5 суток
                                 .rent-single__desc Furnished room next to Festival Plaza Mall. You can also easily get around the city as the Energy Metro Station is a few steps to the building. There are a lot of cafes, restaurants nearby. We prefer ladies only. You will have your own private room and private bathroom, with a shared kitchen and small balcony too. The room furniture includes: 1 queen bed, nightstands, chair and mirrors. A huge private bathroom with a shower.
                                 ul.rent-single__list.flex.flex-wrap(data-count="8" data-status="true")
                                     li.rent-single__list-li.rent-single__list-li_first.flex.flex-ai-center.active
@@ -254,9 +261,9 @@ main
                                     .rent-single__col-date.rent-single__col-date_end.text-500 27.12.2023
                             .rent-single__col.w-full
                                 .rent-single__col-item.rent-single__col-item_select.w-full
-                                    .rent-single__col-title.uppercase.text-500 Для кого
                                     .rent-single__select.flex.flex-ai-center.flex-j-between.w-full.relative
                                         .rent-single__select-current.relative.w-full.flex.flex-ai-center.flex-j-between.cursor-pointer
+                                            .rent-single__col-title.uppercase.text-500.absolute Для кого
                                             .rent-single__select-title.text-500 1 гость
                                             .rent-single__select-arrow
                                                 +picture('img/rent/single/main/arrow.png', 'img/rent/single/main/arrow', false, '', 16, 16, '', '')
@@ -267,11 +274,11 @@ main
                                                         .rent-single__select-subtitle.text-500 Взрослые
                                                         .rent-single__select-subdesc От 13 лет
                                                     .rent-single__select-right
-                                                        .rent-single__quantity.flex.flex-ai-center
+                                                        .rent-single__quantity.flex.flex-ai-center(data-texts="[\"гость\",\"гостя\",\"гостей\"]")
                                                             .rent-single__quantity-item.rent-single__quantity-minus.flex.flex-ai-center.flex-j-center
                                                                 <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false"><path d="m.75 6.75h10.5v-1.5h-10.5z"></path></svg>
                                                             .rent-single__quantity-input
-                                                                input(type="text" name="adults" value="0")
+                                                                input(type="text" name="adults" value="1" disabled)
                                                             .rent-single__quantity-item.rent-single__quantity-plus.flex.flex-ai-center.flex-j-center
                                                                 <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" ><path d="m6.75.75v4.5h4.5v1.5h-4.5v4.5h-1.5v-4.5h-4.5v-1.5h4.5v-4.5z"></path></svg>
                                             .rent-single__select-close.text-underline.flex.flex-j-end.cursor-pointer Закрыть
