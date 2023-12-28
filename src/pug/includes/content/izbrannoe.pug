@@ -1,0 +1,87 @@
+include ../mixins
+main
+    .estate.overflow-hidden.estate_fav
+        .container.margin-center
+            .section__title.font-tenor.text-c3.text-center Избранное
+            .estate__items.flex.flex-col
+                .estate__item.relative.w-full
+                    .estate__item-title Аренда
+                    .estate__swiper.relative
+                        .swiper
+                            .swiper-wrapper
+                                .swiper-slide
+                                    include ../../components/filterCardWithDelete
+                                .swiper-slide
+                                    include ../../components/filterCardWithDelete
+                                .swiper-slide
+                                    include ../../components/filterCardWithDelete
+                                .swiper-slide
+                                    include ../../components/filterCardWithDelete
+                                .swiper-slide
+                                    include ../../components/filterCardWithDelete
+                .estate__item.relative.w-full
+                    .estate__item-title Покупка
+                    .estate__swiper.relative
+                        .swiper
+                            .swiper-wrapper
+                                .swiper-slide
+                                    include ../../components/filterCardWithDelete
+                                .swiper-slide
+                                    include ../../components/filterCardWithDelete
+                                .swiper-slide
+                                    include ../../components/filterCardWithDelete
+                                .swiper-slide
+                                    include ../../components/filterCardWithDelete
+                                .swiper-slide
+                                    include ../../components/filterCardWithDelete
+                                .swiper-slide
+                                    include ../../components/filterCardWithDelete
+    .catalog-cons.catalog-cons_second
+        .container.margin-center
+            .catalog-cons__item.relative
+                .catalog-cons__img-left.absolute.bottom-0.left-0
+                    +picture('img/catalogs/cons/left2.png', 'img/catalogs/cons/left2', true, '', 646, 586, '', '')
+                form.relative
+                    .catalog-cons__text.relative
+                        .catalog-cons__title Поможем проанализировать и выбрать лучшее
+                        .catalog-cons__subtitle Оставьте свои данные, <span class="text-c5">наш агент свяжется с вами в течение дня</span>
+                        .catalog-cons__inputs.flex
+                            .form__input
+                                input(type="text" name="name" placeholder="Ваше имя" required)
+                            .form__input
+                                input(type="tel" name="tel" placeholder="8 999 999 99 99" required)
+                            .form__input
+                                .p-select.relative
+                                    .p-select__current.flex.flex-ai-center.flex-j-between
+                                        input(type="hidden" name="request" value="Позвонить мне")
+                                        .p-select__current-item Позвонить мне
+                                        .p-select__current-arrow
+                                            +picture('img/main/get/arrow.png', 'img/main/get/arrow', true, '', 17, 17, '', '')
+                                    .p-select__abs.absolute.flex.flex-col
+                                        .p-select__abs-item.active(data-value="Позвонить мне") Позвонить мне
+                                        .p-select__abs-item(data-value="Написать мне") Написать мне
+                                        .p-select__abs-item(data-value="Написать позже") Написать позже
+                                        .p-select__abs-item(data-value="Позвонить позже") Позвонить позже
+                        .get__item-end
+                            button(type="submit").p-btn.flex.flex-ai-center.flex-j-center.text-500 Получить консультацию
+                            label.p-check.flex.flex-ai-center
+                                input(type="checkbox" name="check" checked)
+                                span.p-check__square.flex.flex-j-center.flex-ai-center.flex-shrink
+                                    +picture('img/main/get/check.png', 'img/main/get/check', true, '', 13, 13, '', '')
+                                span.p-check__title Отправляя форму, вы даёте согласие на обработку персональных данных
+                        .catalog-cons__end
+                            span или напишите нам в
+                            span
+                                a(href="#!").catalog-cons__end-link.flex.flex-ai-center
+                                    span.catalog-cons__end-svg.flex-shrink
+                                        +picture('img/catalogs/cons/whatsapp.png', 'img/catalogs/cons/whatsapp', true, '', 18, 18, '', '')
+                                    span.catalog-cons__end-title.text-c3.text-underline Whatsapp
+                            span или
+                            span
+                                a(href="#!").catalog-cons__end-link.flex.flex-ai-center
+                                    span.catalog-cons__end-svg.flex-shrink
+                                        +picture('img/catalogs/cons/telegram.png', 'img/catalogs/cons/telegram', true, '', 17, 17, '', '')
+                                    span.catalog-cons__end-title.text-c3.text-underline Telegram
+    .blog_second
+        include ../../components/blog
+    include ../../components/contacts

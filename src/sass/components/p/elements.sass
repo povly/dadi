@@ -55,7 +55,10 @@
       border-radius: 14px
       overflow: hidden
       height: auto
-      &__like
+      &__image
+        img
+          height: 218px
+      &__like, &__delete
         width: 62px
         height: 48px
         background: linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.00) 100%)
@@ -66,9 +69,10 @@
         padding-top: 5px
         cursor: pointer
         align-items: flex-start
-      &__image
+      &__delete
+        padding-top: 11px
         img
-          height: 218px
+          height: 16px
       .swiper
         &-pagination
           display: flex
