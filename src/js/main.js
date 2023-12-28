@@ -882,6 +882,29 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     }
 
+    const compars = document.querySelectorAll('.compar');
+    if (compars[0]){
+        compars.forEach((compar)=>{
+            const items = compar.querySelectorAll('.compar__item');
+            if (items[0]){
+                items.forEach((item)=>{
+                    const subitems = item.querySelectorAll('.compar__subitem');
+                    subitems.forEach((subitem)=>{
+                        const swiper = new Swiper(subitem.querySelector('.swiper'), {
+                            slidesPerView: 1,
+                            spaceBetween: 40,
+                            pagination: {
+                                clickable: true,
+                                el: subitem.querySelector('.swiper-pagination'),
+                            },
+                        });
+                    })
+                })
+            }
+        })
+    }
+
+
 
     function resetEvent(e) {
         e.preventDefault();
