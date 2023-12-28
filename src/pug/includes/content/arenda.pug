@@ -100,7 +100,7 @@ main
                                         .modal_filter__price-item
                                             .modal_filter__price-top.flex
                                                 .modal_filter__price-title.text-500.text-c5 Спальни
-                                            .modal_filter__range.modal_filter__bedrooms(data-min="1" data-max="3")
+                                            .modal_filter__range.modal_filter__bedrooms(data-min="1" data-max="3" data-type="int")
                                                 .modal_filter__range-main
                                                 input(type="hidden" name="bedrooms_min")
                                                 input(type="hidden" name="bedrooms_max")
@@ -168,7 +168,7 @@ main
                             .p-select__abs.absolute.flex.flex-col
                                 .p-select__abs-item.active(data-value="RUB") RUB
                                 .p-select__abs-item(data-value="$") $
-                                .p-select__abs-item(data-value="BYN") BYN
+                                .p-select__abs-item(data-value="€") €
                 .filters__top-right.flex.flex-ai-center
                     .filters__sort
                         .p-select.relative
