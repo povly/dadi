@@ -15,6 +15,25 @@
   &-card
     height: 417px
     border-radius: 11px
+    overflow: hidden
+    &__swiper
+      &-pagination
+        &.swiper-pagination
+          bottom: calc(100% + 11px)
+          display: flex
+          justify-content: center
+          gap: 3px
+        .swiper
+          &-pagination
+            &-bullet
+              background: transparent
+              opacity: 1
+              border: 1px solid var(--c2)
+              margin: 0!important
+              width: 12px
+              height: 12px
+              &-active
+                background: var(--c2)
     &_back
       .p-card__abs
         opacity: 1
@@ -83,11 +102,6 @@
         &-right
           font-size: 15px
           color: #6A6A6A
-    &:hover
-      .p-card
-        &__abs
-          opacity: 1
-          z-index: 5
     &_second
       .p-card
         &__title
@@ -99,9 +113,11 @@
       width: max-content
       left: 16px
       top: 25px
+      z-index: 2
       &-title
         font-size: 12px
     &__text
+      z-index: 2
       bottom: 13px
       left: 16px
       width: calc(100% - 16px - 16px)
@@ -127,9 +143,6 @@
         color: #6A6A6A
         margin-bottom: 0
     &__abs
-      opacity: 0
-      z-index: -1
-      transition: .3s
       border-radius: 16px
       font-size: 24px
       text-decoration: underline
@@ -240,6 +253,8 @@
       &-item
         font-size: 16px
         gap: 5px
+      &-arrow
+        flex-shrink: 0
     &__abs
       width: 100%
       border-radius: 0px 0px 16px 16px

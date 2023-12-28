@@ -16,12 +16,12 @@ main
                             +picture('img/main/first/cards/1-1.jpg', 'img/main/first/cards/1-1', false, '', 65, 65, '', '')
                             +picture('img/main/first/cards/1-2.jpg', 'img/main/first/cards/1-2', false, '', 65, 65, '', '')
                             +picture('img/main/first/cards/1-3.jpg', 'img/main/first/cards/1-3', false, '', 65, 65, '', '')
-                        a(href="#!").main__card-link.text-underline.flex снять квартиру
+                        a(href="/arenda.html").main__card-link.text-underline.flex снять квартиру
                 .main__card.overflow-hidden.bg-c3.text-c2.main__card_2.relative
                     .main__card-text
                         .main__card-title.font-tenor Покупка
                         .main__card-subtitle Выгодные решения для проживания и инвестирования
-                        a(href="#!").main__card-link.text-underline.flex перейти в каталог
+                        a(href="/buy.html").main__card-link.text-underline.flex перейти в каталог
                     .main__card-image.overflow-hidden.img_cover
                         +picture('img/main/first/cards/2.jpg', 'img/main/first/cards/2', false, '', 315, 175, '', '')
                 .main__card.overflow-hidden.main__card_3.relative.bg.text-c2.flex.flex-j-end.flex-col(style="background-image:url('img/main/first/cards/3.webp')")
@@ -92,7 +92,7 @@ main
                                 'расскажем, куда съездить и где вкусно поесть, чтобы вы могли спокойно насладиться отдыхом',
                                 ''
                             )
-                        a(href="#!").p-btn.flex.flex-ai-center.flex-j-center.text-500 Снять квартиру в Дубае
+                        a(href="/arenda.html").p-btn.flex.flex-ai-center.flex-j-center.text-500 Снять квартиру в Дубае
                     .why__content-right
                         .why__content-image.img_cover
                             +picture('img/main/why/1/1.jpg', 'img/main/why/1/1', true, '', 599, 606, '', '')
@@ -157,69 +157,78 @@ main
                                 .swiper-slide
                                     +pCard(
                                         'p-card_second',
-                                        'img/main/estate/1.webp',
+                                        1,
                                         'Квартира 50 кв.м с видом на море',
                                         'Dubai Marina',
                                         'Лот 1111111',
                                         'от 100.000 р за 50 кв.м',
                                         'или 4.500 в сутки',
-                                        'Перейти в каталог Аренды'
+                                        'Перейти в каталог Аренды',
+                                        '/arenda.html'
                                     )
                                 .swiper-slide
                                     +pCard(
                                         'p-card_second',
-                                        'img/main/estate/2.webp',
+                                        2,
                                         'Квартира 50 кв.м с видом на море',
                                         'Dubai Marina',
                                         'Лот 1111111',
                                         'от 100.000 р за 50 кв.м',
                                         'или 4.500 в сутки',
-                                        'Перейти в каталог Аренды'
+                                        'Перейти в каталог Аренды',
+                                        '/arenda.html'
                                     )
                                 .swiper-slide
                                     +pCard(
                                         'p-card_second',
-                                        'img/main/estate/1.webp',
+                                        1,
                                         'Квартира 50 кв.м с видом на море',
                                         'Dubai Marina',
                                         'Лот 1111111',
                                         'от 100.000 р за 50 кв.м',
                                         'или 4.500 в сутки',
-                                        'Перейти в каталог Аренды'
+                                        'Перейти в каталог Аренды',
+                                        '/arenda.html'
                                     )
                                 .swiper-slide
                                     +pCard(
                                         'p-card_second',
-                                        'img/main/estate/1.webp',
+                                        1,
                                         'Квартира 50 кв.м с видом на море',
                                         'Dubai Marina',
                                         'Лот 1111111',
                                         'от 100.000 р за 50 кв.м',
                                         'или 4.500 в сутки',
-                                        'Перейти в каталог Аренды'
+                                        'Перейти в каталог Аренды',
+                                        '/arenda.html'
                                     )
                                 .swiper-slide
                                     +pCard(
                                         'p-card_second',
-                                        'img/main/estate/1.webp',
+                                        1,
                                         'Квартира 50 кв.м с видом на море',
                                         'Dubai Marina',
                                         'Лот 1111111',
                                         'от 100.000 р за 50 кв.м',
                                         'или 4.500 в сутки',
-                                        'Перейти в каталог Аренды'
+                                        'Перейти в каталог Аренды',
+                                        '/arenda.html'
                                     )
                                 .swiper-slide
                                     +pCard(
                                         'p-card_second',
-                                        'img/main/estate/1.webp',
+                                        1,
                                         'Квартира 50 кв.м с видом на море',
                                         'Dubai Marina',
                                         'Лот 1111111',
                                         'от 100.000 р за 50 кв.м',
                                         'или 4.500 в сутки',
-                                        'Перейти в каталог Аренды'
+                                        'Перейти в каталог Аренды',
+                                        '/arenda.html'
                                     )
+                                .swiper-slide
+                                    a(href="/arenda.html").p-card.w-full.h-full.text-center.text-c2.bg-c3.p-card__abs.flex.flex-ai-center.flex-j-center
+                                        .p-card__abs-link.margin-center Перейти в каталог Аренды
                         .main_swiper-arrows.flex.absolute
                             .swiper-button.swiper-button-prev.flex.flex-ai-center.flex-j-center
                                 +picture('img/main/estate/arrow-left.png', 'img/main/estate/arrow-left', true, '', 18, 18, '', '')
@@ -233,80 +242,90 @@ main
                                 .swiper-slide
                                     +pCard(
                                         'p-card_second',
-                                        'img/main/estate/1.webp',
+                                        1,
                                         'Квартира 50 кв.м с видом на море',
                                         'Dubai Marina',
                                         'Лот 1111111',
                                         'от 100.000 р за 50 кв.м',
                                         'или 4.500 в сутки',
-                                        'Перейти в каталог Покупки'
+                                        'Перейти в каталог Покупки',
+                                        '/buy.html'
                                     )
                                 .swiper-slide
                                     +pCard(
                                         'p-card_second',
-                                        'img/main/estate/1.webp',
+                                        1,
                                         'Квартира 50 кв.м с видом на море',
                                         'Dubai Marina',
                                         'Лот 1111111',
                                         'от 100.000 р за 50 кв.м',
                                         'или 4.500 в сутки',
-                                        'Перейти в каталог Покупки'
+                                        'Перейти в каталог Покупки',
+                                        '/buy.html'
                                     )
                                 .swiper-slide
                                     +pCard(
                                         'p-card_second',
-                                        'img/main/estate/1.webp',
+                                        1,
                                         'Квартира 50 кв.м с видом на море',
                                         'Dubai Marina',
                                         'Лот 1111111',
                                         'от 100.000 р за 50 кв.м',
                                         'или 4.500 в сутки',
-                                        'Перейти в каталог Покупки'
+                                        'Перейти в каталог Покупки',
+                                        '/buy.html'
                                     )
                                 .swiper-slide
                                     +pCard(
                                         'p-card_second',
-                                        'img/main/estate/1.webp',
+                                        1,
                                         'Квартира 50 кв.м с видом на море',
                                         'Dubai Marina',
                                         'Лот 1111111',
                                         'от 100.000 р за 50 кв.м',
                                         'или 4.500 в сутки',
-                                        'Перейти в каталог Покупки'
+                                        'Перейти в каталог Покупки',
+                                        '/buy.html'
                                     )
                                 .swiper-slide
                                     +pCard(
                                         'p-card_second',
-                                        'img/main/estate/1.webp',
+                                        1,
                                         'Квартира 50 кв.м с видом на море',
                                         'Dubai Marina',
                                         'Лот 1111111',
                                         'от 100.000 р за 50 кв.м',
                                         'или 4.500 в сутки',
-                                        'Перейти в каталог Покупки'
+                                        'Перейти в каталог Покупки',
+                                        '/buy.html'
                                     )
                                 .swiper-slide
                                     +pCard(
                                         'p-card_second',
-                                        'img/main/estate/1.webp',
+                                        1,
                                         'Квартира 50 кв.м с видом на море',
                                         'Dubai Marina',
                                         'Лот 1111111',
                                         'от 100.000 р за 50 кв.м',
                                         'или 4.500 в сутки',
-                                        'Перейти в каталог Покупки'
+                                        'Перейти в каталог Покупки',
+                                        '/buy.html'
                                     )
                                 .swiper-slide
                                     +pCard(
                                         'p-card_second',
-                                        'img/main/estate/1.webp',
+                                        1,
                                         'Квартира 50 кв.м с видом на море',
                                         'Dubai Marina',
                                         'Лот 1111111',
                                         'от 100.000 р за 50 кв.м',
                                         'или 4.500 в сутки',
-                                        'Перейти в каталог Покупки'
+                                        'Перейти в каталог Покупки',
+                                        '/buy.html'
                                     )
+                                .swiper-slide
+                                    a(href="/buy.html").p-card.w-full.h-full.text-center.text-c2.bg-c3.p-card__abs.flex.flex-ai-center.flex-j-center
+                                        .p-card__abs-link.margin-center Перейти в каталог Покупки
                         .main_swiper-arrows.flex.absolute
                             .swiper-button.swiper-button-prev.flex.flex-ai-center.flex-j-center
                                 +picture('img/main/estate/arrow-left.png', 'img/main/estate/arrow-left', true, '', 18, 18, '', '')
@@ -343,7 +362,7 @@ main
                             ul
                                 li бронируйте свободные апартаменты через удобный календарь
                                 li оплачивайте, общайтесь с менеджером и отслеживайте информацию в личном кабинете
-                        a(href="#!").type__link.text-600.text-underline.text-c3 Забронировать квартиру
+                        a(href="/arenda.html").type__link.text-600.text-underline.text-c3 Забронировать квартиру
                 .type__item.flex.flex-col.flex-ai-center.text-center
                     .type__item-left
                         .type__item-img.w-full.img_cover.img_br
@@ -360,7 +379,7 @@ main
                         .type__title Юридическое сопровождение
                         .type__desc при аренде на срок более 3 месяцев, поможем проверить документы и заключить выгодный договор с собственником
                         a(href="#!").type__link.text-600.text-underline Оставить заявку на долгосрочную аренду
-            a(href="#!").p-btn.flex.flex-ai-center.flex-j-center.text-500 Перейти в каталог аренды
+            a(href="/arenda.html").p-btn.flex.flex-ai-center.flex-j-center.text-500 Перейти в каталог аренды
     .buy.overflow-hidden
         .container.margin-center
             .section__title.font-tenor.text-c3.text-center Покупка
@@ -416,7 +435,7 @@ main
                         .buy__item-title.text-500 Срочный выкуп недвижимости
                         .buy__item-desc.text-500 Выкупим вашу недвижимость за 24 часа с момента просмотра или добавим проект в нашу базу.
                         .buy__item-link.text-600.text-underline Заявка на оценку недвижимости
-            a(href="#!").p-btn.flex.flex-ai-center.flex-j-center.text-500 Перейти в каталог аренды
+            a(href="/buy.html").p-btn.flex.flex-ai-center.flex-j-center.text-500 Перейти в каталог покупки
     .principle
         .container.margin-center
             .principle__block.relative
@@ -460,7 +479,7 @@ main
                 .swiper-pagination
             .reviews__link.text-c3.text-center.text-500 Оставить отзыв о нашей работе
     .get
-        .container.margin-center
+        .container.margin-center 
             .get__item.relative
                 .get__item-img.absolute.bottom-0.left-0
                     +picture('img/main/get/1.jpg', 'img/main/get/1', true, '', 975, 600, '', '')
@@ -492,31 +511,7 @@ main
                                 span.p-check__square.flex.flex-j-center.flex-ai-center.flex-shrink
                                     +picture('img/main/get/check.png', 'img/main/get/check', true, '', 13, 13, '', '')
                                 span.p-check__title Отправляя форму, вы даёте согласие на обработку персональных данных
-    .best.overflow-hidden
-        .container.margin-center
-            .section__title.font-tenor.text-c3 Каталоги лучшей недвижимости Дубая 2023-2024
-            .best__swiper.relative
-                .swiper
-                    .swiper-wrapper
-                        .swiper-slide
-                            include ../../components/bestItem
-                        .swiper-slide
-                            include ../../components/bestItem
-                        .swiper-slide
-                            include ../../components/bestItem
-                        .swiper-slide
-                            include ../../components/bestItem
-                        .swiper-slide
-                            include ../../components/bestItem
-                        .swiper-slide
-                            include ../../components/bestItem
-                        .swiper-slide
-                            include ../../components/bestItem
-                .main_swiper-arrows.flex.absolute
-                    .swiper-button.swiper-button-prev.flex.flex-ai-center.flex-j-center
-                        +picture('img/main/estate/arrow-left.png', 'img/main/estate/arrow-left', true, '', 18, 18, '', '')
-                    .swiper-button.swiper-button-next.flex.flex-ai-center.flex-j-center
-                        +picture('img/main/estate/arrow-right.png', 'img/main/estate/arrow-right', true, '', 18, 18, '', '')
+    include ../../components/bestBlock
     .team
         .container.margin-center
             .section__title.font-tenor.text-c3 Команда DADI

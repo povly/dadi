@@ -1,16 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    const classesForGsap = [
-        'team', 'advs'
-    ];
-
-    classesForGsap.some((classForGsap)=>{
-        const block = document.querySelector('.' + classForGsap);
-        if (block){
-            gsap.registerPlugin(ScrollTrigger);
-            return true;
-        }
-    })
+    gsap.registerPlugin(ScrollTrigger);
 
 
     const lazyContent = new LazyLoad({
@@ -52,6 +42,42 @@ document.addEventListener("DOMContentLoaded", () => {
                     item.classList.add('active');
                 })
             })
+
+            const checkboxes = select.querySelectorAll('.p-checkboxes .p-checkboxes__item');
+            if (checkboxes[0]){
+                let activeIndexs = [];
+                function getTitle(){
+                    let text = '';
+                    activeIndexs.forEach((item, index)=>{
+                        if (activeIndexs.length !== index + 1){
+                            text += checkboxes[item].querySelector('.p-checkboxes__item-title').textContent + ', ';
+                        } else {
+                            text += checkboxes[item].querySelector('.p-checkboxes__item-title').textContent;
+                        }
+                    })
+                    return text;
+                }
+                checkboxes.forEach((checkbox, index)=>{
+                    const input = checkbox.querySelector('input');
+                    const checked = input.checked;
+                    if (checked){
+                        activeIndexs.push(index);
+                    }
+                })
+                checkboxes.forEach((checkbox, index)=>{
+                    checkbox.addEventListener('change', ()=>{
+                        const input = checkbox.querySelector('input');
+                        const checked = input.checked;
+                        if (checked){
+                            activeIndexs.push(index);
+                        } else {
+                            activeIndexs = activeIndexs.filter((n) => {return n !== index});
+                        }
+                        currentItem.textContent = getTitle();
+                    })
+                })
+            }
+
         })
     }
 
@@ -100,15 +126,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const estates = document.querySelectorAll('.estate__swiper');
     if (estates[0]) {
         estates.forEach((estaty) => {
-            const swiper = new Swiper(estaty.querySelector('.swiper'), {
-                slidesPerView: 'auto',
-                spaceBetween: 18,
-                // Navigation arrows
-                navigation: {
-                    nextEl: estaty.querySelector('.swiper-button-next'),
-                    prevEl: estaty.querySelector('.swiper-button-prev'),
-                },
-            });
+            const _swiper = estaty.querySelector('.swiper');
+            if (!_swiper.classList.contains('.p-card__swiper')) {
+                const swiper = new Swiper(_swiper, {
+                    slidesPerView: 'auto',
+                    spaceBetween: 18,
+                    // Navigation arrows
+                    navigation: {
+                        nextEl: estaty.querySelector('.swiper-button-next'),
+                        prevEl: estaty.querySelector('.swiper-button-prev'),
+                    },
+                });
+            }
         })
     }
 
@@ -217,14 +246,30 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     }
 
-    const pCardSeconds = document.querySelectorAll('.p-card_second');
-    if (pCardSeconds[0]) {
-        pCardSeconds.forEach((pCardSecond) => {
-            const swiper = new Swiper(pCardSecond.querySelector('.swiper'), {
+    const pCardFilters = document.querySelectorAll('.p-card_filter');
+    if (pCardFilters[0]) {
+        pCardFilters.forEach((pCard) => {
+            const _swiper = pCard.querySelector('.swiper');
+            const swiper = new Swiper(_swiper, {
                 slidesPerView: 'auto',
                 pagination: {
                     clickable: true,
-                    el: pCardSecond.querySelector('.swiper-pagination'),
+                    el: pCard.querySelector('.swiper-pagination'),
+                },
+            });
+        })
+    }
+
+    const pCardSeconds = document.querySelectorAll('.p-card_second');
+    if (pCardSeconds[0]) {
+        pCardSeconds.forEach((pCard) => {
+            const _swiper = pCard.querySelector('.p-card__swiper');
+            const swiper = new Swiper(_swiper, {
+                slidesPerView: 'auto',
+                allowTouchMove: false,
+                pagination: {
+                    clickable: true,
+                    el: pCard.querySelector('.p-card__swiper-pagination'),
                 },
             });
         })

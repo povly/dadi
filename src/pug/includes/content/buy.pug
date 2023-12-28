@@ -1,6 +1,6 @@
 include ../mixins
 main
-    .rent
+    .rent.rent_second
         .container.margin-center
             .rent__subtitle.uppercase.text-c5 Dadi Properties
             .rent__title.text-c3.font-tenor Покупка недвижимости в Дубае
@@ -8,32 +8,41 @@ main
                 .rent__item-top.absolute для жизни и инвестиций
                 .rent__item.relative.bg(style="background-image:url('img/rent/main/2.webp')")
                     form.rent__form.flex
-                        .rent__input.relative.flex.flex-ai-center.flex-j-center.rent__input_date
-                            input(type="text" name="start" placeholder="Заезд" required)
-                            .rent__input-svg.absolute.cursor-pointer
-                                <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4.5 0C4.22386 0 4 0.223858 4 0.5C4 0.776142 3.77614 1 3.5 1H2C0.895431 1 0 1.89543 0 3V20C0 21.6569 1.34315 23 3 23H19C20.6569 23 22 21.6569 22 20V3C22 1.89543 21.1046 1 20 1H18.5C18.2239 1 18 0.776142 18 0.5C18 0.223858 17.7761 0 17.5 0H16.5C16.2239 0 16 0.223858 16 0.5C16 0.776142 15.7761 1 15.5 1H6.5C6.22386 1 6 0.776142 6 0.5C6 0.223858 5.77614 0 5.5 0H4.5ZM2 4C2 3.44772 2.44772 3 3 3H3.5C3.77614 3 4 3.22386 4 3.5C4 3.77614 4.22386 4 4.5 4H5.5C5.77614 4 6 3.77614 6 3.5C6 3.22386 6.22386 3 6.5 3H15.5C15.7761 3 16 3.22386 16 3.5C16 3.77614 16.2239 4 16.5 4H17.5C17.7761 4 18 3.77614 18 3.5C18 3.22386 18.2239 3 18.5 3H19C19.5523 3 20 3.44772 20 4C20 4.55228 19.5523 5 19 5H3C2.44772 5 2 4.55228 2 4ZM2 10C2 8.34315 3.34315 7 5 7H17C18.6569 7 20 8.34315 20 10V18C20 19.6569 18.6569 21 17 21H5C3.34315 21 2 19.6569 2 18V10ZM9 9C8.44771 9 8 9.44771 8 10C8 10.5523 8.44771 11 9 11C9.55229 11 10 10.5523 10 10C10 9.44771 9.55229 9 9 9ZM13 9C12.4477 9 12 9.44771 12 10C12 10.5523 12.4477 11 13 11C13.5523 11 14 10.5523 14 10C14 9.44771 13.5523 9 13 9ZM17 9C16.4477 9 16 9.44771 16 10C16 10.5523 16.4477 11 17 11C17.5523 11 18 10.5523 18 10C18 9.44771 17.5523 9 17 9ZM5 13C4.44772 13 4 13.4477 4 14C4 14.5523 4.44772 15 5 15C5.55228 15 6 14.5523 6 14C6 13.4477 5.55228 13 5 13ZM9 13C8.44771 13 8 13.4477 8 14C8 14.5523 8.44771 15 9 15C9.55229 15 10 14.5523 10 14C10 13.4477 9.55229 13 9 13ZM13 13C12.4477 13 12 13.4477 12 14C12 14.5523 12.4477 15 13 15C13.5523 15 14 14.5523 14 14C14 13.4477 13.5523 13 13 13ZM17 13C16.4477 13 16 13.4477 16 14C16 14.5523 16.4477 15 17 15C17.5523 15 18 14.5523 18 14C18 13.4477 17.5523 13 17 13ZM5 17C4.44772 17 4 17.4477 4 18C4 18.5523 4.44772 19 5 19C5.55228 19 6 18.5523 6 18C6 17.4477 5.55228 17 5 17ZM9 17C8.44771 17 8 17.4477 8 18C8 18.5523 8.44771 19 9 19C9.55229 19 10 18.5523 10 18C10 17.4477 9.55229 17 9 17ZM13 17C12.4477 17 12 17.4477 12 18C12 18.5523 12.4477 19 13 19C13.5523 19 14 18.5523 14 18C14 17.4477 13.5523 17 13 17Z" fill="#282828"/>
-                                </svg>
-                        .rent__input.relative.flex.flex-ai-center.flex-j-center.rent__input_date
-                            input(type="text" name="end" placeholder="Выезд" required)
-                            .rent__input-svg.absolute.cursor-pointer
-                                <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4.5 0C4.22386 0 4 0.223858 4 0.5C4 0.776142 3.77614 1 3.5 1H2C0.895431 1 0 1.89543 0 3V20C0 21.6569 1.34315 23 3 23H19C20.6569 23 22 21.6569 22 20V3C22 1.89543 21.1046 1 20 1H18.5C18.2239 1 18 0.776142 18 0.5C18 0.223858 17.7761 0 17.5 0H16.5C16.2239 0 16 0.223858 16 0.5C16 0.776142 15.7761 1 15.5 1H6.5C6.22386 1 6 0.776142 6 0.5C6 0.223858 5.77614 0 5.5 0H4.5ZM2 4C2 3.44772 2.44772 3 3 3H3.5C3.77614 3 4 3.22386 4 3.5C4 3.77614 4.22386 4 4.5 4H5.5C5.77614 4 6 3.77614 6 3.5C6 3.22386 6.22386 3 6.5 3H15.5C15.7761 3 16 3.22386 16 3.5C16 3.77614 16.2239 4 16.5 4H17.5C17.7761 4 18 3.77614 18 3.5C18 3.22386 18.2239 3 18.5 3H19C19.5523 3 20 3.44772 20 4C20 4.55228 19.5523 5 19 5H3C2.44772 5 2 4.55228 2 4ZM2 10C2 8.34315 3.34315 7 5 7H17C18.6569 7 20 8.34315 20 10V18C20 19.6569 18.6569 21 17 21H5C3.34315 21 2 19.6569 2 18V10ZM9 9C8.44771 9 8 9.44771 8 10C8 10.5523 8.44771 11 9 11C9.55229 11 10 10.5523 10 10C10 9.44771 9.55229 9 9 9ZM13 9C12.4477 9 12 9.44771 12 10C12 10.5523 12.4477 11 13 11C13.5523 11 14 10.5523 14 10C14 9.44771 13.5523 9 13 9ZM17 9C16.4477 9 16 9.44771 16 10C16 10.5523 16.4477 11 17 11C17.5523 11 18 10.5523 18 10C18 9.44771 17.5523 9 17 9ZM5 13C4.44772 13 4 13.4477 4 14C4 14.5523 4.44772 15 5 15C5.55228 15 6 14.5523 6 14C6 13.4477 5.55228 13 5 13ZM9 13C8.44771 13 8 13.4477 8 14C8 14.5523 8.44771 15 9 15C9.55229 15 10 14.5523 10 14C10 13.4477 9.55229 13 9 13ZM13 13C12.4477 13 12 13.4477 12 14C12 14.5523 12.4477 15 13 15C13.5523 15 14 14.5523 14 14C14 13.4477 13.5523 13 13 13ZM17 13C16.4477 13 16 13.4477 16 14C16 14.5523 16.4477 15 17 15C17.5523 15 18 14.5523 18 14C18 13.4477 17.5523 13 17 13ZM5 17C4.44772 17 4 17.4477 4 18C4 18.5523 4.44772 19 5 19C5.55228 19 6 18.5523 6 18C6 17.4477 5.55228 17 5 17ZM9 17C8.44771 17 8 17.4477 8 18C8 18.5523 8.44771 19 9 19C9.55229 19 10 18.5523 10 18C10 17.4477 9.55229 17 9 17ZM13 17C12.4477 17 12 17.4477 12 18C12 18.5523 12.4477 19 13 19C13.5523 19 14 18.5523 14 18C14 17.4477 13.5523 17 13 17Z" fill="#282828"/>
-                                </svg>
-                        .rent__input.relative.flex.flex-ai-center.flex-j-center
-                            .p-select.relative
-                                .p-select__current.flex.flex-ai-center.flex-j-between
-                                    input(type="hidden" name="guest" value="1 гость")
-                                    .p-select__current-item 1 гость
-                                    .p-select__current-arrow
-                                        <svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M6.5 10L0.870834 0.25H12.1292L6.5 10Z" fill="#282828"/>
-                                        </svg>
-                                .p-select__abs.absolute.flex.flex-col
-                                    .p-select__abs-item.active(data-value="1 гость") 1 гость
-                                    .p-select__abs-item(data-value="2 гостя") 2 гостя
-                                    .p-select__abs-item(data-value="3 гостя") 3 гостя
-                                    .p-select__abs-item(data-value="Более 3 гостей") Более 3 гостей
+                        .rent__input.relative
+                            .rent__form-item
+                                .rent__form-title Тип недвижимости
+                                .rent__select
+                                    .p-select.relative
+                                        .p-select__current.flex.flex-ai-center.flex-j-between
+                                            .p-select__current-item Любая
+                                            .p-select__current-arrow
+                                                <svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6.5 10L0.870834 0.25H12.1292L6.5 10Z" fill="#282828"/>
+                                                </svg>
+                                        .p-select__abs.absolute.flex.flex-col
+                                            .p-checkboxes.flex.flex-wrap
+                                                +pCheckbox('type[]', 'Любая', true)
+                                                +pCheckbox('type[]', 'Апартаменты', false)
+                                                +pCheckbox('type[]', 'Пентхаусы', false)
+                                                +pCheckbox('type[]', 'Таунхаусы', false)
+                                                +pCheckbox('type[]', 'Дуплексы', false)
+                                                +pCheckbox('type[]', 'Квартиры в отелях', false)
+                                                +pCheckbox('type[]', 'Виллы', false)
+                                                +pCheckbox('type[]', 'Пол этажа', false)
+                                                +pCheckbox('type[]', 'Целые этажи', false)
+                                                +pCheckbox('type[]', 'Целые здания', false)
+                                                +pCheckbox('type[]', 'Коммерческие помещения', false)
+                                                +pCheckbox('type[]', 'Земельные участки', false)
+                        .rent__input.relative
+                            .rent__form-item
+                                .rent__form-title Цена
+                                .rent__price.flex
+                                    .rent__price-left
+                                        span от
+                                        input(type="text" name="price_min")
+                                    .rent__price-right
+                                        span до
+                                        input(type="text" name="price_min")
                         .rent__input.relative
                             button(type="submit").text-500 Посмотреть х вариантов
                     a(href="#!").rent__item-end.text-underline.text-c3.text-600 Подобрать с менеджером
@@ -130,41 +139,41 @@ main
                                 .modal_filter__item
                                     .modal_filter__item-title.text-500.text-c5 Районы
                                     .p-checkboxes.flex.flex-wrap
-                                        +pCheckbox('raioni[]', 'Palm Jumeriah')
-                                        +pCheckbox('raioni[]', 'Yas Island')
-                                        +pCheckbox('raioni[]', 'Town Square')
-                                        +pCheckbox('raioni[]', 'JVC')
-                                        +pCheckbox('raioni[]', 'Arjan')
-                                        +pCheckbox('raioni[]', 'Business Bay')
-                                        +pCheckbox('raioni[]', 'Downtown')
-                                        +pCheckbox('raioni[]', 'Jebel Ali')
-                                        +pCheckbox('raioni[]', 'Dubailand')
-                                        +pCheckbox('raioni[]', 'Production City')
-                                        +pCheckbox('raioni[]', 'Damac Lagoons')
-                                        +pCheckbox('raioni[]', 'Beachfront')
-                                        +pCheckbox('raioni[]', 'JLT')
-                                        +pCheckbox('raioni[]', 'Dubai Hils')
-                                        +pCheckbox('raioni[]', 'MBR')
-                                        +pCheckbox('raioni[]', 'Dubai Marina')
+                                        +pCheckbox('raioni[]', 'Palm Jumeriah', false)
+                                        +pCheckbox('raioni[]', 'Yas Island', false)
+                                        +pCheckbox('raioni[]', 'Town Square', false)
+                                        +pCheckbox('raioni[]', 'JVC', false)
+                                        +pCheckbox('raioni[]', 'Arjan', false)
+                                        +pCheckbox('raioni[]', 'Business Bay', false)
+                                        +pCheckbox('raioni[]', 'Downtown', false)
+                                        +pCheckbox('raioni[]', 'Jebel Ali', false)
+                                        +pCheckbox('raioni[]', 'Dubailand', false)
+                                        +pCheckbox('raioni[]', 'Production City', false)
+                                        +pCheckbox('raioni[]', 'Damac Lagoons', false)
+                                        +pCheckbox('raioni[]', 'Beachfront', false)
+                                        +pCheckbox('raioni[]', 'JLT', false)
+                                        +pCheckbox('raioni[]', 'Dubai Hils', false)
+                                        +pCheckbox('raioni[]', 'MBR', false)
+                                        +pCheckbox('raioni[]', 'Dubai Marina', false)
                                 .modal_filter__item
                                     .modal_filter__item-title.text-500.text-c5 Удобства
                                     .p-checkboxes.flex.flex-wrap
-                                        +pCheckbox('ydobstva[]', 'Вид на море')
-                                        +pCheckbox('ydobstva[]', 'Вид на парк')
-                                        +pCheckbox('ydobstva[]', 'Вид на канал')
-                                        +pCheckbox('ydobstva[]', 'Вид на Бурдж-Халифа')
-                                        +pCheckbox('ydobstva[]', 'Близко к пляжу')
-                                        +pCheckbox('ydobstva[]', 'Детская площадка')
-                                        +pCheckbox('ydobstva[]', 'Вид на город')
-                                        +pCheckbox('ydobstva[]', 'Близко к метро')
-                                        +pCheckbox('ydobstva[]', 'Вид на канал')
-                                        +pCheckbox('ydobstva[]', 'Бассейн')
+                                        +pCheckbox('ydobstva[]', 'Вид на море', false)
+                                        +pCheckbox('ydobstva[]', 'Вид на парк', false)
+                                        +pCheckbox('ydobstva[]', 'Вид на канал', false)
+                                        +pCheckbox('ydobstva[]', 'Вид на Бурдж-Халифа', false)
+                                        +pCheckbox('ydobstva[]', 'Близко к пляжу', false)
+                                        +pCheckbox('ydobstva[]', 'Детская площадка', false)
+                                        +pCheckbox('ydobstva[]', 'Вид на город', false)
+                                        +pCheckbox('ydobstva[]', 'Близко к метро', false)
+                                        +pCheckbox('ydobstva[]', 'Вид на канал', false)
+                                        +pCheckbox('ydobstva[]', 'Бассейн', false)
                                 .modal_filter__item.modal_filter__item_finishing
                                     .modal_filter__item-title.text-500.text-c5 Отделка
                                     .p-checkboxes.flex.flex-wrap
-                                        +pCheckbox('finishing[]', 'Полностью меблированная')
-                                        +pCheckbox('finishing[]', 'Частично меблированная')
-                                        +pCheckbox('finishing[]', 'Не меблированная')
+                                        +pCheckbox('finishing[]', 'Полностью меблированная', false)
+                                        +pCheckbox('finishing[]', 'Частично меблированная', false)
+                                        +pCheckbox('finishing[]', 'Не меблированная', false)
                                 .modal_filter__item
                                     button(type="submit").p-btn.flex.flex-ai-center.flex-j-center.text-500 Применить фильтры
 
@@ -232,194 +241,229 @@ main
                 .filters__content-load.margin-center.text-c3.text-underline.text-500 Загрузить <span>18</span> из 103
             .filters__content-map
                 .filters__content-map-item#map
-    .advs.overflow-hidden
+    .estate.overflow-hidden.estate_buy
         .container.margin-center
-            .section__title.font-tenor.text-c3.relative В чем преимущества
-            .advs__subtitle.relative аренды апартаментов с отельным сервисом
-            .advs__items.flex.flex-col
-                +adv(
-                'star',
-                29,
-                29,
-                1,
-                2,
-                'Гостеприимство 5* отеля',
-                'Мы встречаем вас, как самого дорогого гостя, с&nbsp;приветственными напитками, фруктовой тарелкой, а также предоставляем чай, кофе и душевые принадлежности для вашего комфорта. ',
-                )
-                +adv(
-                'car',
-                31,
-                31,
-                3,
-                4,
-                'Лучшее обустройство',
-                'Наши апартаменты оборудованы лучше, чем большинство отелей. В каждой квартире есть кофемашина, посудомоечная машина, стиральная машина, фен и полный набор посуды и для удобства наших гостей. ',
-                )
-                +adv(
-                'clean',
-                29,
-                29,
-                5,
-                6,
-                'Обслуживание и уборка',
-                'Вам не нужно думать об уборке и обслуживании апартаментов — мы обо всём позаботимся. Сделаем всё, чтобы ваше пребывание было беззаботным и приятным. ',
-                )
-                +adv(
-                'telephone',
-                28,
-                28,
-                7,
-                8,
-                'Поддержка Customer Service 24/7',
-                'Наша Служба Заботы доступна круглосуточно и готова помочь вам в любое время суток. Мы гарантируем, что ваши запросы и потребности будут удовлетворены моментально. ',
-                )
-                +adv(
-                'car2',
-                39,
-                39,
-                9,
-                10,
-                'Парковочное место',
-                'Мы предоставляем паркинг неподалеку от дома, чтобы вы могли удобно и без забот оставить свой автомобиль. ',
-                )
-                +adv(
-                'monitor',
-                30,
-                30,
-                11,
-                12,
-                'Бесплатный Wi-Fi и телевизор',
-                '<p>с возможностью потокового воспроизведения</p><p>Все наши апартаменты оборудованы бесплатным Wi-Fi и современными телевизорами с доступом к потоковым сервисам для вашего развлечения и связи.</p>',
-                )
-    .addit
+            .section__title.font-tenor.text-c3 Новые проекты партнеров DADI
+            .estate__items.flex.flex-col
+                .estate__item.relative.w-full
+                    .estate__swiper.relative
+                        .swiper
+                            .swiper-wrapper
+                                .swiper-slide
+                                    +pCard(
+                                        'p-card_second',
+                                        1,
+                                        'Квартира 50 кв.м с видом на море',
+                                        'Dubai Marina',
+                                        'Лот 1111111',
+                                        'от 100.000 р за 50 кв.м',
+                                        'или 4.500 в сутки',
+                                        'Перейти в каталог Аренды',
+                                        '/arenda.html'
+                                    )
+                                .swiper-slide
+                                    +pCard(
+                                        'p-card_second',
+                                        2,
+                                        'Квартира 50 кв.м с видом на море',
+                                        'Dubai Marina',
+                                        'Лот 1111111',
+                                        'от 100.000 р за 50 кв.м',
+                                        'или 4.500 в сутки',
+                                        'Перейти в каталог Аренды',
+                                        '/arenda.html'
+                                    )
+                                .swiper-slide
+                                    +pCard(
+                                        'p-card_second',
+                                        1,
+                                        'Квартира 50 кв.м с видом на море',
+                                        'Dubai Marina',
+                                        'Лот 1111111',
+                                        'от 100.000 р за 50 кв.м',
+                                        'или 4.500 в сутки',
+                                        'Перейти в каталог Аренды',
+                                        '/arenda.html'
+                                    )
+                                .swiper-slide
+                                    +pCard(
+                                        'p-card_second',
+                                        1,
+                                        'Квартира 50 кв.м с видом на море',
+                                        'Dubai Marina',
+                                        'Лот 1111111',
+                                        'от 100.000 р за 50 кв.м',
+                                        'или 4.500 в сутки',
+                                        'Перейти в каталог Аренды',
+                                        '/arenda.html'
+                                    )
+                                .swiper-slide
+                                    +pCard(
+                                        'p-card_second',
+                                        1,
+                                        'Квартира 50 кв.м с видом на море',
+                                        'Dubai Marina',
+                                        'Лот 1111111',
+                                        'от 100.000 р за 50 кв.м',
+                                        'или 4.500 в сутки',
+                                        'Перейти в каталог Аренды',
+                                        '/arenda.html'
+                                    )
+                                .swiper-slide
+                                    +pCard(
+                                        'p-card_second',
+                                        1,
+                                        'Квартира 50 кв.м с видом на море',
+                                        'Dubai Marina',
+                                        'Лот 1111111',
+                                        'от 100.000 р за 50 кв.м',
+                                        'или 4.500 в сутки',
+                                        'Перейти в каталог Аренды',
+                                        '/arenda.html'
+                                    )
+                        .main_swiper-arrows.flex.absolute
+                            .swiper-button.swiper-button-prev.flex.flex-ai-center.flex-j-center
+                                +picture('img/main/estate/arrow-left.png', 'img/main/estate/arrow-left', true, '', 18, 18, '', '')
+                            .swiper-button.swiper-button-next.flex.flex-ai-center.flex-j-center
+                                +picture('img/main/estate/arrow-right.png', 'img/main/estate/arrow-right', true, '', 18, 18, '', '')
+    .buy-form
         .container.margin-center
-            .addit__item.bg-c5.text-c2
-                .addit__item-title.font-tenor Дополнительно можем предложить:
-                .addit__els.flex
-                    .addit__el.flex.flex-ai-center
-                        .addit__el-img.img_cover.flex-shrink
-                            +picture('img/rent/addit/1.jpg', 'img/rent/addit/1', true, '', 98, 127, '', '')
-                        .addit__el-text
-                            .addit__el-title Фитнес-центр и бассейн
-                            .addit__el-subtitle Предоставим доступ к фитнес-центру и бассейну в ЖК или рядом, чтобы вы могли&nbsp;поддерживать активный образ жизни&nbsp;и расслабиться.
-                    .addit__el.flex.flex-ai-center
-                        .addit__el-img.img_cover.flex-shrink
-                            +picture('img/rent/addit/2.jpg', 'img/rent/addit/2', true, '', 98, 127, '', '')
-                        .addit__el-text
-                            .addit__el-title Экскурсии и развлечения
-                            .addit__el-subtitle Мы поможем спланировать и забронировать экскурсии в регионе, чтобы вы могли насладиться всем, что может предложить местная культура и природа.
-    .appartments.overflow-hidden
+            .buy-form__item.relative
+                .buy-form__item-subtitle.uppercase Dadi Properties
+                .buy-form__item-title.text-c3.text-500 Каталог надёжных застройщиков Дубая
+                .buy-form__item-desc.font-roboto
+                    p Внутри:
+                    p - новые объекты с подробным описанием характеристик
+                    p - апартаменты по специальной цене
+                    p - идеи по обустройству
+                    p - советы экспертов
+                form
+                    .buy-form__inner.relative
+                        .buy-form__inputs.flex
+                            .form__input
+                                input(type="text" name="name" placeholder="Ваше имя" required)
+                            .form__input
+                                input(type="email" name="email" placeholder="Email" required)
+                        button(type="submit").p-btn.flex.flex-ai-center.flex-j-center.text-500 Скачать
+                        label.p-check.flex.flex-ai-center
+                            input(type="checkbox" name="check" checked)
+                            span.p-check__square.flex.flex-j-center.flex-ai-center.flex-shrink
+                                +picture('img/main/get/check.png', 'img/main/get/check', true, '', 13, 13, '', '')
+                            span.p-check__title Отправляя форму, вы даёте согласие на обработку персональных данных
+                .buy-form__img.absolute.bottom-0.right-0
+                    +picture('img/buy/form/1.png', 'img/buy/form/1', true, '', 776, 554, '', '')
+    .buy-advs
         .container.margin-center
-            .why__desc
-                p
-                    | Наши апартаменты сочетают в себе <span class="text-c5">комфорт и удобства отеля</span>
-                    | с простором и <span class="text-c5">автономией собственного жилья,</span>
-                    span(class="why__desc-img bg lazy" data-bg="img/rent/appartments/1.webp")
-                    | делая ваше пребывание
-                    span(class="why__desc-img why__desc-img_2 bg lazy" data-bg="img/rent/appartments/2.webp")
-                    | <span class="text-c5">незабываемым и удовлетворяющим </span> все ваши потребности.
-        .appartments__row.flex
-            .appartments__item.flex-shrink
-                +picture('img/rent/appartments/3.jpg', 'img/rent/appartments/3', true, '', 234, 239, '', '')
-            .appartments__item.flex-shrink
-                +picture('img/rent/appartments/4.jpg', 'img/rent/appartments/4', true, '', 234, 239, '', '')
-            .appartments__item.flex-shrink
-                +picture('img/rent/appartments/5.jpg', 'img/rent/appartments/5', true, '', 234, 239, '', '')
-            .appartments__item.flex-shrink
-                +picture('img/rent/appartments/6.jpg', 'img/rent/appartments/6', true, '', 234, 239, '', '')
-            .appartments__item.flex-shrink
-                +picture('img/rent/appartments/7.jpg', 'img/rent/appartments/7', true, '', 234, 239, '', '')
-            .appartments__item.flex-shrink
-                +picture('img/rent/appartments/8.jpg', 'img/rent/appartments/8', true, '', 234, 239, '', '')
-            .appartments__item.flex-shrink
-                +picture('img/rent/appartments/3.jpg', 'img/rent/appartments/3', true, '', 234, 239, '', '')
-            .appartments__item.flex-shrink
-                +picture('img/rent/appartments/4.jpg', 'img/rent/appartments/4', true, '', 234, 239, '', '')
-            .appartments__item.flex-shrink
-                +picture('img/rent/appartments/5.jpg', 'img/rent/appartments/5', true, '', 234, 239, '', '')
-            .appartments__item.flex-shrink
-                +picture('img/rent/appartments/6.jpg', 'img/rent/appartments/6', true, '', 234, 239, '', '')
-            .appartments__item.flex-shrink
-                +picture('img/rent/appartments/7.jpg', 'img/rent/appartments/7', true, '', 234, 239, '', '')
-            .appartments__item.flex-shrink
-                +picture('img/rent/appartments/8.jpg', 'img/rent/appartments/8', true, '', 234, 239, '', '')
-        .appartments__end.flex.flex.flex-ai-center.flex-j-center
-            .p-btn.flex.flex-ai-center.flex-j-center.text-500.modal__show(data-modal="type") Оставить заявку
-            .appartments__link.text-underline.text-c3.text-600 Подобрать с менеджером
-    .type.type_second.rent__type
+            .buy-advs__circle.sticky.flex.flex-j-center.flex-ai-center.flex-col
+                .buy-advs__circle-svg.absolute
+                    <svg width="1440" height="1149" viewBox="0 0 1440 1149" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="720.5" cy="326.5" r="305" stroke="#BCBCBC"/>
+                    <path d="M-34 755.5L1474.5 0" stroke="#BCBCBC" stroke-opacity="0.3"/>
+                    <path d="M721.832 20.9147L716.508 1221.3" stroke="#BCBCBC" stroke-opacity="0.3"/>
+                    </svg>
+                .buy-advs__circle-title.font-tenor.text-c3.text-center.relative
+                    span В чем
+                    span преимущества
+                .buy-advs__circle-left.img_cover.absolute
+                    +picture('img/buy/advs/1.jpg', 'img/buy/advs/1', true, '', 145, 64, '', '')
+                .buy-advs__circle-right.img_cover.absolute
+                    +picture('img/buy/advs/2.jpg', 'img/buy/advs/2', true, '', 145, 64, '', '')
+                .buy-advs__circle-subtitle.text-center.relative  покупки недвижимости в Дубае в 2023
+            .buy-advs__items.relative.flex-wrap.flex
+                .buy-advs__item
+                    .buy-advs__item-icon.flex.flex-ai-center.flex-j-center.bg-c5
+                        +picture('img/buy/advs/refund.png', 'img/buy/advs/refund', true, '', 19, 19, '', '')
+                    .buy-advs__item-title.text-500 Высокая окупаемость инвестиций
+                    .buy-advs__item-desc.flex.flex-col
+                        p В 2022 году Дубай принял 14 млн туристов - сдавая жилье краткосрочно можно получать <strong>доход до 12% годовых.</strong>
+                        p Также ежегодно растет количество экспатов, которые уже сейчас составляют 89% населения ОАЭ. При долгосрочной аренде доход составит <strong>6-9% годовых.</strong> И это без учёта роста стоимости самого объекта.
+                .buy-advs__item.buy-advs__item_second
+                    .buy-advs__item-icon.flex.flex-ai-center.flex-j-center.bg-c2
+                        +picture('img/buy/advs/like.png', 'img/buy/advs/like', true, '', 21, 21, '', '')
+                    .buy-advs__item-title.text-500 Прозрачность законодательства в сфере недвижимости
+                    .buy-advs__item-desc.flex.flex-col
+                        p Из всех 7 эмиратов в составе ОАЭ, Дубай обладает самой развитой законодательной базой в сфере недвижимости. Сектор строительства внимательно <strong>контролируется государством</strong>, все сделки купли-продажи проходят государственную проверку.
+                        p Граждане иностранных государств имеют право напрямую приобретать недвижимость в Дубае в <strong>полную собственность</strong> в специально оговоренных Freehold-районах.
+
+                .buy-advs__item.buy-advs__item_third
+                    .buy-advs__item-icon.flex.flex-ai-center.flex-j-center.bg-c2
+                        +picture('img/buy/advs/identity-card.png', 'img/buy/advs/identity-card', true, '', 20, 20, '', '')
+                    .buy-advs__item-title.text-500 Получение ВНЖ
+                    .buy-advs__item-desc.flex.flex-col
+                        p Купив недвижимость в Дубае ценой от 750.000 дирхам (около 205.000$), инвестор и его семья получают <strong>вид на жительство со статусом резидента</strong>. Она выдается на 2 года, может быть многократно продлена, пока вы остаётесь собственником недвижимости.
+                        p Покупка недвижимости суммой от 2.000.000 дирхам (около 545.000$) дает возможность получить <strong>“Золотую визу в ОАЭ”</strong> сроком на 10 лет и перспективой стать гражданином Эмиратов.
+                .buy-advs__item
+                    .buy-advs__item-icon.flex.flex-ai-center.flex-j-center.bg-c5
+                        +picture('img/buy/advs/security.png', 'img/buy/advs/security', true, '', 23, 23, '', '')
+                    .buy-advs__item-title.text-500 Стабильность экономики и безопасность
+                    .buy-advs__item-desc.flex.flex-col
+                        p В 2021 году Эмираты заняли 2-ое место из 134 <strong>самых безопасных стран</strong> на планете по версии журнала Global Finance.
+                        p Курс дирхама жёстко привязан к доллару и остаётся <strong>неизменным более 20 лет</strong>.
+                        p Нейтральный статус ОАЭ в мировых конфликтах, отсутствие санкций и не вмешательство в мировую политику подтверждает <strong>политическую стабильность</strong>.
+                .buy-advs__item.buy-advs__item_four
+                    .buy-advs__item-icon.flex.flex-ai-center.flex-j-center.bg-c2
+                        +picture('img/buy/advs/taxes.png', 'img/buy/advs/taxes', true, '', 20, 20, '', '')
+                    .buy-advs__item-title.text-500 Отсутствие налога на&nbsp;недвижимость
+                    .buy-advs__item-desc.flex.flex-col
+                        p При покупке необходимо оплатить пошлину в размере 4% от стоимости жилья в Земельный департамент.
+                        p Владение, сдача в аренду, продажа и все другие операции <strong>налогом не облагаются</strong>.
+    .buy.overflow-hidden.buy_second.bg-c2.relative
         .container.margin-center
-            .section__title.font-tenor.text-c3.text-center Услуги DADI HOLIDAY
-            .type__subtitle.text-center аренда апартаментов в Дубае с отельным сервисом
-            .type__row.grid
-                .type__item.flex.flex-ai-center
-                    .type__item-left
-                        .type__item-img.w-full.img_cover.img_br
-                            +picture('img/rent/type/3.jpg', 'img/rent/type/3', true, '', 316, 230, '', '')
-                    .type__item-right
-                        .type__title Букинг-сервис
-                        .type__list.p-list
+            .section__title.font-tenor.text-c3.text-center Услуги DADI
+            .buy__subtitle.text-center покупка недвижимости в Дубае
+            .buy__row.flex.hidden
+                .buy__item.flex-shrink
+                    .buy__item-img.img_br.img_cover.buy__item-img_1
+                        +picture('img/main/buy/1.jpg', 'img/main/buy/1', true, '', 325, 162, '', '')
+                    .buy__item-text
+                        .buy__item-title.text-500 Дистанционная покупка недвижимости
+                        .buy__item-list.p-list
                             ul
-                                li бронируйте свободные апартаменты через удобный календарь
-                                li оплачивайте, общайтесь с менеджером и отслеживайте информацию в личном кабинете
-                        a(href="#!").type__link.text-600.text-underline.text-c3 Забронировать квартиру
-                .type__item.type__item_col.flex.flex-col.flex-ai-center.text-center
-                    .type__item-left
-                        .type__item-img.w-full.img_cover.img_br
-                            +picture('img/main/type/2.jpg', 'img/main/type/2', true, '', 323, 259, '', '')
-                    .type__item-right
-                        .type__title Персональный ассистент в стране
-                        .type__desc поможет с трансфером, арендой автомобиля, химчисткой - решит все бытовые вопросы в новой стране 24/7
-                        .type__link.text-600.text-underline.modal__show.cursor-pointer(data-modal="type") Заказать трансфер из аэропорта
-                .type__item.type__item_col.flex.flex-col.flex-ai-center.text-center
-                    .type__item-left
-                        .type__item-img.w-full.img_cover.img_br
-                            +picture('img/rent/type/1.jpg', 'img/rent/type/1', true, '', 294, 135, '', '')
-                    .type__item-right
-                        .type__title Юридическое сопровождение
-                        .type__desc при аренде на срок более 3 месяцев, поможем проверить документы и заключить выгодный договор с собственником
-                        .type__link.text-600.text-underline Оставить заявку на долгосрочную аренду
-                .type__item.type__item_col.flex.flex-col.flex-ai-center.text-center
-                    .type__item-left
-                        .type__item-img.w-full.img_cover.img_br
-                            +picture('img/rent/type/2.jpg', 'img/rent/type/2', true, '', 294, 174, '', '')
-                    .type__item-right
-                        .type__title Индивидуальный подбор
-                        .type__desc недвижимости для аренды или покупки под ваши запросы
-                        .type__link.text-600.text-underline Оставить заявку
-    .help
-        .container.margin-center
-            .help__item.relative
-                .help__text.relative
-                    .help__title.text-500.text-c5 Поможем подобрать квартиру в аренду
-                    .p-list
-                        ul
-                            li Подберем комфортный вариант под бюджет и пожелания
-                            li Проконсультируем по лучшим районам для жизни
-                            li Организуем трансфер из аэропорта
-                    form
-                        .get__item-text.relative
-                            .get__item-inputs.flex.flex-col
-                                .get__item-input.form__input
-                                    input(type="text" name="name" placeholder="Ваше имя" required)
-                                .get__item-input.form__input
-                                    input(type="tel" name="tel" placeholder="8 999 999 99 99" required)
-                            .get__item-end
-                                button(type="submit").p-btn.flex.flex-ai-center.flex-j-center.text-500 Подобрать квартиру
-                                label.p-check.flex.flex-ai-center
-                                    input(type="checkbox" name="check" checked)
-                                    span.p-check__square.flex.flex-j-center.flex-ai-center.flex-shrink
-                                        +picture('img/main/get/check.png', 'img/main/get/check', true, '', 13, 13, '', '')
-                                    span.p-check__title Отправляя форму, вы даёте согласие на обработку персональных данных
-                .help__img.absolute.bottom-0.right-0
-                    +picture('img/rent/help/1.png', 'img/rent/help/1', true, '', 543, 571, '', '')
-                    .help__name.absolute.text-c2
-                        .help__name-svg.absolute
-                            <svg width="173" height="75" viewBox="0 0 173 75" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M7 0C3.13401 0 0 3.13401 0 7V34C0 35.8916 0.343283 38.1169 0.0724688 39.989C0.0247171 40.3191 0 40.6567 0 41V68C0 71.866 3.13401 75 7 75H166C169.866 75 173 71.866 173 68V41C173 37.134 169.866 34 166 34H136C127.716 34 121 27.2843 121 19V8C121 3.58172 117.418 0 113 0H7Z" fill="#003B50"/>
-                            </svg>
-                        .help__name-text.relative
-                            .help__name-title Владислав
-                            .help__name-subtitle менеджер клиентского сервиса
+                                li организуем онлайн просмотр
+                                li подготовим и переведем все необходимые документы для покупки недвижимости из любой точки мира
+                        .buy__item-link.text-600.text-underline Заявка на подбор недвижимости
+                .buy__item.flex-shrink
+                    .buy__item-img.img_br.img_cover.buy__item-img_2
+                        +picture('img/main/buy/2.jpg', 'img/main/buy/2', true, '', 325, 125, '', '')
+                    .buy__item-text
+                        .buy__item-title.text-500 Арендное управление
+                        .buy__item-subtitle.text-500 Берем на себя все обязанности:
+                        .buy__item-list.p-list
+                            ul
+                                li поиск арендаторов
+                                li заключение договоров аренды
+                                li взимание арендных платежей
+                                li урегулирование споров с арендаторами
+                                li общее управление недвижимостью в интересах собственника
+                        .buy__item-desc.text-500 Обеспечим максимальную доходность и&nbsp;защиту ваших интересов.
+                .buy__item.flex-shrink
+                    .buy__item-img.img_br.img_cover.buy__item-img_3
+                        +picture('img/main/buy/3.jpg', 'img/main/buy/3', true, '', 325, 215, '', '')
+                    .buy__item-text
+                        .buy__item-title.text-500 Юридические гарантии
+                        .buy__item-desc.text-500 Берем на себя всю ответственность по работе с документами, получении ВНЖ, коммуникации и оформлении договоров
+                .buy__item.flex-shrink
+                    .buy__item-img.img_br.img_cover.buy__item-img_4
+                        +picture('img/main/buy/4.jpg', 'img/main/buy/4', true, '', 325, 152, '', '')
+                    .buy__item-text
+                        .buy__item-title.text-500 Инвестирование вместе&nbsp;с&nbsp;DADI
+                        .buy__item-desc.text-500 Мы являемся действующими инвесторами и предлагаем нашим преданным клиентам выгодные оптовые покупки недвижимости у застройщиков. Инвестируйте в проверенные проекты вместе с нами
+                        .buy__item-link.text-600.text-underline Заявка на подбор недвижимости
+                .buy__item.flex-shrink
+                    .buy__item-img.img_br.img_cover.buy__item-img_5
+                        +picture('img/main/buy/5.jpg', 'img/main/buy/5', true, '', 325, 188, '', '')
+                    .buy__item-text
+                        .buy__item-title.text-500 Оценка недвижимости
+                        .buy__item-desc.text-500 Профессионально оценим вашу недвижимость для продажи, проконсультируем по нюансам и поможем сформировать предложение для покупателя.
+                        .buy__item-link.text-600.text-underline Заявка на оценку недвижимости
+                .buy__item.flex-shrink
+                    .buy__item-img.img_br.img_cover.buy__item-img_6
+                        +picture('img/main/buy/6.jpg', 'img/main/buy/6', true, '', 325, 204, '', '')
+                    .buy__item-text
+                        .buy__item-title.text-500 Срочный выкуп недвижимости
+                        .buy__item-desc.text-500 Выкупим вашу недвижимость за 24 часа с момента просмотра или добавим проект в нашу базу.
+                        .buy__item-link.text-600.text-underline Заявка на оценку недвижимости
+    include ../../components/bestBlock
     .blog_second
         include ../../components/blog
     include ../../components/contacts

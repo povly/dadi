@@ -1,6 +1,6 @@
-mixin pCheckbox(name, title)
+mixin pCheckbox(name, title, checked)
     label.p-checkboxes__item.flex
-        input(type="checkbox" name=name value=title)
+        input(type="checkbox" name=name value=title checked=checked)
         span.p-checkboxes__item-square
         span.p-checkboxes__item-title=title
 mixin pCheckboxSecond(name, title)

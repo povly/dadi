@@ -1,5 +1,13 @@
-mixin pCard(classes, img, title, left, right, price, price_old, abs)
-    .p-card.bg.lazy.relative(data-bg=img class=classes)
+mixin pCard(classes, img, title, left, right, price, price_old, abs, link)
+    a(href=link).p-card.relative.flex(class=classes)
+        .swiper.absolute.top-0.left-0.w-full.h-full.p-card__swiper
+            .swiper-wrapper
+                .swiper-slide.img_cover.img_full
+                    +picture('img/main/estate/' + img + '.jpg', 'img/main/estate/' + img, true, '', 281, 417, '', '')
+                .swiper-slide.img_cover.img_full
+                    +picture('img/main/estate/' + img + '.jpg', 'img/main/estate/' + img, true, '', 281, 417, '', '')
+                .swiper-slide.img_cover.img_full
+                    +picture('img/main/estate/' + img + '.jpg', 'img/main/estate/' + img, true, '', 281, 417, '', '')
         .p-card__sale.flex.flex-ai-center.bg-c2.absolute
             .p-card__sale-svg
                 <svg width="12" height="16" viewBox="0 0 12 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -7,10 +15,10 @@ mixin pCard(classes, img, title, left, right, price, price_old, abs)
                 </svg>
             .p-card__sale-title.text-500 Спец. цена
         .p-card__text.bg-c2.bottom-0.left-0.absolute
+            .swiper-pagination.p-card__swiper-pagination
             .p-card__title.text-500=title
             .p-card__top.flex
                 .p-card__top-left.text-c5=left
                 .p-card__top-right=right
             .p-card__price.text-500=price
             .p-card__price.p-card__price_old=price_old
-        a(href="#!").p-card__abs.bg-c3.text-c2.text-center.text-600.flex.flex-j-center.flex-ai-center.absolute.w-full.h-full.top-0.left-0=abs
