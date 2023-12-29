@@ -298,35 +298,38 @@ document.addEventListener("DOMContentLoaded", () => {
     if (rentSingles[0]){
         rentSingles.forEach((rentSingle)=>{
             const startDate = rentSingle.querySelector('.rent-single__right-date_start');
-            const endDate = rentSingle.querySelector('.rent-single__right-date_end');
-            const startDateCol = rentSingle.querySelector('.rent-single__col-date_start');
-            const endDateCol = rentSingle.querySelector('.rent-single__col-date_end');
-            const input = rentSingle.querySelector('.rent-single__right-input input');
-            const ft = flatpickr(input, {
-                minDate: "today",
-                mode: "range",
-                inline: true,
-                dateFormat: 'd.m.Y',
-                locale: _locale,
-                onChange: function(selectedDates, dateStr, instance) {
-                    const _options = {
-                        year: "numeric",
-                        month: "long",
-                        day: "numeric"
-                    };
-                    if (selectedDates[0]){
-                        startDate.textContent = selectedDates[0].toLocaleDateString('ru', _options);
-                        startDateCol.textContent = selectedDates[0].toLocaleDateString('ru');
-                    }
-                    if (selectedDates[1]){
-                        endDate.textContent = selectedDates[1].toLocaleDateString('ru', _options);
-                        endDateCol.textContent = selectedDates[1].toLocaleDateString('ru');
-                    } else {
-                        endDate.textContent = selectedDates[0].toLocaleDateString('ru', _options);
-                        endDateCol.textContent = selectedDates[0].toLocaleDateString('ru');
-                    }
-                },
-            });
+
+            if (startDate){
+                const endDate = rentSingle.querySelector('.rent-single__right-date_end');
+                const startDateCol = rentSingle.querySelector('.rent-single__col-date_start');
+                const endDateCol = rentSingle.querySelector('.rent-single__col-date_end');
+                const input = rentSingle.querySelector('.rent-single__right-input input');
+                const ft = flatpickr(input, {
+                    minDate: "today",
+                    mode: "range",
+                    inline: true,
+                    dateFormat: 'd.m.Y',
+                    locale: _locale,
+                    onChange: function(selectedDates, dateStr, instance) {
+                        const _options = {
+                            year: "numeric",
+                            month: "long",
+                            day: "numeric"
+                        };
+                        if (selectedDates[0]){
+                            startDate.textContent = selectedDates[0].toLocaleDateString('ru', _options);
+                            startDateCol.textContent = selectedDates[0].toLocaleDateString('ru');
+                        }
+                        if (selectedDates[1]){
+                            endDate.textContent = selectedDates[1].toLocaleDateString('ru', _options);
+                            endDateCol.textContent = selectedDates[1].toLocaleDateString('ru');
+                        } else {
+                            endDate.textContent = selectedDates[0].toLocaleDateString('ru', _options);
+                            endDateCol.textContent = selectedDates[0].toLocaleDateString('ru');
+                        }
+                    },
+                });
+            }
 
             const selects = rentSingle.querySelectorAll('.rent-single__select');
             if (selects[0]){
@@ -444,17 +447,36 @@ document.addEventListener("DOMContentLoaded", () => {
             const tabs = rentSingle.querySelectorAll('.rent-single__tabs');
             if (tabs[0]){
                 tabs.forEach((tab)=>{
-                    const tops = tab.querySelectorAll('.rent-single__tab-top');
+                    const prices = tab.querySelectorAll('.rent-single__tab-tops_price .rent-single__tab-top');
+                    const seconds = tab.querySelectorAll('.rent-single__tab-tops_second .rent-single__tab-top');
                     const days = tab.querySelectorAll('.rent-single__day');
-                    tops.forEach((top, index)=>{
-                        top.addEventListener('click', ()=>{
-                            removeActiveElement(tab, '.rent-single__tab-top.active', 'active')
+
+
+                    prices.forEach((price, index)=>{
+                        price.addEventListener('click', ()=>{
+                            removeActiveElement(tab, '.rent-single__tab-tops_price .rent-single__tab-top.active', 'active')
                             removeActiveElement(tab, '.rent-single__day.active', 'active')
 
-                            top.classList.add('active');
+                            price.classList.add('active');
                             days[index].classList.add('active');
                         })
                     })
+
+                    if (seconds[0]){
+                        seconds.forEach((second, index)=>{
+                            second.addEventListener('click', ()=>{
+                                removeActiveElement(tab, '.rent-single__tab-tops_second .rent-single__tab-top.active', 'active')
+
+                                second.classList.add('active');
+
+                                days.forEach((day)=>{
+                                    const daySeconds = day.querySelectorAll('.rent-single__day-seconds .rent-single__day-second');
+                                    removeActiveElement(day, '.rent-single__day-second.active', 'active')
+                                    daySeconds[index].classList.add('active');
+                                })
+                            })
+                        })
+                    }
                 })
             }
         })

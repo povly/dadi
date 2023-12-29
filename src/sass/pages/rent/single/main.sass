@@ -17,6 +17,48 @@
           width: 100%
     &__row
       gap: 41px
+      &_2
+        gap: 8px
+        .rent-single
+          &__left
+            width: 734px
+          &__right
+            top: 20px
+            width: calc(100% - 8px - 734px)
+    &__name
+      border-radius: 7px
+      border: 0.5px solid #808080
+      background: var(--c2)
+      box-shadow: 3px 2px 16px 0px rgba(0, 0, 0, 0.09)
+      backdrop-filter: blur(31.5px)
+      padding: 15px 16px 20px
+      gap: 19px
+      &-left
+        width: 136px
+      &-img
+        img
+          height: 137px
+      &-title
+        font-size: 20px
+        margin-bottom: 9px
+      &-subtitle
+        font-size: 15px
+        margin-bottom: 23px
+      &-btns
+        gap: 4px
+      &-btn
+        width: 148px
+        height: 38px
+        font-size: 11px
+      &-socials
+        gap: 4px
+      &-social
+        width: 33px
+        height: 33px
+        border-radius: 100%
+        &:nth-child(2)
+          img
+            margin-left: 1px
     &__left
       width: 720px
     &__right
@@ -50,6 +92,24 @@
       gap: 10px 17px
       grid-template-areas: "a b" "a c"
       margin-bottom: 35px
+      &_2
+        grid-auto-flow: row dense
+        grid-template-columns: 474px 230px 230px
+        grid-template-rows: 151px 151px
+        gap: 10px 16px
+        margin-bottom: 52px
+        .rent-single
+          &__image
+            img
+              border-radius: 6px
+            &:nth-child(2)
+              grid-area: 1 / 2 / 2 / 3
+            &:nth-child(3)
+              grid-area: 1 / 3 / 2 / 4
+            &:nth-child(4)
+              grid-area: 2 / 2 / 3 / 3
+            &:nth-child(5)
+              grid-area: 2 / 3 / 3 / 4
     &__image
       &:nth-child(1)
         grid-area: a
@@ -169,15 +229,36 @@
           font-size: 16px
     &__tabs
       gap: 19px
+      &_2
+        gap: 35px
+        .rent-single
+          &__day
+            gap: 30px
+            margin-bottom: 29px
+            &-left
+              width: 250px
+            &-right
+              width: calc(100% - 30px - 250px)
+      &-block
+        gap: 163px
     &__tab
       &-tops
         background: #F5F7F9
+        &_second
+          .rent-single
+            &__tab
+              &-top
+                font-size: 16px
       &-top
         font-size: 20px
         color: #CFCFCF
-        padding: 2px 13px
+        padding: 0 13px 1px
         border: 1px solid #808080
         cursor: pointer
+        height: 31px
+        align-items: center
+        display: flex
+        justify-content: center
         &:not(:first-child)
           margin-left: -1px
         &:first-child
@@ -195,14 +276,113 @@
     &__day
       display: none
       margin-bottom: 15px
-      gap: 69px
+      gap: 34px 69px
       font-size: 25px
       &-right
         color: #777
       &.active
         display: flex
+      &-second
+        display: none
+        color: #777
+        &.active
+          display: block
     &__desc
       margin-bottom: 35px
+      &_2
+        max-width: 627px
+        margin-bottom: 89px
+    &__location
+      padding-top: 18px
+      padding-bottom: 89px
+      &-desc
+        margin-top: 9px
+        font-size: 24px
+      &-title
+        margin-bottom: 28px
+    &__edges
+      gap: 30px
+      margin-bottom: 34px
+      &-item
+        width: calc(100% / 3 - 20px )
+        gap: 13px
+      &-img
+        flex-shrink: 0
+        margin-bottom: 5px
+      &-title
+        color: #777
+        font-size: 12px
+      &-subtitle
+        font-size: 20px
+    &__cards
+      gap: 26px
+      padding-top: 50px
+      padding-bottom: 108px
+    &__card
+      width: 357px
+      height: 529px
+      .p-card
+        height: 100%
+      &-inner
+        width: 100%
+        border-radius: 14px
+        height: 100%
+        padding: 0 42px 59px
+      &-subtitle
+        font-size: 16px
+        margin-bottom: 8px
+      &-title
+        font-size: 30px
+        margin-bottom: 8px
+      &-img
+        margin-bottom: 19px
+        img
+          height: 88px
+      &-list
+        gap: 5px
+        margin-bottom: 57px
+      &-li
+        gap: 25px
+        display: flex
+        align-items: center
+      &-num
+        align-items: center
+        gap: 7.5px
+      &-subtitle
+        font-size: 16px
+      &-btn
+        width: 100%
+        height: 58px
+        font-size: 16px
+    &__plan
+      padding-top: 13px
+      padding-bottom: 7px
+      &-top
+        gap: 25px
+        margin-bottom: 55px
+      &-title
+        margin-bottom: 0
+        font-size: 50px
+      &-btn
+        padding: 14px 23px 17px
+        border-radius: 14px
+        background: rgba(21, 107, 127, 0.14)
+        font-size: 20px
+      &-item
+        padding: 18px 0
+        &:not(:last-child)
+          border-bottom: 1px solid #777
+      &-left
+        width: 260px
+        font-size: 24px
+      &-center
+        width: 100px
+        text-align: center
+        font-size: 25px
+      &-right
+        text-align: right
+        font-size: 25px
+        width: 200px
     &__list
       margin-bottom: 116px
       gap: 13px
@@ -257,6 +437,16 @@
     &__advs
       gap: 14px 20px
       margin-bottom: 30px
+      &_2
+        gap: 14px
+        margin-bottom: 129px
+        .rent-single
+          &__advs
+            &-item
+              width: calc(100% / 3 - 9.4px)
+      &-subtitle
+        margin-bottom: 31px
+        font-size: 50px
       &-item
         width: calc(100% / 2 - 20px / 2)
         gap: 18px
@@ -281,3 +471,12 @@
       &-subtitle
         font-size: 22px
         max-width: 333px
+    &__btns
+      gap: 7px
+      top: 34px
+      right: 188px
+    &__btn
+      width: 48px
+      height: 48px
+      border-radius: 100%
+      cursor: pointer
