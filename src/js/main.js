@@ -525,6 +525,43 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     }
 
+    const modalForms = document.querySelectorAll('.modal_form');
+    if (modalForms[0]){
+        modalForms.forEach((modalForm)=>{
+            const changes = modalForm.querySelectorAll('.modal_register__changes .modal_register__change');
+            const inputs = modalForm.querySelectorAll('.modal_register__inputs .modal_register__inputs-item');
+            changes.forEach((change, index)=>{
+                change.addEventListener('click', ()=>{
+                  removeActiveElement(modalForm, '.modal_register__changes .modal_register__change.active', 'active');
+                  removeActiveElement(modalForm, '.modal_register__inputs .modal_register__inputs-item.active', 'active');
+                    if (index === 0){
+                        changes[1].classList.add('active');
+                        inputs[1].classList.add('active');
+                    } else {
+                        changes[0].classList.add('active');
+                        inputs[0].classList.add('active');
+                    }
+                })
+            })
+
+            const items = modalForm.querySelectorAll('.modal_conf__items .modal_conf__item');
+            const link = modalForm.querySelector('.modal_conf__end-link');
+            if (items[0]){
+                link.addEventListener('click', ()=>{
+                    const index = link.dataset.index;
+                    removeActiveElement(modalForm, '.modal_conf__items .modal_conf__item.active', 'active');
+                    if (index === '2'){
+                        items[0].classList.add('active');
+                        link.dataset.index = 1;
+                    } else {
+                        items[1].classList.add('active');
+                        link.dataset.index = 2;
+                    }
+                })
+            }
+        })
+    }
+
     const filterRanges = document.querySelectorAll('.modal_filter__range');
     if (filterRanges[0]){
         filterRanges.forEach((filterRange)=>{

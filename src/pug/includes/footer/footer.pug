@@ -141,3 +141,68 @@ footer.footer.text-c2
                             span.p-check__square.flex.flex-j-center.flex-ai-center.flex-shrink
                                 +picture('img/main/get/check.png', 'img/main/get/check', true, '', 13, 13, '', '')
                             span.p-check__title Отправляя форму, вы даёте согласие на обработку персональных данных
+.modal.modal_register.modal_form
+    .modal__content.relative.margin-center
+        .modal__close.absolute
+            +picture('img/modal/type/close.png', 'img/modal/type/close', true, '', 14, 14, '', '')
+        .modal_register__content.relative
+            .modal_register__title.text-center.text-c5 Регистрация
+            form.relative
+                .modal_register__inputs.flex.flex-col
+                    .modal_register__inputs-item.active
+                        .modal_register__input.form__input
+                            .modal_register__input-subtitle.text-500 Страна/регион
+                            .modal_register__input-title Россия (+7)
+                        .modal_register__input.form__input
+                            input(type="tel" name="tel" placeholder="Номер телефона" required)
+                        .modal_register__input-text.text-center Мы отправим вам SMS для подтверждения номера телефона.
+                    .modal_register__inputs-item
+                        .modal_register__input.form__input
+                            .modal_register__input-subtitle.text-500 Email
+                            input(type="email" name="email" placeholder="Ваш Email" required)
+                        .modal_register__input-text.text-center Мы отправим вам код для подтверждения почты.
+                .modal_register__end
+                    button(type="submit").p-btn.flex.flex-ai-center.flex-j-center.text-500 Продолжить
+                    .modal_register__end-center.text-center.font-roboto или
+                    .modal_register__changes
+                        .modal_register__change.cursor-pointer.flex.flex-ai-center.active
+                            .modal_register__change-svg
+                                +picture('img/modal/form/mail.png', 'img/modal/form/mail', true, '', 19, 19, '', '')
+                            .modal_register__change-title С помощью e-mail
+                        .modal_register__change.cursor-pointer.flex.flex-ai-center
+                            .modal_register__change-svg
+                                +picture('img/modal/form/tel.png', 'img/modal/form/tel', true, '', 17, 17, '', '')
+                            .modal_register__change-title С помощью номера телефона
+                    .modal_register__acc.flex.flex-ai-center
+                        .modal_register__acc-text У вас уже есть аккаунт?
+                        .modal_register__acc-link.text-underline.text-500 Войти
+.modal.modal_conf.modal_form
+    .modal__content.relative.margin-center
+        .modal__close.absolute
+            +picture('img/modal/type/close.png', 'img/modal/type/close', true, '', 14, 14, '', '')
+        .modal_conf__content.relative
+            form.relative
+                .modal_conf__items
+                    .modal_conf__item.active
+                        .modal_conf__title.modal_register__title.text-center.text-c5 Подтвердите номер
+                        .modal_conf__item-title Введите код, высланный на номер +7 (9**) ***-**-**
+                        .modal_conf__item-inputs.flex.flex-ai-center
+                            input(type="text" name="code1").modal_conf__item-input
+                            input(type="text" name="code2").modal_conf__item-input
+                            input(type="text" name="code3").modal_conf__item-input
+                            input(type="text" name="code4").modal_conf__item-input
+                        .modal_conf__request.flex.flex-ai-center
+                            .modal_conf__request-left Не получили код?
+                            .modal_conf__request-right.text-underline.cursor-pointer Отправить ещё раз
+                    .modal_conf__item
+                        .modal_conf__title.modal_register__title.text-center.text-c5 Подтвердите почту
+                        .modal_conf__item-title Введите код, высланный на адрес *******@gmail.com
+                        .modal_conf__item-inputs.flex.flex-ai-center
+                            input(type="text" name="code1").modal_conf__item-input
+                            input(type="text" name="code2").modal_conf__item-input
+                            input(type="text" name="code3").modal_conf__item-input
+                            input(type="text" name="code4").modal_conf__item-input
+                        .modal_conf__request.flex.flex-ai-center
+                            .modal_conf__request-left Не получили код?
+                            .modal_conf__request-right.text-underline.cursor-pointer Отправить ещё раз
+                .modal_conf__end-link.text-underline.text-500.text-c3.cursor-pointer(data-index="2") Выбрать другой способ
