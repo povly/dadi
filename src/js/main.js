@@ -562,6 +562,32 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     }
 
+    const cabinet = document.querySelector('.cabinet');
+    if (cabinet){
+
+        const dates = cabinet.querySelectorAll('.cabinet__change-label_date');
+        if (dates[0]){
+            dates.forEach((date)=>{
+                const _input = date.querySelector('input');
+                const fp = flatpickr(_input, {
+                    dateFormat: 'd.m.Y',
+                    locale: _locale
+                });
+            })
+        }
+
+        const card = cabinet.querySelector('.cabinet__card');
+        if (card){
+
+
+            const term = cabinet.querySelector('.cabinet__card-second input[name="term"]');
+            const fp = flatpickr(term, {
+                dateFormat: 'm/y',
+                locale: _locale
+            });
+        }
+    }
+
     const filterRanges = document.querySelectorAll('.modal_filter__range');
     if (filterRanges[0]){
         filterRanges.forEach((filterRange)=>{
