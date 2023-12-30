@@ -39,13 +39,13 @@ main
                                 .rent__price.flex
                                     .rent__price-left
                                         span от
-                                        input(type="text" name="price_min")
+                                        input(type="number" name="price_min")
                                     .rent__price-right
                                         span до
-                                        input(type="text" name="price_min")
+                                        input(type="number" name="price_min")
                         .rent__input.relative
                             button(type="submit").text-500 Посмотреть х вариантов
-                    a(href="#!").rent__item-end.text-underline.text-c3.text-600 Подобрать с менеджером
+                    .rent__item-end.text-underline.text-c3.text-600.modal__show(data-modal="type-first") Подобрать с менеджером
     .filters
         .container.margin-center
             form.filters__top.flex.flex-ai-center.flex-j-between
@@ -403,7 +403,7 @@ main
                             ul
                                 li организуем онлайн просмотр
                                 li подготовим и переведем все необходимые документы для покупки недвижимости из любой точки мира
-                        .buy__item-link.text-600.text-underline Заявка на подбор недвижимости
+                        .buy__item-link.text-600.text-underline.modal__show(data-modal="type-second") Заявка на подбор недвижимости
                 .buy__item.flex-shrink
                     .buy__item-img.img_br.img_cover.buy__item-img_2
                         +picture('img/main/buy/2.jpg', 'img/main/buy/2', true, '', 325, 125, '', '')
@@ -430,21 +430,21 @@ main
                     .buy__item-text
                         .buy__item-title.text-500 Инвестирование вместе&nbsp;с&nbsp;DADI
                         .buy__item-desc.text-500 Мы являемся действующими инвесторами и предлагаем нашим преданным клиентам выгодные оптовые покупки недвижимости у застройщиков. Инвестируйте в проверенные проекты вместе с нами
-                        .buy__item-link.text-600.text-underline Заявка на подбор недвижимости
+                        .buy__item-link.text-600.text-underline.modal__show(data-modal="type-second") Заявка на подбор недвижимости
                 .buy__item.flex-shrink
                     .buy__item-img.img_br.img_cover.buy__item-img_5
                         +picture('img/main/buy/5.jpg', 'img/main/buy/5', true, '', 325, 188, '', '')
                     .buy__item-text
                         .buy__item-title.text-500 Оценка недвижимости
                         .buy__item-desc.text-500 Профессионально оценим вашу недвижимость для продажи, проконсультируем по нюансам и поможем сформировать предложение для покупателя.
-                        .buy__item-link.text-600.text-underline Заявка на оценку недвижимости
+                        .buy__item-link.text-600.text-underline.modal__show(data-modal="type-second") Заявка на оценку недвижимости
                 .buy__item.flex-shrink
                     .buy__item-img.img_br.img_cover.buy__item-img_6
                         +picture('img/main/buy/6.jpg', 'img/main/buy/6', true, '', 325, 204, '', '')
                     .buy__item-text
                         .buy__item-title.text-500 Срочный выкуп недвижимости
                         .buy__item-desc.text-500 Выкупим вашу недвижимость за 24 часа с момента просмотра или добавим проект в нашу базу.
-                        .buy__item-link.text-600.text-underline Заявка на оценку недвижимости
+                        .buy__item-link.text-600.text-underline.modal__show(data-modal="type-second") Заявка на оценку недвижимости
     include ../../components/bestBlock
     .blog_second
         include ../../components/blog

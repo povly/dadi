@@ -36,7 +36,7 @@ main
                                     .p-select__abs-item(data-value="Более 3 гостей") Более 3 гостей
                         .rent__input.relative
                             button(type="submit").text-500 Посмотреть х вариантов
-                    a(href="#!").rent__item-end.text-underline.text-c3.text-600 Подобрать с менеджером
+                    .rent__item-end.text-underline.text-c3.text-600.modal__show(data-modal="type-first") Подобрать с менеджером
     .filters
         .container.margin-center
             form.filters__top.flex.flex-ai-center.flex-j-between
@@ -120,15 +120,15 @@ main
                                 .modal_filter__item
                                     .modal_filter__item-title.text-500.text-c5 Удобства
                                     .p-checkboxes.flex.flex-wrap
-                                        +pCheckbox('ydobstva[]', 'Wi-Fi', false)
-                                        +pCheckbox('ydobstva[]', 'Фен', false)
-                                        +pCheckbox('ydobstva[]', 'Микроволновая печь', false)
-                                        +pCheckbox('ydobstva[]', 'TV', false)
-                                        +pCheckbox('ydobstva[]', 'Кофемашина', false)
-                                        +pCheckbox('ydobstva[]', 'Посудомоечная машина', false)
-                                        +pCheckbox('ydobstva[]', 'Кондиционер', false)
-                                        +pCheckbox('ydobstva[]', 'Парковочное место', false)
-                                        +pCheckbox('ydobstva[]', 'Стиральная машина', false)
+                                        +pCheckbox('ydobstva[]', 'Wi-Fi', true)
+                                        +pCheckbox('ydobstva[]', 'Фен', true)
+                                        +pCheckbox('ydobstva[]', 'Микроволновая печь', true)
+                                        +pCheckbox('ydobstva[]', 'TV', true)
+                                        +pCheckbox('ydobstva[]', 'Кофемашина', true)
+                                        +pCheckbox('ydobstva[]', 'Посудомоечная машина', true)
+                                        +pCheckbox('ydobstva[]', 'Кондиционер', true)
+                                        +pCheckbox('ydobstva[]', 'Парковочное место', true)
+                                        +pCheckbox('ydobstva[]', 'Стиральная машина', true)
                                         +pCheckbox('ydobstva[]', 'Ванна', false)
                                         +pCheckbox('ydobstva[]', 'Балкон', false)
                                         +pCheckbox('ydobstva[]', 'Общий бассейн', false)
@@ -321,7 +321,7 @@ main
                 +picture('img/rent/appartments/8.jpg', 'img/rent/appartments/8', true, '', 234, 239, '', '')
         .appartments__end.flex.flex.flex-ai-center.flex-j-center
             .p-btn.flex.flex-ai-center.flex-j-center.text-500.modal__show(data-modal="type") Оставить заявку
-            .appartments__link.text-underline.text-c3.text-600 Подобрать с менеджером
+            .appartments__link.text-underline.text-c3.text-600.modal__show(data-modal="type-first") Подобрать с менеджером
     .type.type_second.rent__type
         .container.margin-center
             .section__title.font-tenor.text-c3.text-center Услуги DADI HOLIDAY
@@ -337,7 +337,7 @@ main
                             ul
                                 li бронируйте свободные апартаменты через удобный календарь
                                 li оплачивайте, общайтесь с менеджером и отслеживайте информацию в личном кабинете
-                        a(href="#!").type__link.text-600.text-underline.text-c3 Забронировать квартиру
+                        a(href="/arenda.html").type__link.text-600.text-underline.text-c3 Забронировать квартиру
                 .type__item.type__item_col.flex.flex-col.flex-ai-center.text-center
                     .type__item-left
                         .type__item-img.w-full.img_cover.img_br
@@ -345,7 +345,7 @@ main
                     .type__item-right
                         .type__title Персональный ассистент в стране
                         .type__desc поможет с трансфером, арендой автомобиля, химчисткой - решит все бытовые вопросы в новой стране 24/7
-                        .type__link.text-600.text-underline.modal__show.cursor-pointer(data-modal="type") Заказать трансфер из аэропорта
+                        .type__link.text-600.text-underline.modal__show.cursor-pointer(data-modal="type-first") Заказать трансфер из аэропорта
                 .type__item.type__item_col.flex.flex-col.flex-ai-center.text-center
                     .type__item-left
                         .type__item-img.w-full.img_cover.img_br
@@ -353,7 +353,7 @@ main
                     .type__item-right
                         .type__title Юридическое сопровождение
                         .type__desc при аренде на срок более 3 месяцев, поможем проверить документы и заключить выгодный договор с собственником
-                        .type__link.text-600.text-underline Оставить заявку на долгосрочную аренду
+                        .type__link.text-600.text-underline.modal__show(data-modal="type-second") Оставить заявку на долгосрочную аренду
                 .type__item.type__item_col.flex.flex-col.flex-ai-center.text-center
                     .type__item-left
                         .type__item-img.w-full.img_cover.img_br
@@ -361,7 +361,7 @@ main
                     .type__item-right
                         .type__title Индивидуальный подбор
                         .type__desc недвижимости для аренды или покупки под ваши запросы
-                        .type__link.text-600.text-underline Оставить заявку
+                        .type__link.text-600.text-underline.modal__show(data-modal="type-second") Оставить заявку
     .help
         .container.margin-center
             .help__item.relative

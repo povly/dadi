@@ -9,7 +9,7 @@ footer.footer.text-c2
                             +picture('img/footer/logo.png', 'img/footer/logo', true, '', 149, 84, '', '')
                         .footer__cabinet
                             .footer__cabinet-title Личный кабинет клиента
-                            a(href="#!").p-btn.p-btn_white.flex.flex-ai-center.flex-j-center.text-500 Войти
+                            .p-btn.p-btn_white.flex.flex-ai-center.flex-j-center.text-500.modal__show(data-modal="register") Войти
                     .footer__right
                         .footer__list
                             ul.flex.flex-col
@@ -52,7 +52,7 @@ footer.footer.text-c2
                     span Копирование материалов без согласия автора запрещено
             .footer__bottom-center.margin-center
                 .contacts__socials.flex
-                    a(href="#!").contacts__social.flex.flex-ai-center.flex-j-center
+                    a(href="https://wa.me/971524476830?text=Hello! I’m interested in a real estate in Dubai.").contacts__social.flex.flex-ai-center.flex-j-center
                         +picture('img/main/contacts/whatsapp.png', 'img/main/contacts/whatsapp', true, '', 18, 18, '', '')
                     a(href="#!").contacts__social.flex.flex-ai-center.flex-j-center
                         +picture('img/main/contacts/telegram.png', 'img/main/contacts/telegram', true, '', 17, 17, '', '')
@@ -71,7 +71,7 @@ footer.footer.text-c2
                 .footer__bottom-links.flex.flex-col
                     a(href="#!").footer__bottom-link Политика конфиденциальности
                     a(href="#!").footer__bottom-link Договор оферты
-.modal.modal_type
+.modal.modal_type.modal_type-first
     .modal__content.relative.margin-center
         .modal__close.absolute
             +picture('img/modal/type/close.png', 'img/modal/type/close', true, '', 14, 14, '', '')
@@ -107,7 +107,7 @@ footer.footer.text-c2
                                 +picture('img/main/get/check.png', 'img/main/get/check', true, '', 13, 13, '', '')
                             span.p-check__title Отправляя форму, вы даёте согласие на обработку персональных данных
                     .modal__socials.flex.flex-wrap.flex-j-end
-                        a(href="#!").modal__socials-item.flex.flex-ai-center
+                        a(href="https://wa.me/971524476830?text=Hello! I’m interested in a real estate in Dubai.").modal__socials-item.flex.flex-ai-center
                             .modal__socials-title Написать в <span class="text-underline">WhatsApp</span>
                             .modal__socials-svg
                                 +picture('img/modal/type/what.png', 'img/modal/type/what', true, '', 18, 18, '', '')
@@ -119,6 +119,55 @@ footer.footer.text-c2
                             .modal__socials-title Написать в <span class="text-underline">Telegram</span>
                             .modal__socials-svg
                                 +picture('img/modal/type/tel.png', 'img/modal/type/tel', true, '', 17, 17, '', '')
+.modal.modal_type.modal_type-second
+    .modal__content.relative.margin-center
+        .modal__close.absolute
+            +picture('img/modal/type/close.png', 'img/modal/type/close', true, '', 14, 14, '', '')
+        .modal_type__content.relative
+            .catalog-cons__item.relative
+                .catalog-cons__img-left.absolute.bottom-0.left-0
+                    +picture('img/catalogs/cons/left2.png', 'img/catalogs/cons/left2', true, '', 574, 586, '', '')
+                form.relative
+                    .catalog-cons__text.relative
+                        .catalog-cons__title Консультация менеджера DADI
+                        .catalog-cons__subtitle Оставьте свои данные, <span class="text-c5">наш агент свяжется с вами в течение дня</span>
+                        .catalog-cons__inputs.flex
+                            .form__input
+                                input(type="text" name="name" placeholder="Ваше имя" required)
+                            .form__input
+                                input(type="tel" name="tel" placeholder="8 999 999 99 99" required)
+                            .form__input
+                                .p-select.relative
+                                    .p-select__current.flex.flex-ai-center.flex-j-between
+                                        input(type="hidden" name="request" value="Позвонить мне")
+                                        .p-select__current-item Позвонить мне
+                                        .p-select__current-arrow
+                                            +picture('img/main/get/arrow.png', 'img/main/get/arrow', true, '', 17, 17, '', '')
+                                    .p-select__abs.absolute.flex.flex-col
+                                        .p-select__abs-item.active(data-value="Позвонить мне") Позвонить мне
+                                        .p-select__abs-item(data-value="Написать мне") Написать мне
+                                        .p-select__abs-item(data-value="Написать позже") Написать позже
+                                        .p-select__abs-item(data-value="Позвонить позже") Позвонить позже
+                        .get__item-end
+                            button(type="submit").p-btn.flex.flex-ai-center.flex-j-center.text-500 Получить консультацию
+                            label.p-check.flex.flex-ai-center
+                                input(type="checkbox" name="check" checked)
+                                span.p-check__square.flex.flex-j-center.flex-ai-center.flex-shrink
+                                    +picture('img/main/get/check.png', 'img/main/get/check', true, '', 13, 13, '', '')
+                                span.p-check__title Отправляя форму, вы даёте согласие на обработку персональных данных
+                        .catalog-cons__end
+                            span или напишите нам в
+                            span
+                                a(href="https://wa.me/971524476830?text=Hello! I’m interested in a real estate in Dubai.").catalog-cons__end-link.flex.flex-ai-center
+                                    span.catalog-cons__end-svg.flex-shrink
+                                        +picture('img/catalogs/cons/whatsapp.png', 'img/catalogs/cons/whatsapp', true, '', 18, 18, '', '')
+                                    span.catalog-cons__end-title.text-c3.text-underline Whatsapp
+                            span или
+                            span
+                                a(href="#!").catalog-cons__end-link.flex.flex-ai-center
+                                    span.catalog-cons__end-svg.flex-shrink
+                                        +picture('img/catalogs/cons/telegram.png', 'img/catalogs/cons/telegram', true, '', 17, 17, '', '')
+                                    span.catalog-cons__end-title.text-c3.text-underline Telegram
 .modal.modal_pdf
     .modal__content.relative.margin-center
         .modal__close.absolute

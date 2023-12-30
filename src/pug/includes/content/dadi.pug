@@ -60,7 +60,7 @@ main
                     .type__item-right
                         .type__title Персональный ассистент в стране
                         .type__desc поможет с трансфером, арендой автомобиля, химчисткой - решит все бытовые вопросы в новой стране 24/7
-                        .type__link.text-600.text-underline.modal__show.cursor-pointer(data-modal="type") Заказать трансфер из аэропорта
+                        .type__link.text-600.text-underline.modal__show.cursor-pointer(data-modal="type-first") Заказать трансфер из аэропорта
                 .type__item.flex.flex-ai-center
                     .type__item-left
                         .type__item-img.w-full.img_cover.img_br
@@ -68,7 +68,7 @@ main
                     .type__item-right
                         .type__title Юридическое сопровождение
                         .type__desc при аренде на срок более 3 месяцев, поможем проверить документы и заключить выгодный договор с собственником
-                        a(href="#!").type__link.text-600.text-underline Оставить заявку на долгосрочную аренду
+                        .type__link.text-600.text-underline.modal__show(data-modal="type-second") Оставить заявку на долгосрочную аренду
             a(href="/arenda.html").p-btn.flex.flex-ai-center.flex-j-center.text-500 Перейти в каталог аренды
     .buy.overflow-hidden
         .container.margin-center
@@ -83,7 +83,7 @@ main
                             ul
                                 li организуем онлайн просмотр
                                 li подготовим и переведем все необходимые документы для покупки недвижимости из любой точки мира
-                        .buy__item-link.text-600.text-underline Заявка на подбор недвижимости
+                        .buy__item-link.text-600.text-underline.modal__show(data-modal="type-second") Заявка на подбор недвижимости
                 .buy__item.flex-shrink
                     .buy__item-img.img_br.img_cover.buy__item-img_2
                         +picture('img/main/buy/2.jpg', 'img/main/buy/2', true, '', 325, 125, '', '')
@@ -110,21 +110,21 @@ main
                     .buy__item-text
                         .buy__item-title.text-500 Инвестирование вместе&nbsp;с&nbsp;DADI
                         .buy__item-desc.text-500 Мы являемся действующими инвесторами и предлагаем нашим преданным клиентам выгодные оптовые покупки недвижимости у застройщиков. Инвестируйте в проверенные проекты вместе с нами
-                        .buy__item-link.text-600.text-underline Заявка на подбор недвижимости
+                        .buy__item-link.text-600.text-underline.modal__show(data-modal="type-second") Заявка на подбор недвижимости
                 .buy__item.flex-shrink
                     .buy__item-img.img_br.img_cover.buy__item-img_5
                         +picture('img/main/buy/5.jpg', 'img/main/buy/5', true, '', 325, 188, '', '')
                     .buy__item-text
                         .buy__item-title.text-500 Оценка недвижимости
                         .buy__item-desc.text-500 Профессионально оценим вашу недвижимость для продажи, проконсультируем по нюансам и поможем сформировать предложение для покупателя.
-                        .buy__item-link.text-600.text-underline Заявка на оценку недвижимости
+                        .buy__item-link.text-600.text-underline.modal__show(data-modal="type-second") Заявка на оценку недвижимости
                 .buy__item.flex-shrink
                     .buy__item-img.img_br.img_cover.buy__item-img_6
                         +picture('img/main/buy/6.jpg', 'img/main/buy/6', true, '', 325, 204, '', '')
                     .buy__item-text
                         .buy__item-title.text-500 Срочный выкуп недвижимости
                         .buy__item-desc.text-500 Выкупим вашу недвижимость за 24 часа с момента просмотра или добавим проект в нашу базу.
-                        .buy__item-link.text-600.text-underline Заявка на оценку недвижимости
+                        .buy__item-link.text-600.text-underline.modal__show(data-modal="type-second") Заявка на оценку недвижимости
             a(href="/buy.html").p-btn.flex.flex-ai-center.flex-j-center.text-500 Перейти в каталог покупки
     .principle
         .container.margin-center

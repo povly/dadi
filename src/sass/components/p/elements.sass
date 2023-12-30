@@ -1,4 +1,17 @@
 .p
+  &-lang
+    &__abs
+      top: 100%
+      left: 0
+      opacity: 0
+      z-index: -1
+      visibility: hidden
+      transition: .3s
+    &.active
+      .p-lang__abs
+        opacity: 1
+        z-index: 1
+        visibility: visible
   &-btn
     border-radius: 53px
     border: 1px solid var(--c1)

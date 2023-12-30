@@ -20,6 +20,16 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    const pLangs = document.querySelectorAll('.p-lang');
+    if (pLangs[0]){
+        pLangs.forEach((pLang)=>{
+            const current = pLang.querySelector('.p-lang__current');
+            current.addEventListener('click', ()=>{
+                pLang.classList.toggle('active');
+            })
+        })
+    }
+
     const selects = document.querySelectorAll('.p-select');
     if (selects[0]){
         selects.forEach((select)=>{
@@ -139,6 +149,9 @@ document.addEventListener("DOMContentLoaded", () => {
                         nextEl: estaty.querySelector('.swiper-button-next'),
                         prevEl: estaty.querySelector('.swiper-button-prev'),
                     },
+                    mousewheel: {
+                        forceToAxis: true,
+                    },
                 });
             }
         })
@@ -221,6 +234,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     clickable: true,
                     el: review.querySelector('.swiper-pagination'),
                 },
+                mousewheel: {
+                    forceToAxis: true,
+                },
             });
         })
     }
@@ -231,6 +247,9 @@ document.addEventListener("DOMContentLoaded", () => {
             const swiper = new Swiper(article.querySelector('.swiper'), {
                 slidesPerView: 'auto',
                 spaceBetween: 41,
+                mousewheel: {
+                    forceToAxis: true,
+                },
             });
         })
     }
@@ -244,6 +263,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 navigation: {
                     nextEl: best.querySelector('.swiper-button-next'),
                     prevEl: best.querySelector('.swiper-button-prev'),
+                },
+                mousewheel: {
+                    forceToAxis: true,
                 },
             });
         })
@@ -259,6 +281,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     clickable: true,
                     el: pCard.querySelector('.swiper-pagination'),
                 },
+                mousewheel: {
+                    forceToAxis: true,
+                },
             });
         })
     }
@@ -273,6 +298,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 pagination: {
                     clickable: true,
                     el: pCard.querySelector('.p-card__swiper-pagination'),
+                },
+                mousewheel: {
+                    forceToAxis: true,
                 },
             });
         })
@@ -437,6 +465,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     navigation: {
                         nextEl: floor.querySelector('.swiper-button-next'),
                         prevEl: floor.querySelector('.swiper-button-prev'),
+                    },
+                    mousewheel: {
+                        forceToAxis: true,
                     },
                 });
             }
@@ -995,6 +1026,9 @@ document.addEventListener("DOMContentLoaded", () => {
                             pagination: {
                                 clickable: true,
                                 el: subitem.querySelector('.swiper-pagination'),
+                            },
+                            mousewheel: {
+                                forceToAxis: true,
                             },
                         });
                     })
