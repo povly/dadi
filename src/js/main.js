@@ -427,6 +427,20 @@ document.addEventListener("DOMContentLoaded", () => {
                 })
             }
 
+            const floor = rentSingle.querySelector('.rent-single__floor');
+            if (floor){
+                const _swiper = floor.querySelector('.swiper');
+                const swiper = new Swiper(_swiper, {
+                    slidesPerView: 'auto',
+                    spaceBetween: 18,
+                    // Navigation arrows
+                    navigation: {
+                        nextEl: floor.querySelector('.swiper-button-next'),
+                        prevEl: floor.querySelector('.swiper-button-prev'),
+                    },
+                });
+            }
+
             const subitem = rentSingle.querySelector('.rent-single__subitem');
             if (subitem){
                 const row = subitem.closest('.rent-single__row');
