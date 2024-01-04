@@ -2,7 +2,10 @@ include ../mixins
 main
     .main
         .container.margin-center.relative
-            .main__item.bg.flex.flex-ai-center.flex-j-center.flex-col.relative.text-c2.text-center.overflow-hidden(style="background-image:url('img/main/first/1.webp')")
+            .main__item.bg.flex.flex-ai-center.flex-j-center.flex-col.relative.text-c2.text-center.overflow-hidden
+                .p-bg.absolute.top-0.left-0.w-full.h-full.img_cover.img_full
+                    +picture('img/main/first/1.jpg', 'img/main/first/1', false, '', 1170, 456, '', '')
+                    +picture('img/main/first/1_mb.jpg', 'img/main/first/1_mb', false, '', 320, 386, '', '')
                 .main__item-bg.absolute.top-0.left-0.w-full.h-full
                 .main__item-title.font-tenor.relative DADI
                 .main__item-subtitle.relative Подбор премиальной недвижимости в Дубае
@@ -143,6 +146,113 @@ main
                             +picture('img/main/why/2/4.jpg', 'img/main/why/2/4', true, '', 599, 606, '', '')
                             +picture('img/main/why/2/5.jpg', 'img/main/why/2/5', true, '', 599, 606, '', '')
                             +picture('img/main/why/2/6.jpg', 'img/main/why/2/6', true, '', 599, 606, '', '')
+            .why__blocks
+                .why__block.active
+                    .why__block-item
+                        .why__block-top
+                            +whyContentTab(
+                                'Welcome-сервис, как в отеле 5*',
+                                'прочувствуйте уровень жизни одного из самых богатых городов мира',
+                                ''
+                            )
+                        .why__block-bottom.img_cover
+                            +picture('img/main/why/1/1.jpg', 'img/main/why/1/1', true, '', 599, 606, '', '')
+                    .why__block-item.active
+                        .why__block-top
+                            +whyContentTab(
+                                'Элитные апартаменты',
+                                'премиальные ЖК и лучшие условия для жизни в коротких поездках и на долгосрок',
+                                'active'
+                            )
+                        .why__block-bottom.img_cover
+                            +picture('img/main/why/1/2.jpg', 'img/main/why/1/2', true, '', 599, 606, '', '')
+                    .why__block-item
+                        .why__block-top
+                            +whyContentTab(
+                                'Агентская поддержка',
+                                'личный кабинет на сайте для удобства бронирования и отслеживания оплат',
+                                ''
+                            )
+                        .why__block-bottom.img_cover
+                            +picture('img/main/why/1/3.jpg', 'img/main/why/1/3', true, '', 599, 606, '', '')
+                    .why__block-item
+                        .why__block-top
+                            +whyContentTab(
+                                'Личный ассистент в стране ',
+                                'поможет с трансфером, арендой автомобиля, химчисткой — решает все бытовые вопросы в новой стране 24/7',
+                                ''
+                            )
+                        .why__block-bottom.img_cover
+                            +picture('img/main/why/1/4.jpg', 'img/main/why/1/4', true, '', 599, 606, '', '')
+                    .why__block-item
+                        .why__block-top
+                            +whyContentTab(
+                                'Туристическое направление ',
+                                'расскажем, куда съездить и где вкусно поесть, чтобы вы могли спокойно насладиться отдыхом',
+                                ''
+                            )
+                        .why__block-bottom.img_cover
+                            +picture('img/main/why/1/5.jpg', 'img/main/why/1/5', true, '', 599, 606, '', '')
+                    .why__block-item
+                        a(href="/arenda.html").p-btn.flex.flex-ai-center.flex-j-center.text-500 Снять квартиру в Дубае
+                .why__block
+                    .why__block-item
+                        .why__block-top
+                            +whyContentTab(
+                                'Глубокая аналитика рыночной ситуации ',
+                                'в зависимости от ваших запросов подберём наилучший вариант по рентабельности, инфраструктуре, окружающей застройке \n' +
+                                'и перспективой прибыли',
+                                ''
+                            )
+                        .why__block-bottom.img_cover
+                            +picture('img/main/why/2/1.jpg', 'img/main/why/2/1', true, '', 599, 606, '', '')
+                    .why__block-item
+                        .why__block-top
+                            +whyContentTab(
+                                'Помощь в оформлении Визы и ВНЖ ',
+                                'сопроводим в получении всех документов от начала до конца',
+                                ''
+                            )
+                        .why__block-bottom.img_cover
+                            +picture('img/main/why/2/2.jpg', 'img/main/why/2/2', true, '', 599, 606, '', '')
+                    .why__block-item
+                        .why__block-top
+                            +whyContentTab(
+                                'Гарантия юридических обязательств ',
+                                'берём на себя всю ответственность по работе с документами и юр. сопровождению сделки',
+                                ''
+                            )
+                        .why__block-bottom.img_cover
+                            +picture('img/main/why/2/3.jpg', 'img/main/why/2/3', true, '', 599, 606, '', '')
+                    .why__block-item
+                        .why__block-top
+                            +whyContentTab(
+                                'Поиск сделок Distress Deal ',
+                                'предоставим доступ к базе недвижимости с ценой ниже рыночной и поможем проверить и заключить выгодную сделку/7',
+                                ''
+                            )
+                        .why__block-bottom.img_cover
+                            +picture('img/main/why/2/4.jpg', 'img/main/why/2/4', true, '', 599, 606, '', '')
+                    .why__block-item
+                        .why__block-top
+                            +whyContentTab(
+                                'Доверительное управление ',
+                                'берем квартиры в управление: проконтролируем ремонт, обслуживание и сдачу/продажу, максимизируем вашу прибыль',
+                                ''
+                            )
+                        .why__block-bottom.img_cover
+                            +picture('img/main/why/2/5.jpg', 'img/main/why/2/5', true, '', 599, 606, '', '')
+                    .why__block-item
+                        .why__block-top
+                            +whyContentTab(
+                                'Подбор мебели ',
+                                'если квартира не меблирована, наймём команду дизайнеров и проконтролируем процессы',
+                                ''
+                            )
+                        .why__block-bottom.img_cover
+                            +picture('img/main/why/2/6.jpg', 'img/main/why/2/6', true, '', 599, 606, '', '')
+                    .why__block-item
+                        a(href="/buy.html").p-btn.flex.flex-ai-center.flex-j-center.text-500 Купить квартиру в Дубае
             .why__desc
                 p Мы любим свою работу, <span class="why__desc-img bg lazy" data-bg="img/main/why/desc1.webp"></span> ежедневно работаем над качеством и предоставляем лучший сервис на рынке <span class="why__desc-img why__desc-img_2 bg lazy" data-bg="img/main/why/desc2.webp"></span> недвижимости Дубая.
             .why__end.font-inter Вы можете проверить, просто <a href="tel:+97145859538" class="why__end-link text-c3">позвонив нам</a> или <span class="why__end-link text-c3 modal__show" data-modal="type-first">оставив заявку</span>
@@ -347,8 +457,9 @@ main
                                 .service__form-input.w-full.form__input
                                     input(type="tel" name="tel" placeholder="8 999 999 99 99" required)
                             button(type="submit").p-btn.flex.flex-ai-center.flex-j-center.text-500 Оставить заявку
-                .service__item-bg.absolute.right-0.bottom-0
-                    +picture('img/main/service/1.jpg', 'img/main/service/1', true, '', 907, 604, '', '')
+                .service__item-bg.absolute.right-0.bottom-0.p-img
+                    +picture('img/main/service/1.png', 'img/main/service/1', true, '', 907, 604, '', '')
+                    +picture('img/main/service/1_mb.png', 'img/main/service/1_mb', true, '', 340, 262, '', '')
     .type
         .container.margin-center
             .section__title.font-tenor.text-c3.text-center Аренда
@@ -440,12 +551,15 @@ main
     .principle.overflow-hidden
         .container.margin-center
             .principle__block.relative
-                .principle__img.principle__img_1.absolute.img_cover
+                .principle__img.principle__img_1.absolute.img_cover.p-img
                     +picture('img/main/principle/1.jpg', 'img/main/principle/1', true, '', 448, 493, '', '')
-                .principle__img.principle__img_2.absolute.img_cover
+                    +picture('img/main/principle/1_mb.jpg', 'img/main/principle/1_mb', true, '', 394, 125, '', '')
+                .principle__img.principle__img_2.absolute.img_cover.p-img
                     +picture('img/main/principle/2.jpg', 'img/main/principle/2', true, '', 337, 102, '', '')
-                .principle__img.principle__img_3.absolute.img_cover
+                    +picture('img/main/principle/2_mb.jpg', 'img/main/principle/2_mb', true, '', 186, 58, '', '')
+                .principle__img.principle__img_3.absolute.img_cover.p-img
                     +picture('img/main/principle/3.jpg', 'img/main/principle/3', true, '', 337, 288, '', '')
+                    +picture('img/main/principle/3_mb.jpg', 'img/main/principle/3_mb', true, '', 158, 58, '', '')
                 .section__title.font-tenor.text-c3 Наши принципы
                 .principle__items.flex.flex-col
                     +principle(
@@ -482,8 +596,9 @@ main
     .get
         .container.margin-center
             .get__item.relative
-                .get__item-img.absolute.bottom-0.left-0
-                    +picture('img/main/get/1.jpg', 'img/main/get/1', true, '', 975, 600, '', '')
+                .get__item-img.absolute.bottom-0.left-0.p-img
+                    +picture('img/main/get/1.png', 'img/main/get/1', true, '', 975, 600, '', '')
+                    +picture('img/main/get/1_mb.png', 'img/main/get/1_mb', true, '', 340, 344, '', '')
                 form
                     .get__item-text.relative
                         .get__item-title.text-500 Подберём лучшее решение под ваш запрос

@@ -1,0 +1,244 @@
+@media screen and (max-width: 1160px)
+  .container
+    padding-left: 10px
+    padding-right: 10px
+  .header
+    &__block
+      align-items: flex-end
+  .footer
+    padding-bottom: 14px
+    &__logo
+      margin-left: 0
+      display: flex
+      justify-content: center
+
+    &__left, &__right
+      width: 100%
+
+    &__block, &__top
+      flex-direction: column
+      justify-content: center
+      align-items: center
+
+    &__top
+
+      &-left, &-center, &-right
+        width: 100%
+
+      &-left
+        padding-left: 0
+
+    &__bottom
+      align-items: flex-start
+      flex-direction: column-reverse
+
+      &-left
+        padding-left: 0
+
+      &-center
+        display: none
+
+    &__block
+      gap: 24px
+
+    &__cabinet
+      &-title
+        text-align: center
+
+      .p-btn
+        margin: 0 auto
+    &__list
+      ul
+        flex-direction: row
+        gap: 29px
+        justify-content: center
+    &__block
+      padding-bottom: 14px
+    &__top, &__bottom
+      padding-left: 17px
+      padding-right: 17px
+    &__top
+      &-center
+        position: relative
+        padding: 30px 0
+        &::after, &::before
+          content: ''
+          position: absolute
+          width: calc(100% + 20px + 34px)
+          left: -27px
+          height: 1px
+          background: #808080
+        &::after
+          top: 0
+        &::before
+          bottom: 0
+      &-right
+        padding-top: 21px
+    &__link
+      width: 100%
+      display: flex
+      align-items: center
+      justify-content: space-between
+      &:nth-child(1), &:nth-child(3)
+        display: none
+    &__bottom
+      &-right
+        padding-bottom: 29px
+        position: relative
+        &::after
+          content: ''
+          position: absolute
+          width: calc(100% + 20px + 34px)
+          left: -27px
+          height: 1px
+          background: #808080
+          bottom: 0
+      &-left, &-right, &-center
+        width: 100%
+      &-left
+        padding-top: 21px
+    &__copy
+      display: flex
+      flex-direction: column
+      gap: 10px
+      span
+        display: block
+@media screen and (max-width: 768px)
+  .container
+    max-width: 340px
+  .img
+    &_br
+      img
+        border-radius: 14px
+  .p
+    &-btn
+      font-size: 13px
+      height: 41px
+    &-bg, &-img
+      picture
+        &:nth-child(1)
+          display: none
+        &:nth-child(2)
+          display: flex
+    &-card
+      height: 366px
+      border-radius: 14px
+      &__text
+        padding: 12px 11px 18px
+        bottom: 11px
+        left: 14px
+        width: calc(100% - 14px - 14px)
+      &__title
+        font-size: 15px
+        margin-bottom: 12px
+      &__top
+        margin-bottom: 9px
+        &-left
+          font-size: 13px
+          margin-right: 10px
+        &-right
+          font-size: 11px
+      &__price
+        font-size: 13px
+        &_old
+          font-size: 12px
+      &__sale
+        padding: 4px 9px
+        gap: 6px
+        &-svg
+          svg
+            width: 11px
+        &-title
+          font-size: 13px
+      &__abs
+        border-radius: 12px
+        &-link
+          font-size: 16px
+          max-width: 174px
+    &-list
+      font-size: 15px
+      ul
+        padding-left: 20px
+    &-check
+      &__title
+        font-size: 9px
+        max-width: 167px
+  .header
+    &__comparison
+      svg
+        width: 18px
+        height: 19px
+    &__like
+      svg
+        width: 13px
+        height: 17px
+    &__profile
+      svg
+        width: 18px
+        height: 18px
+  .section
+    &__title
+      font-size: 30px
+      margin-bottom: 25px
+  .main
+    &_swiper
+      &-arrows
+        gap: 4px
+        top: -42px
+        .swiper
+          &-button
+            width: 24px
+            height: 24px
+            img
+              width: 10px
+  .footer
+    &__logo
+      margin-bottom: 14px
+    &__cabinet
+      &-title
+        font-size: 16px
+        margin-bottom: 9px
+      .p-btn
+        width: 189px
+        font-size: 13px
+    &__list
+      ul
+        font-size: 16px
+    &__top, &__bottom
+      padding: 0
+    &__top
+      margin-bottom: 38px
+      &-center
+        &::before, &::after
+          width: 100vw
+          left: 50%
+          transform: translateX(-50%)
+    &__link
+      &-title
+        margin-bottom: 0
+    &__form
+      &-title
+        font-size: 20px
+        margin-bottom: 9px
+      &-input
+        margin-bottom: 14px
+        input
+          font-size: 14px
+      .p-btn
+        margin-bottom: 14px
+    &__bottom
+      &-links
+        gap: 9px
+      &-link
+        font-size: 14px
+      &-right
+        &::after
+          width: 100vw
+          left: 50%
+          transform: translateX(-50%)
+    &__web
+      font-size: 10px
+      margin-bottom: 9px
+    &__copy
+      font-size: 9px
+      gap: 5px

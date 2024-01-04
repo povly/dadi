@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-
     function removeActiveElement(element, query, classes) {
         const active = element.querySelector(query);
         if (active) {
@@ -21,30 +20,30 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const pLangs = document.querySelectorAll('.p-lang');
-    if (pLangs[0]){
-        pLangs.forEach((pLang)=>{
+    if (pLangs[0]) {
+        pLangs.forEach((pLang) => {
             const current = pLang.querySelector('.p-lang__current');
-            current.addEventListener('click', ()=>{
+            current.addEventListener('click', () => {
                 pLang.classList.toggle('active');
             })
         })
     }
 
     const selects = document.querySelectorAll('.p-select');
-    if (selects[0]){
-        selects.forEach((select)=>{
+    if (selects[0]) {
+        selects.forEach((select) => {
             const current = select.querySelector('.p-select__current');
             const currentItem = current.querySelector('.p-select__current-item');
             const abs = select.querySelector('.p-select__abs');
             const input = current.querySelector('input');
             const absItems = abs.querySelectorAll('.p-select__abs-item');
 
-            current.addEventListener('click', ()=>{
+            current.addEventListener('click', () => {
                 select.classList.toggle('active');
             })
 
-            absItems.forEach((item)=>{
-                item.addEventListener('click', ()=>{
+            absItems.forEach((item) => {
+                item.addEventListener('click', () => {
                     removeActiveElement(abs, '.p-select__abs-item.active', 'active');
                     input.value = item.dataset.value;
                     currentItem.textContent = item.dataset.value;
@@ -54,37 +53,41 @@ document.addEventListener("DOMContentLoaded", () => {
             })
 
             const checkboxes = select.querySelectorAll('.p-checkboxes .p-checkboxes__item');
-            if (checkboxes[0]){
+            if (checkboxes[0]) {
                 let activeIndexs = [];
-                function getTitle(){
+
+                function getTitle() {
                     let text = '';
-                    activeIndexs.forEach((item, index)=>{
-                        if (activeIndexs.length !== index + 1){
+                    activeIndexs.forEach((item, index) => {
+                        if (activeIndexs.length !== index + 1) {
                             text += checkboxes[item].querySelector('.p-checkboxes__item-title').textContent + ', ';
                         } else {
                             text += checkboxes[item].querySelector('.p-checkboxes__item-title').textContent;
                         }
                     })
-                    if (!activeIndexs.length){
+                    if (!activeIndexs.length) {
                         text = select.dataset.textDefault;
                     }
                     return text;
                 }
-                checkboxes.forEach((checkbox, index)=>{
+
+                checkboxes.forEach((checkbox, index) => {
                     const input = checkbox.querySelector('input');
                     const checked = input.checked;
-                    if (checked){
+                    if (checked) {
                         activeIndexs.push(index);
                     }
                 })
-                checkboxes.forEach((checkbox, index)=>{
-                    checkbox.addEventListener('change', ()=>{
+                checkboxes.forEach((checkbox, index) => {
+                    checkbox.addEventListener('change', () => {
                         const input = checkbox.querySelector('input');
                         const checked = input.checked;
-                        if (checked){
+                        if (checked) {
                             activeIndexs.push(index);
                         } else {
-                            activeIndexs = activeIndexs.filter((n) => {return n !== index});
+                            activeIndexs = activeIndexs.filter((n) => {
+                                return n !== index
+                            });
                         }
                         currentItem.textContent = getTitle();
                     })
@@ -99,13 +102,16 @@ document.addEventListener("DOMContentLoaded", () => {
         whys.forEach((why) => {
             const tabs = why.querySelectorAll('.why__tabs .why__tab');
             const contents = why.querySelectorAll('.why__contents .why__content');
+            const blocks = why.querySelectorAll('.why__blocks .why__block');
 
             tabs.forEach((tab, index) => {
                 tab.addEventListener('click', () => {
                     removeActiveElement(why, '.why__tabs .why__tab.active', 'active');
                     removeActiveElement(why, '.why__contents .why__content.active', 'active');
+                    removeActiveElement(why, '.why__blocks .why__block.active', 'active');
                     tab.classList.add('active');
                     contents[index].classList.add('active');
+                    blocks[index].classList.add('active');
                 })
             })
 
@@ -133,6 +139,32 @@ document.addEventListener("DOMContentLoaded", () => {
                     })
                 })
             })
+
+            blocks.forEach((block) => {
+                const items = block.querySelectorAll('.why__block-item');
+                items.forEach((item) => {
+                    const tab = item.querySelector('.why__content-tab');
+                    if (tab && tab.classList.contains('active')) {
+                        const text = tab.querySelector('.why__content-text');
+                        text.style.height = text.scrollHeight + 'px';
+                    }
+                    if (tab) {
+                        tab.addEventListener('click', () => {
+                            const tabActiveClass = '.why__block-item .why__content-tab.active';
+                            const tabActiveText = block.querySelector(tabActiveClass + ' .why__content-text');
+                            if (tabActiveText) {
+                                tabActiveText.style.height = '';
+                            }
+                            removeActiveElement(block, tabActiveClass, 'active');
+                            removeActiveElement(block, '.why__block-item.active', 'active');
+                            tab.classList.add('active');
+                            const text = tab.querySelector('.why__content-text');
+                            text.style.height = text.scrollHeight + 'px';
+                            item.classList.add('active');
+                        })
+                    }
+                })
+            })
         })
     }
 
@@ -143,7 +175,6 @@ document.addEventListener("DOMContentLoaded", () => {
             if (!_swiper.classList.contains('.p-card__swiper')) {
                 const swiper = new Swiper(_swiper, {
                     slidesPerView: 'auto',
-                    spaceBetween: 18,
                     // Navigation arrows
                     navigation: {
                         nextEl: estaty.querySelector('.swiper-button-next'),
@@ -152,6 +183,14 @@ document.addEventListener("DOMContentLoaded", () => {
                     mousewheel: {
                         forceToAxis: true,
                     },
+                    breakpoints: {
+                        320: {
+                            spaceBetween: 10,
+                        },
+                        769: {
+                            spaceBetween: 18,
+                        }
+                    }
                 });
             }
         })
@@ -163,45 +202,64 @@ document.addEventListener("DOMContentLoaded", () => {
             const row = buy.querySelector('.buy__row');
             const rowWidth = row.offsetWidth;
             const ammountToScroll = rowWidth - window.innerWidth;
-            let sliderImages  = gsap.utils.toArray(buy.querySelectorAll('.buy__item'));
+            let sliderImages = gsap.utils.toArray(buy.querySelectorAll('.buy__item'));
 
 
-            const nextElement = buy.nextElementSibling;
-
-
-            gsap.to(sliderImages, {
-                x: -rowWidth,
-                ease: "none",
-                scrollTrigger: {
-                    trigger: row,
-                    start: 'top 185px',
-                    pin: true,
-                    // pinReparent: true,
-                    // pinSpacing: false,
-                    scrub: 1,
-                    end: () => "+=" + rowWidth,
-                    invalidateOnRefresh: true,
-                    // onUpdate:(self) => {
-                    //     console.log(self);
-                    //     console.log(self.progress);
-                    // }
-                },
-            });
+            if (window.innerWidth >= 1160) {
+                gsap.to(sliderImages, {
+                    x: -rowWidth,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: row,
+                        start: 'center center',
+                        pin: true,
+                        // pinReparent: true,
+                        // pinSpacing: false,
+                        scrub: 1,
+                        end: () => "+=" + rowWidth,
+                        invalidateOnRefresh: true,
+                        // onUpdate:(self) => {
+                        //     console.log(self);
+                        //     console.log(self.progress);
+                        // }
+                    },
+                });
+            } else {
+                let width = sliderImages[0].scrollWidth * (sliderImages.length - 1);
+                gsap.to(sliderImages, {
+                    x: -width,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: row,
+                        start: 'center center',
+                        pin: true,
+                        // pinReparent: true,
+                        // pinSpacing: false,
+                        scrub: 1,
+                        end: () => "+=" + width,
+                        invalidateOnRefresh: true,
+                        // onUpdate:(self) => {
+                        //     console.log(self);
+                        //     console.log(self.progress);
+                        // }
+                    },
+                });
+            }
 
         })
     }
 
 
     const filters = document.querySelectorAll('.filters');
-    if (filters[0]){
-        filters.forEach((filter)=>{
+    if (filters[0]) {
+        filters.forEach((filter) => {
             const btnCoub = filter.querySelector('.filters__coub');
             const btnMap = filter.querySelector('.filters__map');
 
             const content = filter.querySelector('.filters__content');
             const map = filter.querySelector('.filters__content-map');
 
-            btnCoub.addEventListener('click', ()=>{
+            btnCoub.addEventListener('click', () => {
                 btnCoub.classList.add('active');
                 content.classList.add('active');
                 map.classList.remove('active');
@@ -209,7 +267,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 ScrollTrigger.refresh();
             })
 
-            btnMap.addEventListener('click', ()=>{
+            btnMap.addEventListener('click', () => {
                 btnCoub.classList.remove('active');
                 content.classList.remove('active');
                 map.classList.add('active');
@@ -259,7 +317,6 @@ document.addEventListener("DOMContentLoaded", () => {
         bests.forEach((best) => {
             const swiper = new Swiper(best.querySelector('.swiper'), {
                 slidesPerView: 'auto',
-                spaceBetween: 61,
                 navigation: {
                     nextEl: best.querySelector('.swiper-button-next'),
                     prevEl: best.querySelector('.swiper-button-prev'),
@@ -267,6 +324,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 mousewheel: {
                     forceToAxis: true,
                 },
+                breakpoints: {
+                    320: {
+                        spaceBetween: 47,
+                    },
+                    768: {
+                        spaceBetween: 61,
+                    }
+                }
             });
         })
     }
@@ -323,11 +388,11 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     const rentSingles = document.querySelectorAll('.rent-single');
-    if (rentSingles[0]){
-        rentSingles.forEach((rentSingle)=>{
+    if (rentSingles[0]) {
+        rentSingles.forEach((rentSingle) => {
             const startDate = rentSingle.querySelector('.rent-single__right-date_start');
 
-            if (startDate){
+            if (startDate) {
                 const endDate = rentSingle.querySelector('.rent-single__right-date_end');
                 const startDateCol = rentSingle.querySelector('.rent-single__col-date_start');
                 const endDateCol = rentSingle.querySelector('.rent-single__col-date_end');
@@ -338,17 +403,17 @@ document.addEventListener("DOMContentLoaded", () => {
                     inline: true,
                     dateFormat: 'd.m.Y',
                     locale: _locale,
-                    onChange: function(selectedDates, dateStr, instance) {
+                    onChange: function (selectedDates, dateStr, instance) {
                         const _options = {
                             year: "numeric",
                             month: "long",
                             day: "numeric"
                         };
-                        if (selectedDates[0]){
+                        if (selectedDates[0]) {
                             startDate.textContent = selectedDates[0].toLocaleDateString('ru', _options);
                             startDateCol.textContent = selectedDates[0].toLocaleDateString('ru');
                         }
-                        if (selectedDates[1]){
+                        if (selectedDates[1]) {
                             endDate.textContent = selectedDates[1].toLocaleDateString('ru', _options);
                             endDateCol.textContent = selectedDates[1].toLocaleDateString('ru');
                         } else {
@@ -360,15 +425,15 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             const selects = rentSingle.querySelectorAll('.rent-single__select');
-            if (selects[0]){
-                selects.forEach((select)=>{
+            if (selects[0]) {
+                selects.forEach((select) => {
                     const current = select.querySelector('.rent-single__select-current');
-                    current.addEventListener('click', (e)=>{
+                    current.addEventListener('click', (e) => {
                         resetEvent(e);
                         select.classList.toggle('active');
                     })
                     const close = select.querySelector('.rent-single__select-close');
-                    close.addEventListener('click', (e)=>{
+                    close.addEventListener('click', (e) => {
                         resetEvent(e);
                         select.classList.remove('active');
                     })
@@ -376,8 +441,8 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             const quantities = rentSingle.querySelectorAll('.rent-single__quantity');
-            if (quantities[0]){
-                quantities.forEach((quantity)=>{
+            if (quantities[0]) {
+                quantities.forEach((quantity) => {
                     const minus = quantity.querySelector('.rent-single__quantity-minus');
                     const plus = quantity.querySelector('.rent-single__quantity-plus');
                     const input = quantity.querySelector('.rent-single__quantity-input input');
@@ -386,15 +451,15 @@ document.addEventListener("DOMContentLoaded", () => {
                     const title = select.querySelector('.rent-single__select-title');
                     const texts = JSON.parse(quantity.dataset.texts);
 
-                    function setTitle(int){
+                    function setTitle(int) {
                         title.textContent = int + ' ' + morph(int, texts);
                     }
 
-                    minus.addEventListener('click', (e)=>{
+                    minus.addEventListener('click', (e) => {
                         resetEvent(e);
                         let value = parseInt(input.value);
 
-                        if (value <= 1){
+                        if (value <= 1) {
                             input.value = 1;
                         } else {
                             value--;
@@ -403,7 +468,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         setTitle(input.value);
                     })
 
-                    plus.addEventListener('click', (e)=>{
+                    plus.addEventListener('click', (e) => {
                         resetEvent(e);
                         let value = parseInt(input.value);
 
@@ -415,23 +480,23 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             const lists = rentSingle.querySelectorAll('.rent-single__list');
-            if (lists[0]){
-                lists.forEach((list)=>{
+            if (lists[0]) {
+                lists.forEach((list) => {
                     const count = list.dataset.count;
                     const items = list.querySelectorAll('.rent-single__list-li');
                     const more = list.querySelector('.rent-single__list-li_more');
-                    more.addEventListener('click', ()=>{
+                    more.addEventListener('click', () => {
                         const status = list.dataset.status;
-                        items.forEach((item, index)=>{
-                            if (count <= index){
+                        items.forEach((item, index) => {
+                            if (count <= index) {
                                 item.classList.toggle('active');
                             }
                         })
-                        if (status === 'true'){
+                        if (status === 'true') {
                             list.dataset.status = 'false';
                             more.textContent = more.dataset.textHide;
                         }
-                        if (status === 'false'){
+                        if (status === 'false') {
                             list.dataset.status = 'true';
                             more.textContent = more.dataset.textShow;
                         }
@@ -440,12 +505,12 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             const rules = rentSingle.querySelectorAll('.rent-single__rules');
-            if (rules[0]){
-                rules.forEach((rule)=>{
+            if (rules[0]) {
+                rules.forEach((rule) => {
                     const tabs = rule.querySelectorAll('.rent-single__rules-tab');
                     const contents = rule.querySelectorAll('.rent-single__rules-content');
-                    tabs.forEach((tab, index)=>{
-                        tab.addEventListener('click', ()=>{
+                    tabs.forEach((tab, index) => {
+                        tab.addEventListener('click', () => {
                             removeActiveElement(rule, '.rent-single__rules-tab.active', 'active');
                             removeActiveElement(rule, '.rent-single__rules-content.active', 'active');
                             tab.classList.add('active');
@@ -456,7 +521,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             const floor = rentSingle.querySelector('.rent-single__floor');
-            if (floor){
+            if (floor) {
                 const _swiper = floor.querySelector('.swiper');
                 const swiper = new Swiper(_swiper, {
                     slidesPerView: 'auto',
@@ -473,11 +538,11 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             const subitem = rentSingle.querySelector('.rent-single__subitem');
-            if (subitem){
+            if (subitem) {
                 const row = subitem.closest('.rent-single__row');
                 const item = rentSingle.querySelector('.rent-single__right-item');
                 let end = row.offsetHeight - subitem.offsetHeight - parseInt(window.getComputedStyle(subitem).top);
-                if (item){
+                if (item) {
                     end = end - item.offsetHeight - parseInt(window.getComputedStyle(item).marginBottom);
                 }
                 ScrollTrigger.create({
@@ -490,15 +555,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
             const tabs = rentSingle.querySelectorAll('.rent-single__tabs');
-            if (tabs[0]){
-                tabs.forEach((tab)=>{
+            if (tabs[0]) {
+                tabs.forEach((tab) => {
                     const prices = tab.querySelectorAll('.rent-single__tab-tops_price .rent-single__tab-top');
                     const seconds = tab.querySelectorAll('.rent-single__tab-tops_second .rent-single__tab-top');
                     const days = tab.querySelectorAll('.rent-single__day');
 
 
-                    prices.forEach((price, index)=>{
-                        price.addEventListener('click', ()=>{
+                    prices.forEach((price, index) => {
+                        price.addEventListener('click', () => {
                             removeActiveElement(tab, '.rent-single__tab-tops_price .rent-single__tab-top.active', 'active')
                             removeActiveElement(tab, '.rent-single__day.active', 'active')
 
@@ -507,14 +572,14 @@ document.addEventListener("DOMContentLoaded", () => {
                         })
                     })
 
-                    if (seconds[0]){
-                        seconds.forEach((second, index)=>{
-                            second.addEventListener('click', ()=>{
+                    if (seconds[0]) {
+                        seconds.forEach((second, index) => {
+                            second.addEventListener('click', () => {
                                 removeActiveElement(tab, '.rent-single__tab-tops_second .rent-single__tab-top.active', 'active')
 
                                 second.classList.add('active');
 
-                                days.forEach((day)=>{
+                                days.forEach((day) => {
                                     const daySeconds = day.querySelectorAll('.rent-single__day-seconds .rent-single__day-second');
                                     removeActiveElement(day, '.rent-single__day-second.active', 'active')
                                     daySeconds[index].classList.add('active');
@@ -529,26 +594,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const rents = document.querySelectorAll('.rent');
     if (rents[0]) {
-        rents.forEach((rent)=>{
+        rents.forEach((rent) => {
             const inputs = rent.querySelectorAll(".rent__input_date");
-            inputs.forEach((input)=>{
+            inputs.forEach((input) => {
                 const _input = input.querySelector('input');
-                if (_input){
+                if (_input) {
                     const fp = flatpickr(_input, {
                         minDate: "today",
                         dateFormat: 'd.m.Y',
                         locale: _locale,
-                        onChange: function(selectedDates, dateStr, instance) {
+                        onChange: function (selectedDates, dateStr, instance) {
                             const _element = instance.element;
-                            if (_element.getAttribute('name') === 'start'){
+                            if (_element.getAttribute('name') === 'start') {
                                 const parent = _element.closest('.rent__form');
                                 const end = parent.querySelector('input[name="end"]');
-                                end._flatpickr.set('minDate',dateStr);
+                                end._flatpickr.set('minDate', dateStr);
                             }
                         },
                     });
                     const svg = input.querySelector(".rent__input-svg");
-                    svg.addEventListener('click', ()=>{
+                    svg.addEventListener('click', () => {
                         fp.toggle();
                     })
                 }
@@ -557,15 +622,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const modalForms = document.querySelectorAll('.modal_form');
-    if (modalForms[0]){
-        modalForms.forEach((modalForm)=>{
+    if (modalForms[0]) {
+        modalForms.forEach((modalForm) => {
             const changes = modalForm.querySelectorAll('.modal_register__changes .modal_register__change');
             const inputs = modalForm.querySelectorAll('.modal_register__inputs .modal_register__inputs-item');
-            changes.forEach((change, index)=>{
-                change.addEventListener('click', ()=>{
-                  removeActiveElement(modalForm, '.modal_register__changes .modal_register__change.active', 'active');
-                  removeActiveElement(modalForm, '.modal_register__inputs .modal_register__inputs-item.active', 'active');
-                    if (index === 0){
+            changes.forEach((change, index) => {
+                change.addEventListener('click', () => {
+                    removeActiveElement(modalForm, '.modal_register__changes .modal_register__change.active', 'active');
+                    removeActiveElement(modalForm, '.modal_register__inputs .modal_register__inputs-item.active', 'active');
+                    if (index === 0) {
                         changes[1].classList.add('active');
                         inputs[1].classList.add('active');
                     } else {
@@ -577,11 +642,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const items = modalForm.querySelectorAll('.modal_conf__items .modal_conf__item');
             const link = modalForm.querySelector('.modal_conf__end-link');
-            if (items[0]){
-                link.addEventListener('click', ()=>{
+            if (items[0]) {
+                link.addEventListener('click', () => {
                     const index = link.dataset.index;
                     removeActiveElement(modalForm, '.modal_conf__items .modal_conf__item.active', 'active');
-                    if (index === '2'){
+                    if (index === '2') {
                         items[0].classList.add('active');
                         link.dataset.index = 1;
                     } else {
@@ -594,11 +659,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const cabinet = document.querySelector('.cabinet');
-    if (cabinet){
+    if (cabinet) {
 
         const dates = cabinet.querySelectorAll('.cabinet__change-label_date');
-        if (dates[0]){
-            dates.forEach((date)=>{
+        if (dates[0]) {
+            dates.forEach((date) => {
                 const _input = date.querySelector('input');
                 const fp = flatpickr(_input, {
                     dateFormat: 'd.m.Y',
@@ -608,7 +673,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         const card = cabinet.querySelector('.cabinet__card');
-        if (card){
+        if (card) {
 
 
             const term = cabinet.querySelector('.cabinet__card-second input[name="term"]');
@@ -620,18 +685,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const filterRanges = document.querySelectorAll('.modal_filter__range');
-    if (filterRanges[0]){
-        filterRanges.forEach((filterRange)=>{
+    if (filterRanges[0]) {
+        filterRanges.forEach((filterRange) => {
             const slider = filterRange.querySelector('.modal_filter__range-main');
             let sliderMin = parseFloat(filterRange.dataset.min);
             let sliderMax = parseFloat(filterRange.dataset.max);
             let string = filterRange.dataset.string;
-            if (string){
+            if (string) {
                 string = JSON.parse(string);
                 let start = filterRange.dataset.start;
                 let end = filterRange.dataset.end;
                 var format = {
-                    to: function(value) {
+                    to: function (value) {
                         return string[Math.round(value)];
                     },
                     from: function (value) {
@@ -641,7 +706,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 noUiSlider.create(slider, {
                     start: [start, end],
-                    range: { min: 0, max: string.length - 1 },
+                    range: {min: 0, max: string.length - 1},
                     step: 1,
                     tooltips: true,
                     format: format,
@@ -653,7 +718,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 var inputs = [min, max];
 
 
-                if (type && type === 'int'){
+                if (type && type === 'int') {
                     noUiSlider.create(slider, {
                         start: [
                             sliderMin,
@@ -665,7 +730,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             'max': sliderMax
                         },
                         tooltips: {
-                            to: function(numericValue) {
+                            to: function (numericValue) {
                                 return numericValue.toFixed(0);
                             }
                         },
@@ -692,13 +757,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const filterItemsChanges = document.querySelectorAll('.modal_filter__item_change');
-    if (filterItemsChanges[0]){
-        filterItemsChanges.forEach((filterItemsChange)=>{
+    if (filterItemsChanges[0]) {
+        filterItemsChanges.forEach((filterItemsChange) => {
             const checkboxes = filterItemsChange.querySelectorAll('.p-checkboxes__item');
             const ranges = filterItemsChange.querySelectorAll('.modal_filter__range-content');
-            if (checkboxes[0]){
-                checkboxes.forEach((checkbox, index)=>{
-                    checkbox.addEventListener('click', ()=>{
+            if (checkboxes[0]) {
+                checkboxes.forEach((checkbox, index) => {
+                    checkbox.addEventListener('click', () => {
                         removeActiveElement(filterItemsChange, '.modal_filter__range-content.active', 'active');
                         ranges[index].classList.add('active');
                     })
@@ -707,13 +772,13 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     }
     const filterItemsAreas = document.querySelectorAll('.modal_filter__price-item_area');
-    if (filterItemsAreas[0]){
-        filterItemsAreas.forEach((filterItemsArea)=>{
+    if (filterItemsAreas[0]) {
+        filterItemsAreas.forEach((filterItemsArea) => {
             const checkboxes = filterItemsArea.querySelectorAll('.p-checkboxes__item');
             const items = filterItemsArea.querySelectorAll('.modal_filter__area-item');
-            if (checkboxes[0]){
-                checkboxes.forEach((checkbox, index)=>{
-                    checkbox.addEventListener('click', ()=>{
+            if (checkboxes[0]) {
+                checkboxes.forEach((checkbox, index) => {
+                    checkbox.addEventListener('click', () => {
                         removeActiveElement(filterItemsArea, '.modal_filter__area-item.active', 'active');
                         items[index].classList.add('active');
                     })
@@ -723,10 +788,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const modalFilter = document.querySelector('.modal_filter');
-    if (modalFilter){
+    if (modalFilter) {
         const form = modalFilter.closest('form');
         const reset = form.querySelector('.modal_filter__reset');
-        reset.addEventListener('click', ()=>{
+        reset.addEventListener('click', () => {
             const location = window.location;
             // console.log(location);
             window.location.href = location.protocol + '//' + location.host + location.pathname;
@@ -734,55 +799,87 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const teams = document.querySelectorAll('.team');
-    if (teams[0]){
-        teams.forEach((team)=>{
+    if (teams[0]) {
+        teams.forEach((team) => {
             let itemsBlock = team.querySelector('.team__text-items');
             let lineCircle = team.querySelector('.team__text-line .team__text-line-circle');
             let itemsElements = itemsBlock.querySelectorAll('.team__text-item');
 
-            let _animation = gsap.timeline({
-                scrollTrigger: {
-                    trigger: team,
-                    start: "center center",
-                    pin: true,
-                    scrub: 1,
-                    end: "+=100%",
-                    ease: "power2",
-                    toggleActions: "play none none reverse",
-                    onUpdate: (self) => {
-                        gsap.to(
-                            lineCircle,
-                            {
-                                top: self.progress.toFixed(2) * 100 + '%'
-                            }
-                        )
-                    },
-                }
-            });
-
-
-            itemsElements.forEach((element)=>{
-                _animation.fromTo(
-                    element,
-                    {
-                        opacity: 0
-                    },
-                    {
-                        opacity: 1
+            if (window.innerWidth >= 1160) {
+                let _animation = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: team,
+                        start: "center center",
+                        pin: true,
+                        scrub: 1,
+                        end: "+=100%",
+                        ease: "power2",
+                        toggleActions: "play none none reverse",
+                        onUpdate: (self) => {
+                            gsap.to(
+                                lineCircle,
+                                {
+                                    top: self.progress.toFixed(2) * 100 + '%'
+                                }
+                            )
+                        },
                     }
-                )
-            })
+                });
+                itemsElements.forEach((element) => {
+                    _animation.fromTo(
+                        element,
+                        {
+                            opacity: 0
+                        },
+                        {
+                            opacity: 1
+                        }
+                    )
+                })
+            } else {
+                let _animation = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: itemsBlock.closest('.team__right'),
+                        start: "center center",
+                        pin: true,
+                        scrub: 1,
+                        end: "+=" + itemsBlock.clientHeight + 'px',
+                        ease: "power2",
+                        toggleActions: "play none none reverse",
+                        onUpdate: (self) => {
+                            gsap.to(
+                                lineCircle,
+                                {
+                                    top: self.progress.toFixed(2) * 100 + '%'
+                                }
+                            )
+                        },
+                    }
+                });
+                itemsElements.forEach((element) => {
+                    _animation.fromTo(
+                        element,
+                        {
+                            opacity: 0
+                        },
+                        {
+                            opacity: 1
+                        }
+                    )
+                })
+            }
+
         })
     }
     const advs = document.querySelectorAll('.advs');
-    if (advs[0]){
-        advs.forEach((adv)=>{
+    if (advs[0]) {
+        advs.forEach((adv) => {
             let itemsBlock = adv.querySelector('.advs__items');
             let itemsElements = itemsBlock.querySelectorAll('.advs__item');
 
             let panels = gsap.utils.toArray(itemsElements);
             panels.forEach((panel, i) => {
-                if(i !== panels.length - 1) {
+                if (i !== panels.length - 1) {
                     ScrollTrigger.create({
                         trigger: panel,
                         start: () => panel.offsetHeight < window.innerHeight ? "top top" : "bottom bottom", // if it's shorter than the viewport, we prefer to pin it at the top
@@ -801,13 +898,19 @@ document.addEventListener("DOMContentLoaded", () => {
         config = config || {};
         let onChange = config.onChange,
             lastIndex = 0,
-            tl = gsap.timeline({repeat: config.repeat, onUpdate: onChange && function() {
+            tl = gsap.timeline({
+                repeat: config.repeat,
+                onUpdate: onChange && function () {
                     let i = tl.closestIndex();
                     if (lastIndex !== i) {
                         lastIndex = i;
                         onChange(items[i], i);
                     }
-                }, paused: config.paused, defaults: {ease: "none"}, onReverseComplete: () => tl.totalTime(tl.rawTime() + tl.duration() * 100)}),
+                },
+                paused: config.paused,
+                defaults: {ease: "none"},
+                onReverseComplete: () => tl.totalTime(tl.rawTime() + tl.duration() * 100)
+            }),
             length = items.length,
             startX = items[0].offsetLeft,
             times = [],
@@ -822,7 +925,7 @@ document.addEventListener("DOMContentLoaded", () => {
             timeOffset = 0,
             container = center === true ? items[0].parentNode : gsap.utils.toArray(center)[0] || items[0].parentNode,
             totalWidth,
-            getTotalWidth = () => items[length-1].offsetLeft + xPercents[length-1] / 100 * widths[length-1] - startX + spaceBefore[0] + items[length-1].offsetWidth * gsap.getProperty(items[length-1], "scaleX") + (parseFloat(config.paddingRight) || 0),
+            getTotalWidth = () => items[length - 1].offsetLeft + xPercents[length - 1] / 100 * widths[length - 1] - startX + spaceBefore[0] + items[length - 1].offsetWidth * gsap.getProperty(items[length - 1], "scaleX") + (parseFloat(config.paddingRight) || 0),
             populateWidths = () => {
                 let b1 = container.getBoundingClientRect(), b2;
                 items.forEach((el, i) => {
@@ -868,8 +971,15 @@ document.addEventListener("DOMContentLoaded", () => {
                     curX = xPercents[i] / 100 * widths[i];
                     distanceToStart = item.offsetLeft + curX - startX + spaceBefore[0];
                     distanceToLoop = distanceToStart + widths[i] * gsap.getProperty(item, "scaleX");
-                    tl.to(item, {xPercent: snap((curX - distanceToLoop) / widths[i] * 100), duration: distanceToLoop / pixelsPerSecond}, 0)
-                        .fromTo(item, {xPercent: snap((curX - distanceToLoop + totalWidth) / widths[i] * 100)}, {xPercent: xPercents[i], duration: (curX - distanceToLoop + totalWidth - curX) / pixelsPerSecond, immediateRender: false}, distanceToLoop / pixelsPerSecond)
+                    tl.to(item, {
+                        xPercent: snap((curX - distanceToLoop) / widths[i] * 100),
+                        duration: distanceToLoop / pixelsPerSecond
+                    }, 0)
+                        .fromTo(item, {xPercent: snap((curX - distanceToLoop + totalWidth) / widths[i] * 100)}, {
+                            xPercent: xPercents[i],
+                            duration: (curX - distanceToLoop + totalWidth - curX) / pixelsPerSecond,
+                            immediateRender: false
+                        }, distanceToLoop / pixelsPerSecond)
                         .add("label" + i, distanceToStart / pixelsPerSecond);
                     times[i] = distanceToStart / pixelsPerSecond;
                 }
@@ -889,6 +999,7 @@ document.addEventListener("DOMContentLoaded", () => {
         populateTimeline();
         populateOffsets();
         window.addEventListener("resize", () => refresh(true));
+
         function toIndex(index, vars) {
             vars = vars || {};
             (Math.abs(index - curIndex) > length / 2) && (index += index > curIndex ? -length : length); // always go in the shortest direction
@@ -905,6 +1016,7 @@ document.addEventListener("DOMContentLoaded", () => {
             gsap.killTweensOf(proxy);
             return vars.duration === 0 ? tl.time(timeWrap(time)) : tl.tweenTo(time, vars);
         }
+
         tl.toIndex = (index, vars) => toIndex(index, vars);
         tl.closestIndex = setCurrent => {
             let index = getClosest(times, tl.time(), tl.duration());
@@ -915,21 +1027,21 @@ document.addEventListener("DOMContentLoaded", () => {
             return index;
         };
         tl.current = () => indexIsDirty ? tl.closestIndex(true) : curIndex;
-        tl.next = vars => toIndex(tl.current()+1, vars);
-        tl.previous = vars => toIndex(tl.current()-1, vars);
+        tl.next = vars => toIndex(tl.current() + 1, vars);
+        tl.previous = vars => toIndex(tl.current() - 1, vars);
         tl.times = times;
         tl.progress(1, true).progress(0, true); // pre-render for performance
         if (config.reversed) {
             tl.vars.onReverseComplete();
             tl.reverse();
         }
-        if (config.draggable && typeof(Draggable) === "function") {
+        if (config.draggable && typeof (Draggable) === "function") {
             proxy = document.createElement("div")
             let wrap = gsap.utils.wrap(0, 1),
                 ratio, startProgress, draggable, dragSnap, lastSnap, initChangeX, wasPlaying,
                 align = () => tl.progress(wrap(startProgress + (draggable.startX - draggable.x) * ratio)),
                 syncIndex = () => tl.closestIndex(true);
-            typeof(InertiaPlugin) === "undefined" && console.warn("InertiaPlugin required for momentum-based scrolling and snapping. https://greensock.com/club");
+            typeof (InertiaPlugin) === "undefined" && console.warn("InertiaPlugin required for momentum-based scrolling and snapping. https://greensock.com/club");
             draggable = Draggable.create(proxy, {
                 trigger: items[0].parentNode,
                 type: "x",
@@ -979,8 +1091,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const appartmens = document.querySelectorAll('.appartments');
-    if (appartmens[0]){
-        appartmens.forEach((appartment)=>{
+    if (appartmens[0]) {
+        appartmens.forEach((appartment) => {
             const loop = horizontalLoop(appartment.querySelectorAll(".appartments__item"), {
                 repeat: -1,
                 paused: false,
@@ -990,11 +1102,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const devs = document.querySelectorAll('.devs');
-    if (devs[0]){
-        devs.forEach((dev)=>{
+    if (devs[0]) {
+        devs.forEach((dev) => {
             const items = dev.querySelectorAll('.devs__item');
-            items.forEach((item)=>{
-                if (item.classList.contains('devs__item_reverse')){
+            items.forEach((item) => {
+                if (item.classList.contains('devs__item_reverse')) {
                     const loop = horizontalLoop(item.querySelectorAll("picture"), {
                         repeat: -1,
                         paused: false,
@@ -1013,13 +1125,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const compars = document.querySelectorAll('.compar');
-    if (compars[0]){
-        compars.forEach((compar)=>{
+    if (compars[0]) {
+        compars.forEach((compar) => {
             const items = compar.querySelectorAll('.compar__item');
-            if (items[0]){
-                items.forEach((item)=>{
+            if (items[0]) {
+                items.forEach((item) => {
                     const subitems = item.querySelectorAll('.compar__subitem');
-                    subitems.forEach((subitem)=>{
+                    subitems.forEach((subitem) => {
                         const swiper = new Swiper(subitem.querySelector('.swiper'), {
                             slidesPerView: 1,
                             spaceBetween: 40,
@@ -1036,7 +1148,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         })
     }
-
 
 
     function resetEvent(e) {

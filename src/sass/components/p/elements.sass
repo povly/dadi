@@ -1,4 +1,8 @@
 .p
+  &-bg, &-img
+    picture
+      &:nth-child(2)
+        display: none
   &-lang
     &__abs
       top: 100%
@@ -10,7 +14,7 @@
     &.active
       .p-lang__abs
         opacity: 1
-        z-index: 1
+        z-index: 10
         visibility: visible
   &-btn
     border-radius: 53px

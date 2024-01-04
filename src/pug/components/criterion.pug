@@ -1,6 +1,9 @@
 .criterion
     .container.margin-center
-        .criterion__item.lazy.bg.relative.flex.flex-col(data-bg="img/main/criterion/bg.webp")
+        .criterion__item.relative.flex.flex-col.overflow-hidden
+            .criterion__item-bg.absolute.bottom-0.left-0.p-img
+                +picture('img/main/criterion/bg.png', 'img/main/criterion/bg', true, '', 1160, 432, '', '')
+                +picture('img/main/criterion/bg_mb.png', 'img/main/criterion/bg_mb', true, '', 322, 230, '', '')
             .criterion__title.text-center Лучшая недвижимость по вашим критериям
             .criterion__subtitle.text-center Оставьте заявку на <span class="text-c5">бесплатную консультацию </span>
             form
