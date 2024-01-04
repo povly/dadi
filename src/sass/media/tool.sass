@@ -2,6 +2,75 @@
   .container
     padding-left: 10px
     padding-right: 10px
+  .modal
+    padding-left: 10px
+    padding-right: 10px
+    &__content
+      transform: none
+      .get
+        &__item
+          &-text, &-subtitle, &-inputs, &-end, &-title
+            max-width: 100%
+            text-align: left
+            width: 100%
+      .catalog
+        &-cons
+          &__title, &__subtitle, &__text, &__inputs, &__end
+            max-width: 100%
+            text-align: left
+            width: 100%
+          &__inputs
+            flex-wrap: wrap
+            gap: 29px
+      .form
+        &__input
+          width: 100%
+    &__close
+      width: 29px
+      height: 29px
+      top: -7px
+      right: -2px
+      img
+        width: 9px
+    &_type
+      .modal
+        &__content
+          padding: 35px 18px 324px
+      &-second
+        .modal
+          &__content
+            padding: 0
+        .catalog
+          &-cons
+            &__item
+              background: transparent
+              padding: 29px 18px 273px
+            &__img
+              &-left
+                width: max-content
+                left: 50%
+                transform: translateX(-50%)
+                img
+                  width: 300px
+      &__img
+        &-left
+          bottom: -324px
+          left: 50%
+          transform: translateX(-50%)
+          width: max-content
+          img
+            width: 313px
+      .p
+        &-chekc
+          margin-top: 24px
+    &__socials
+      justify-content: flex-start
+      max-width: 100%
+      &-item
+        width: 100%
+        max-width: 100%
+        flex-direction: row-reverse
+        justify-content: flex-end
   .header
     &__block
       align-items: flex-end
@@ -242,3 +311,50 @@
     &__copy
       font-size: 9px
       gap: 5px
+  .modal
+    &__socials
+      gap: 15px
+      &-item
+        gap: 13px
+        font-size: 14px
+    &_type
+      .get
+        &__item
+          &-title
+            font-size: 18px
+            margin-bottom: 13px
+          &-subtitle
+            font-size: 15px
+            margin-bottom: 30px
+      &-second
+        .p
+          &-check
+            margin-bottom: 24px
+        .catalog
+          &-cons
+            &__title
+              font-size: 18px
+              margin-bottom: 12px
+            &__subtitle
+              font-size: 16px
+              margin-bottom: 29px
+            &__img
+              &-left
+                img
+                  width: 322px
+            &__end
+              font-size: 14px
+              &-link
+                gap: 13px
+@media screen and (max-width: 340px)
+  .modal
+    &_type
+      &-second
+        .catalog
+          &-cons
+            &__img
+              &-left
+                width: 100%
+                img
+                  width: 100%
+                  border-bottom-right-radius: 14px
