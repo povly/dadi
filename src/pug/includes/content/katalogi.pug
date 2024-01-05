@@ -1,12 +1,13 @@
 include ../mixins
 main
-    .catalogs
+    .catalogs.overflow-hidden
         .container.margin-center
             .catalogs__item.relative
                 .catalogs__item-subtitle.text-c5.uppercase.relative.text-center DADI REAL ESTATE
                 .catalogs__item-title.text-c3.font-tenor.relative.text-center Каталоги недвижимости в Дубае
-                .catalogs__item-img.absolute.bottom-0
+                .catalogs__item-img.absolute.bottom-0.p-img
                     +picture('img/catalogs/main/bg.png', 'img/catalogs/main/bg', false, '', 1023, 509, '', '')
+                    +picture('img/catalogs/main/bg_mb.png', 'img/catalogs/main/bg_mb', false, '', 691, 521, '', '')
     include ../../components/bestBlock
     .estate.overflow-hidden.catalogs_estate
         .container.margin-center
@@ -177,12 +178,13 @@ main
     .catalog-cons
         .container.margin-center
             .catalog-cons__item.relative
-                .catalog-cons__img-left.absolute.bottom-0.left-0
+                .catalog-cons__img-left.absolute.bottom-0.left-0.p-img
                     +picture('img/catalogs/cons/left.png', 'img/catalogs/cons/left', true, '', 991, 653, '', '')
+                    +picture('img/catalogs/cons/left_mb.png', 'img/catalogs/cons/left_mb', true, '', 332, 309, '', '')
                 form.relative
                     .catalog-cons__text.relative
                         .catalog-cons__title Получите консультацию по Застройщикам и лучшим проектам
-                        .catalog-cons__subtitle Оставьте свои данные и <span class="text-c5">мы ответим на все вопросы </span>
+                        .catalog-cons__subtitle Оставьте свои данные и&nbsp;<span class="text-c5">мы&nbsp;ответим на все вопросы </span>
                         .catalog-cons__inputs.flex
                             .form__input
                                 input(type="text" name="name" placeholder="Ваше имя" required)
