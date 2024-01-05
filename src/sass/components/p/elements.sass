@@ -29,6 +29,26 @@
       border-color: var(--c2)
       &:hover
         border-color: var(--c3)
+  &-pagination
+    border-radius: 9px
+    background: #F5F7F9
+    height: 35px
+    width: max-content
+    margin: 28px auto 0
+    &__item
+      height: 100%
+      width: 29px
+      display: flex
+      align-items: center
+      justify-content: center
+      font-size: 14px
+      border-radius: 6px
+      &.active, &:hover
+        color: var(--c2)
+        background: #156B7F
+      &_prev
+        img
+          transform: rotate(180deg)
   &-card
     height: 417px
     border-radius: 11px

@@ -196,6 +196,24 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     }
 
+    const _estaties = document.querySelectorAll('.estate');
+    if (_estaties[0]) {
+        _estaties.forEach((estaty) => {
+            const tabs = estaty.querySelectorAll('.estate_fav__tabs .estate_fav__tab');
+            if (tabs[0]) {
+                const items = estaty.querySelectorAll('.estate_fav__items .estate_fav__item');
+                tabs.forEach((tab, index) => {
+                    tab.addEventListener('click', () => {
+                        removeActiveElement(estaty, '.estate_fav__tabs .estate_fav__tab.active', 'active')
+                        removeActiveElement(estaty, '.estate_fav__items .estate_fav__item.active', 'active')
+                        tab.classList.add('active');
+                        items[index].classList.add('active');
+                    })
+                })
+            }
+        })
+    }
+
     const buys = document.querySelectorAll('.buy');
     if (buys[0]) {
         buys.forEach((buy) => {
