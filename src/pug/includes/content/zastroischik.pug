@@ -115,11 +115,13 @@ main
                     '/jk.html'
                 )
             .rent-single__projects-link.text-underline.text-c3.text-center.text-500 Показать <span>16</span> из 42
+            .rent-single__pagination.hidden
+                include ../../components/pagination
     .rent-map
         .container.margin-center
             .rent-map__title.section__title.font-tenor.text-c3 Расположение объектов в ОАЭ
             .rent-map__item
-    .catalog-cons
+    .catalog-cons.catalog-cons_buy
         .container.margin-center
             .catalog-cons__item.relative
                 .catalog-cons__img-left.absolute.bottom-0.left-0
@@ -186,4 +188,6 @@ main
                 +picture('img/catalogs/devs/5.jpg', 'img/catalogs/devs/5', true, '', 300, 126, '', '')
                 +picture('img/catalogs/devs/6.jpg', 'img/catalogs/devs/6', true, '', 300, 126, '', '')
                 +picture('img/catalogs/devs/7.jpg', 'img/catalogs/devs/7', true, '', 300, 126, '', '')
+        .devs__items-link.hidden
+            a(href="/katalogi.html").devs__top-link.text-underline.text-500.text-c3 Вернуться в каталог
     include ../../components/contacts
