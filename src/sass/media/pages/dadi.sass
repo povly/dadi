@@ -23,6 +23,11 @@
     &__img
       img
         width: 343px
+    &_second
+      .help
+        &__item
+          padding-left: 30px
+          padding-right: 30px
   .articles
     &__row
       &-item
@@ -158,6 +163,11 @@
     &__left, &__right
       width: 100%
   .rent
+    &-dev
+      &__row
+        flex-direction: column
+      &__left, &__right
+        width: 100%
     &-single
       overflow: hidden
       &__btns
@@ -766,6 +776,26 @@
     &-single
       padding-bottom: 30px
       overflow: hidden
+      &__floor
+        margin-bottom: 60px
+        &-title
+          margin-bottom: 40px
+        &-arrows
+          position: absolute
+          top: -55px
+          right: 0
+          .swiper-button
+            width: 27px
+            height: 27px
+            img
+              width: 11px
+        &-row
+          gap: 14px
+          flex-wrap: wrap
+        &-left, &-right
+          width: 100%
+        &-subtitle
+          font-size: 16px
       &__btns
         display: none
       &__title
@@ -1049,6 +1079,31 @@
           font-size: 15px
     &-map
       padding-bottom: 50px
+    &-dev
+      padding-bottom: 60px
+      &__img
+        img
+          width: 100%
+          height: 119px
+          object-fit: cover
+          object-position: center
+      &__row
+        gap: 15px
+      &__desc
+        font-size: 14px
+        margin-bottom: 16px
+      &__btn
+        width: 100%
+      &__list
+        gap: 6px 11px
+        flex-wrap: wrap
+        margin-bottom: 10px
+        &-li
+          width: calc(100% / 2 - 11px / 2)
+        &-num
+          font-size: 35px
+        &-title
+          font-size: 16px
   .offers
     .swiper
       &-slide
@@ -1135,6 +1190,16 @@
       &-cons
         &__end
           font-size: 15px
+  .help
+    &_second
+      .help
+        &__item
+          padding-bottom: 264px
+        &__name
+          width: 155px
+          &-svg
+            svg
+              width: 150px
 @media screen and (max-width: 340px)
   .buy
     &-advs
