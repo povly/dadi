@@ -449,6 +449,52 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
             }
 
+            const show = rentSingle.querySelector('.rent-single__mb-show');
+            if (show) {
+                const images = rentSingle.querySelector('.rent-single__images');
+
+                show.addEventListener('click', () => {
+                    if (images.classList.contains('active')) {
+                        images.style.height = '';
+                        show.textContent = show.dataset.textHide;
+                    } else {
+                        images.style.height = images.scrollHeight + 'px';
+                        show.textContent = show.dataset.textDefault;
+                    }
+                    images.classList.toggle('active');
+                })
+            }
+
+            const mbDate = rentSingle.querySelector('.rent-single__date');
+            if (mbDate) {
+                const input = mbDate.querySelector('.rent-single__date-input');
+                const ft = flatpickr(input, {
+                    minDate: "today",
+                    mode: "range",
+                    inline: true,
+                    dateFormat: 'd.m.Y',
+                    locale: _locale,
+                    // onChange: function (selectedDates, dateStr, instance) {
+                    //     const _options = {
+                    //         year: "numeric",
+                    //         month: "long",
+                    //         day: "numeric"
+                    //     };
+                    //     if (selectedDates[0]) {
+                    //         startDate.textContent = selectedDates[0].toLocaleDateString('ru', _options);
+                    //         startDateCol.textContent = selectedDates[0].toLocaleDateString('ru');
+                    //     }
+                    //     if (selectedDates[1]) {
+                    //         endDate.textContent = selectedDates[1].toLocaleDateString('ru', _options);
+                    //         endDateCol.textContent = selectedDates[1].toLocaleDateString('ru');
+                    //     } else {
+                    //         endDate.textContent = selectedDates[0].toLocaleDateString('ru', _options);
+                    //         endDateCol.textContent = selectedDates[0].toLocaleDateString('ru');
+                    //     }
+                    // },
+                });
+            }
+
             const selects = rentSingle.querySelectorAll('.rent-single__select');
             if (selects[0]) {
                 selects.forEach((select) => {

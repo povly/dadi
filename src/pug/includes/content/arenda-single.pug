@@ -29,6 +29,15 @@ main
                             +picture('img/rent/single/main/2.jpg', 'img/rent/single/main/2', false, '', 474, 312, '', '')
                         .rent-single__image.img_cover.img_full.img_br
                             +picture('img/rent/single/main/2.jpg', 'img/rent/single/main/2', false, '', 474, 312, '', '')
+                    .rent-single__mb.hidden
+                        .rent-single__mb-top.flex.flex-ai-center.flex-j-between
+                            .rent-single__mb-text.font-roboto
+                                .rent-single__mb-pric.text-c5.text-500 13 430₽ <span>ночь</span>
+                                .rent-single__mb-date.text-500 23-28 окт.
+                            .rent-single__mb-btn
+                                .p-btn.flex.flex-ai-center.flex-j-center.text-500 Оставить заявку
+                        .rent-single__mb-bottom
+                            .rent-single__mb-show.text-c3(data-text-default="Посмотреть все фото" data-text-hide="Скрыть все фото") Посмотреть все фото
                     .rent-single__tabs.flex.flex-col
                         .rent-single__tab-tops.flex.overflow-hidden.rent-single__tab-tops_price
                             .rent-single__tab-top.active ₽
@@ -176,6 +185,14 @@ main
                                             form.rent-single__form.bg.lazy(data-bg="img/rent/single/form/1.webp")
                                                 .rent-single__form-btn.p-btn.flex.flex-ai-center.flex-j-center.text-500 оставьте заявку
                                                 .rent-single__form-subtitle.text-500.text-c5 на скидку за количество месяцев аренды и заключения договора с собственником
+                    .rent-single__date.hidden
+                        .rent-single__date-title.font-tenor.text-c3 5 ночей
+                        .rent-single__date-text.flex.flex-ai-center.text-500
+                            span 23 окт. 2023 г.
+                            span -
+                            span 28 окт. 2023 г.
+                        .rent-single__date-input
+                            input(type="text" name="date" )
                     .rent-single__map
                         .rent-single__map-title.font-tenor.section__title.text-c3 Где находится
                         .rent-single__map-item#rent-single__map-item
@@ -232,8 +249,9 @@ main
                                             +picture('img/rent/single/faq/telegram.png', 'img/rent/single/faq/telegram', true, '', 14, 14, '', '')
                                     a(href="tel:+79999999999").rent-single__socials-phone + 7 (999) 999-99-99
                             .rent-single__faq-right
-                                .rent-single__faq-img
+                                .rent-single__faq-img.p-img
                                     +picture('img/rent/single/faq/bg.jpg', 'img/rent/single/faq/bg', true, '', 226, 518, '', '')
+                                    +picture('img/rent/single/faq/bg_mb.jpg', 'img/rent/single/faq/bg_mb', true, '', 308, 106, '', '')
                 form.rent-single__right
                     .rent-single__right-item
                         .rent-single__right-date.flex.flex-ai-center.text-500
@@ -250,7 +268,7 @@ main
                             ins
                                 span.rent-single__price-new 13 430
                                 span ₽
-                                |&nbsp;ночь
+                                | &nbsp;ночь
                         .rent-single__cols.flex.flex-col.font-roboto
                             .rent-single__col.flex
                                 .rent-single__col-item
@@ -288,7 +306,7 @@ main
                             .rent-single__end-item.flex.flex-ai-center.flex-j-between.w-full
                                 .rent-single__end-title.text-500
                                     span.rent-single__end-price 13 430
-                                    |₽
+                                    | ₽
                                     span.rent-single__end-span х 2 ночи
                                 .rent-single__end-subprice.text-500
                                     span 26 860

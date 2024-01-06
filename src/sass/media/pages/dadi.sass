@@ -152,6 +152,55 @@
         &-row
           .p-card
             width: 277px
+  .rent
+    &-single
+      &__row
+        flex-direction: column
+      &__left, &__right
+        width: 100%
+      &__right
+        display: none
+      &__mb
+        display: block
+        &-top
+          padding: 16px 50px
+          border-radius: 53px
+          border: 1px solid var(--c1)
+          margin-left: -50px
+          margin-right: -50px
+          width: calc(100% + 100px)
+        &-price
+          font-size: 17px
+          span
+            font-size: 16px
+            font-weight: 400
+        &-date
+          font-size: 14px
+        &-bottom
+          padding-top: 10px
+          padding-bottom: 20px
+        &-show
+          text-align: center
+          font-size: 15px
+        &-btn
+          .p-btn
+            width: 159px
+            height: 41px
+            font-size: 13px
+      &__date
+        display: block
+        padding-top: 50px
+        padding-bottom: 25px
+        &-title
+          font-size: 30px
+        &-text
+          font-size: 14px
+          color: #777
+          margin-bottom: 23px
+          gap: 5px
+        &-input
+          input
+            display: none
 @media screen and (max-width: 768px)
   .main
     &_blog
@@ -690,7 +739,77 @@
           gap: 15px
   .rent
     &-single
+      padding-bottom: 30px
       overflow: hidden
+      &__service
+        padding-bottom: 60px
+        &-title
+          text-align: center
+        &-row
+          display: flex
+          gap: 10px
+          margin-bottom: 25px
+          flex-wrap: wrap
+        &-item
+          width: 100%
+          flex-wrap: wrap
+          padding: 21px 27px 49px
+          gap: 25px
+          &:nth-child(n)
+            .rent-single
+              &__service
+                &-text
+                  padding-left: 0
+                &-subtitle, &-desc
+                  margin-left: auto
+                  margin-right: auto
+        &-img, &-text
+          width: 100%
+        &-img
+          height: 169px
+        &-text
+          padding-left: 0
+          text-align: center
+        &-subtitle, &-desc
+          max-width: 100%
+        &-subtitle
+          font-size: 19px
+          margin-bottom: 10px
+        &-desc
+          font-size: 15px
+      &__faq
+        &-item
+          flex-wrap: wrap
+          padding: 20px 6px 22px
+          gap: 33px
+        &-left, &-right
+          width: 100%
+        &-left
+          padding-left: 21px
+          padding-right: 21px
+        &-title
+          font-size: 22px
+          margin-bottom: 7px
+        &-subtitle
+          font-size: 16px
+          max-width: 237px
+          margin-bottom: 70px
+        &-img
+          img
+            border-radius: 195px
+            height: 106px
+        &-form
+          .get
+            &__item
+              &-input
+                input
+                  font-size: 14px
+                  padding-left: 5px
+          .p-check
+            margin-bottom: 30px
+      &__socials
+        &-phone
+          font-size: 14px
       &__link
         font-size: 14px
         margin-bottom: 7px
@@ -702,6 +821,25 @@
         .rent-single
           &__right
             top: auto
+      &__top
+        gap: 22px
+        margin-bottom: 19px
+        &-area, &-title, &-lot
+          font-size: 12px
+      &__images
+        height: 252px
+        overflow: hidden
+        display: flex
+        flex-wrap: wrap
+        gap: 12px 5px
+        margin-bottom: 0
+        transition: .3s
+      &__image
+        width: calc(100% / 2 - 5px / 2)
+        &:nth-child(1)
+          width: 100%
+        img
+          border-radius: 12px
       &__dev
         &-img
           margin-bottom: 0
@@ -752,8 +890,45 @@
           display: none
       &__pagination
         display: block
+      &__day
+        font-size: 15px
+        gap: 17px
+      &__list
+        margin-bottom: 60px
+        &-li
+          width: auto
+          font-size: 14px
+      &__rules
+        &-title
+          font-size: 30px
+          margin-bottom: 15px
+        &-tabs
+          gap: 12px
+          margin-bottom: 16px
+        &-tab
+          font-size: 13px
+          width: 50%
+          padding-bottom: 4px
+      &__tab
+        &-contents
+          width: 100%
+      &__advs
+        gap: 10px
+        &-item
+          width: 100%
+        &-title
+          font-size: 16px
     &-map
       padding-bottom: 50px
+  .offers
+    .swiper
+      &-slide
+        width: 291px
+    .main_swiper-arrows
+      top: -35px
+    .section
+      &__title
+        margin-bottom: 50px
   .catalog
     &-cons
       &_buy
@@ -776,6 +951,7 @@
           display: block
           text-align: center
           font-size: 16px
+
 @media screen and (max-width: 340px)
   .buy
     &-advs
