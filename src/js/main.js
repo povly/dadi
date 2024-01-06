@@ -617,6 +617,20 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     }
 
+    const buyAdvs = document.querySelectorAll('.buy-advs');
+    if (buyAdvs[0]) {
+        buyAdvs.forEach((buyAdv) => {
+            const circle = buyAdv.querySelector('.buy-advs__circle');
+            ScrollTrigger.create({
+                trigger: buyAdv,
+                start: "top top",
+                end: "bottom bottom",
+                pin: circle,
+                pinSpacing: false,
+            });
+        })
+    }
+
     const rents = document.querySelectorAll('.rent');
     if (rents[0]) {
         rents.forEach((rent) => {
