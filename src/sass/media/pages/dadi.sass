@@ -47,6 +47,21 @@
       gap: 20px
     &__item
       height: 641px
+  .article
+    &__item
+      flex-direction: column-reverse
+      &-img
+        display: none
+        margin-bottom: 12px
+      &-text
+        .article
+          &__item
+            &-img
+              display: flex
+    &-items
+      .swiper
+        &-slide
+          width: 320px
 @media screen and (max-width: 768px)
   .main
     &_blog
@@ -193,6 +208,7 @@
   .telegram
     padding-top: 60px
     padding-bottom: 10px
+    overflow: hidden
     &__item
       padding: 37px 13px
       height: 484px
@@ -218,3 +234,65 @@
       bottom: 0
       img
         width: 600px
+  .article
+    padding-top: 45px
+    &__title
+      font-size: 25px
+      margin-bottom: 18px
+      padding-left: 0
+    &__img
+      margin-bottom: 30px
+      &-link
+        gap: 13px
+        padding: 0 4px 4px
+      &-svg
+        svg
+          width: 13px
+      &-title
+        font-size: 16px
+      &-main
+        img
+          object-fit: fill
+          height: 412px
+    &__items
+      gap: 25px
+    &__item
+      &-title
+        font-size: 25px
+        margin-bottom: 12px
+      &-img
+        img
+          height: 197px
+      &-desc, &-list
+        font-size: 15px
+      &-list
+        margin-top: 20px
+      &-li
+        display: block
+        span
+          margin-right: 0
+    &-items
+      padding-top: 60px
+      &__top
+        margin-bottom: 22px
+        .section
+          &__title
+            font-size: 30px
+      &__link
+        right: auto
+        left: 50%
+        transform: translateX(-50%)
+        top: 470px
+        font-size: 18px
+      &__item
+        min-height: auto
+        .articles
+          &__item
+            &-img
+              margin-bottom: 22px
+              img
+                height: 163px
+            &-title
+              margin-bottom: 22px
+            &-desc
+              margin-bottom: 25px

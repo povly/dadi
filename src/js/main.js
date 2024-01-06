@@ -322,10 +322,17 @@ document.addEventListener("DOMContentLoaded", () => {
         articleItems.forEach((article) => {
             const swiper = new Swiper(article.querySelector('.swiper'), {
                 slidesPerView: 'auto',
-                spaceBetween: 41,
                 mousewheel: {
                     forceToAxis: true,
                 },
+                breakpoints: {
+                    320: {
+                        spaceBetween: 12,
+                    },
+                    768: {
+                        spaceBetween: 41,
+                    }
+                }
             });
         })
     }

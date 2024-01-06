@@ -10,12 +10,15 @@ main
                         <path d="M28.876 6.53033C29.1689 6.23743 29.1689 5.76256 28.876 5.46967L24.1031 0.696697C23.8102 0.403804 23.3353 0.403804 23.0424 0.696697C22.7495 0.989591 22.7495 1.46446 23.0424 1.75736L27.285 6L23.0424 10.2426C22.7495 10.5355 22.7495 11.0104 23.0424 11.3033C23.3353 11.5962 23.8102 11.5962 24.1031 11.3033L28.876 6.53033ZM0.345703 6.75L28.3457 6.75L28.3457 5.25L0.345703 5.25L0.345703 6.75Z" fill="#282828"/>
                         </svg>
                     .article__img-title DADI блог
-                .article__img-main
-                    +picture('img/article/1.jpg', 'img/article/1', true, '', 1160, 337, '', '')
+                .article__img-main.img_cover.p-img
+                    +picture('img/article/1.jpg', 'img/article/1', false, '', 1160, 337, '', '')
+                    +picture('img/article/1_mb.png', 'img/article/1_mb', false, '', 320, 412, '', '')
             .article__items.flex.flex-col
                 .article__item.flex
                     .article__item-text
                         .article__item-title.font-tenor.text-c3 1. Dubai Miracle Garden
+                        .article__item-img.img_cover.img_br.flex-shrink.hidden
+                            +picture('img/article/2.jpg', 'img/article/2', true, '', 500, 309, '', '')
                         .article__item-desc Парк со 150 млн цветов и 120 видами растений площадью 72 000 м². Здесь представлены огромные цветочные скульптуры: от аэробуса авиакомпании Emirates до 18 м Микки Мауса.
                         .article__item-list
                             .article__item-li.flex <span class="text-c5 text-500">Адрес:</span> Al Barsha South
@@ -26,6 +29,8 @@ main
                 .article__item.flex
                     .article__item-text
                         .article__item-title.font-tenor.text-c3 2. Global Village
+                        .article__item-img.img_cover.img_br.flex-shrink.hidden
+                            +picture('img/article/3.jpg', 'img/article/3', true, '', 500, 309, '', '')
                         .article__item-desc 28 сезон предложит 27 павильонов, посвящённых разным странам, живые выступления, детский театр и гастрономические приключения. Впечатляющие фейерверки по пятницам и субботам.
                         .article__item-list
                             .article__item-li.flex <span class="text-c5 text-500">Адрес:</span> Mohamed Bin Zayed Road
@@ -36,6 +41,8 @@ main
                 .article__item.flex
                     .article__item-text
                         .article__item-title.font-tenor.text-c3 3. Al Wasl Plaza и Surreal
+                        .article__item-img.img_cover.img_br.flex-shrink.hidden
+                            +picture('img/article/4.jpg', 'img/article/4', true, '', 500, 309, '', '')
                         .article__item-desc Al Wasl Plaza – это купол диаметром 130 м и высотой 67 м с иммерсивным проекционным экраном с обзором 360°. Surreal – захватывающий аттракцион, объединяющий воду, свет, огонь и музыку. Летом нет световой части шоу.
                         .article__item-list
                             .article__item-li.flex <span class="text-c5 text-500">Адрес:</span> Expo City
