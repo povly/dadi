@@ -152,8 +152,18 @@
         &-row
           .p-card
             width: 277px
+  .view
+    &__row
+      flex-direction: column
+    &__left, &__right
+      width: 100%
   .rent
     &-single
+      overflow: hidden
+      &__btns
+        right: 10px
+      &__title
+        padding-right: 123px
       &__row
         flex-direction: column
       &__left, &__right
@@ -162,6 +172,11 @@
         display: none
       &__mb
         display: block
+        &_2
+          .rent-single__name
+            border: none
+            padding: 0
+            box-shadow: none
         &-top
           padding: 16px 50px
           border-radius: 53px
@@ -187,6 +202,16 @@
             width: 159px
             height: 41px
             font-size: 13px
+      &__images
+        &_2
+          flex-wrap: wrap
+          display: flex
+          height: 504px
+          gap: 11px 5px
+          overflow: hidden
+          transition: .3s
+      &__image
+        width: calc(100% / 2 - 5px / 2)
       &__date
         display: block
         padding-top: 50px
@@ -741,6 +766,14 @@
     &-single
       padding-bottom: 30px
       overflow: hidden
+      &__btns
+        display: none
+      &__title
+        padding-right: 0
+      &__mb
+        .rent-single
+          &__name
+            margin-left: 0
       &__service
         padding-bottom: 60px
         &-title
@@ -821,6 +854,36 @@
         .rent-single
           &__right
             top: auto
+        &_2
+          .rent-single
+            &__left, &__right
+              width: 100%
+      &__tabs
+        &-block
+          gap: 0
+          justify-content: space-between
+          width: 100%
+        &_2
+          .rent-single
+            &__day
+              gap: 10px
+              &-left, &-right
+                width: calc(100% / 2 - 10px / 2)
+      &__edges
+        margin-bottom: 21px
+        gap: 5px 10px
+        &-item
+          gap: 7px
+          width: auto
+        &-img
+          img
+            width: 16px
+            height: 16px
+            object-fit: cover
+        &-title
+          font-size: 10px
+        &-subtitle
+          font-size: 15px
       &__top
         gap: 22px
         margin-bottom: 19px
@@ -918,6 +981,72 @@
           width: 100%
         &-title
           font-size: 16px
+        &_2
+          margin-bottom: 30px
+          .rent
+            &-single
+              &__advs
+                &-item
+                  width: 100%
+      &__cards
+        padding-top: 0
+        flex-wrap: wrap
+      &__card
+        width: 100%
+        height: 461px
+        .p-card
+          &__text
+            padding: 20px 13px 15px
+          &__title
+            margin-bottom: 5px
+        &_second
+          height: auto
+          .rent-single
+            &__card
+              &-inner
+                padding: 65px 30px 41px 34px
+              &-subtitle
+                font-size: 18px
+                margin-bottom: 0
+              &-title
+                margin-bottom: 28px
+              &-img
+                img
+                  height: 78px
+                  object-fit: cover
+              &-list
+                gap: 12px
+              &-li
+                gap: 22px
+              &-num
+                font-size: 16px
+              &-subtitle
+                font-size: 15px
+      &__plan
+        padding-top: 0
+        &-top
+          flex-direction: column
+          align-items: flex-start
+          gap: 7px
+          margin-bottom: 27px
+        &-title
+          margin-bottom: 0
+          font-size: 30px
+        &-btn
+          padding: 7px 11px
+          font-size: 13px
+          border-radius: 9px
+        &-item
+          padding: 16px 0
+          gap: 19px
+        &-left, &-center, &-right
+          font-size: 15px
+      &__location
+        padding-bottom: 42px
+        &-title
+          margin-bottom: 18px
+        &-desc
+          font-size: 15px
     &-map
       padding-bottom: 50px
   .offers
@@ -951,7 +1080,61 @@
           display: block
           text-align: center
           font-size: 16px
-
+  .view
+    padding-top: 60px
+    &__item
+      padding: 22px 11px
+      display: flex
+      min-height: auto
+      gap: 14px
+      align-items: center
+      &-img
+        width: 136px
+        margin-bottom: 0
+        img
+          height: 128px
+          border-radius: 7px
+      &-text
+        width: calc(100% - 14px - 136px)
+      &-title
+        font-size: 18px
+        margin-bottom: 8px
+      &-subtitle
+        font-size: 14px
+    &__input, &__date-input
+      input
+        width: 100%
+    &__date
+      &-input
+        width: 100px
+    &__radio
+      &-square
+        width: 19px
+        height: 19px
+        img
+          width: 10px
+    &__subitem
+      min-height: auto
+      padding: 28px 10px 54px
+      font-size: 15px
+      &-title
+        font-size: 22px
+        margin-bottom: 2px
+      &-subtitle
+        font-size: 14px
+        max-width: 204px
+        margin: 0 auto 33px
+      &-form
+        width: 100%
+        gap: 19px
+      &-left, &-right
+        width: calc(100% / 2 - 19px / 2)
+    &__btn
+      width: 100%
+    .catalog
+      &-cons
+        &__end
+          font-size: 15px
 @media screen and (max-width: 340px)
   .buy
     &-advs
