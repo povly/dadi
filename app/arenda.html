@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/parts/swiper.css">
     <link rel="stylesheet" href="css/flatpickr.min.css">
     <link rel="stylesheet" href="css/parts/nouislider.css">
-    <link rel="stylesheet" href="css/parts/main.css?time=7034736467">
+    <link rel="stylesheet" href="css/parts/main.css?time=703458736467">
   </head>
   <body class="relative font-manrope text-c1 bg-c2 text-normal">
     <header class="header">
@@ -66,8 +66,16 @@
           <div class="rent__title text-c3 font-tenor">Аренда недвижимости в Дубае</div>
           <div class="rent__item-block relative">
             <div class="rent__item-top absolute">апартаменты с сервисом отеля 5*</div>
-            <div class="rent__item relative bg" style="background-image:url('img/rent/main/1.webp')">
-              <form class="rent__form flex">
+            <div class="rent__item relative">
+              <div class="rent__item-bg absolute p-img top-0 left-0">
+                    <picture>
+                      <source type="image/webp" srcset="img/rent/main/3.webp"><img width="1160" height="303" src="img/rent/main/3.png" alt="" loading="lazy">
+                    </picture>
+                    <picture>
+                      <source type="image/webp" srcset="img/rent/main/3_mb.webp"><img width="321" height="478" src="img/rent/main/3_mb.png" alt="" loading="lazy">
+                    </picture>
+              </div>
+              <form class="rent__form flex relative">
                 <div class="rent__input relative flex flex-ai-center flex-j-center rent__input_date">
                   <input type="text" name="start" placeholder="Заезд" required>
                   <div class="rent__input-svg absolute cursor-pointer"><svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -82,7 +90,7 @@
 </svg>
                   </div>
                 </div>
-                <div class="rent__input relative flex flex-ai-center flex-j-center">
+                <div class="rent__input relative flex flex-ai-center flex-j-center rent__input_select">
                   <div class="p-select relative">
                     <div class="p-select__current flex flex-ai-center flex-j-between">
                       <input type="hidden" name="guest" value="1 гость">
@@ -100,11 +108,11 @@
                     </div>
                   </div>
                 </div>
-                <div class="rent__input relative">
+                <div class="rent__input relative rent__input_date">
                   <button class="text-500" type="submit">Посмотреть х вариантов</button>
                 </div>
               </form>
-              <div class="rent__item-end text-underline text-c3 text-600 modal__show" data-modal="type-first">Подобрать с менеджером</div>
+              <div class="rent__item-end text-underline text-c3 text-600 modal__show relative" data-modal="type-first">Подобрать с менеджером</div>
             </div>
           </div>
         </div>
@@ -1077,6 +1085,25 @@
               </div>
             </div>
             <div class="filters__content-load margin-center text-c3 text-underline text-500">Загрузить <span>18</span> из 103</div>
+            <div class="filters__pagination hidden">
+              <div class="p-pagination flex flex-j-center">
+                <div class="p-pagination__item p-pagination__item_arrow p-pagination__item_prev">
+                      <picture>
+                        <source type="image/webp" srcset="" data-srcset="img/pagination/down-arrow.webp"><img class="lazy " width="13" height="13" src="" data-src="img/pagination/down-arrow.png" alt="" loading="lazy">
+                      </picture>
+                </div>
+                <div class="p-pagination__item active">1</div>
+                <div class="p-pagination__item">2</div>
+                <div class="p-pagination__item">3</div>
+                <div class="p-pagination__item">4</div>
+                <div class="p-pagination__item">5</div>
+                <div class="p-pagination__item p-pagination__item_arrow p-pagination__item_next">
+                      <picture>
+                        <source type="image/webp" srcset="" data-srcset="img/pagination/down-arrow.webp"><img class="lazy " width="13" height="13" src="" data-src="img/pagination/down-arrow.png" alt="" loading="lazy">
+                      </picture>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="filters__content-map">
             <div class="filters__content-map-item" id="map"></div>
@@ -1253,7 +1280,7 @@
           <div class="why__desc">
             <p>
               Наши апартаменты сочетают в себе <span class="text-c5">комфорт и удобства отеля</span>
-              с простором и <span class="text-c5">автономией собственного жилья,</span><span class="why__desc-img bg lazy" data-bg="img/rent/appartments/1.webp"></span>делая ваше пребывание<span class="why__desc-img why__desc-img_2 bg lazy" data-bg="img/rent/appartments/2.webp"></span><span class="text-c5">незабываемым и удовлетворяющим </span> все ваши потребности.
+              с простором и&nbsp;<span class="text-c5">автономией собственного жилья,</span><span class="why__desc-img bg lazy" data-bg="img/rent/appartments/1.webp"></span>делая ваше пребывание<span class="why__desc-img why__desc-img_2 bg lazy" data-bg="img/rent/appartments/2.webp"></span><span class="text-c5">&nbsp;незабываемым и удовлетворяющим </span> все ваши потребности.<span class="why__desc-img why__desc-img_3 bg lazy" data-bg="img/rent/appartments/2.webp"></span>
             </p>
           </div>
         </div>
@@ -1392,7 +1419,7 @@
           </div>
         </div>
       </div>
-      <div class="help">
+      <div class="help help_rent">
         <div class="container margin-center">
           <div class="help__item relative">
             <div class="help__text relative">
@@ -1431,8 +1458,11 @@
                     <source type="image/webp" srcset="" data-srcset="img/rent/help/1.webp"><img class="lazy " width="543" height="571" src="" data-src="img/rent/help/1.png" alt="" loading="lazy">
                   </picture>
               <div class="help__name absolute text-c2">
-                <div class="help__name-svg absolute"><svg width="173" height="75" viewBox="0 0 173 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <div class="help__name-svg absolute p-img"><svg width="173" height="75" viewBox="0 0 173 75" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M7 0C3.13401 0 0 3.13401 0 7V34C0 35.8916 0.343283 38.1169 0.0724688 39.989C0.0247171 40.3191 0 40.6567 0 41V68C0 71.866 3.13401 75 7 75H166C169.866 75 173 71.866 173 68V41C173 37.134 169.866 34 166 34H136C127.716 34 121 27.2843 121 19V8C121 3.58172 117.418 0 113 0H7Z" fill="#003B50"/>
+</svg>
+<svg width="95" height="42" viewBox="0 0 95 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M3.84393 0C1.72099 0 0 1.72098 0 3.84393V18.6705C0 19.7092 0.188506 20.9313 0.0397946 21.9593C0.0135728 22.1405 0 22.3259 0 22.5144V37.341C0 39.464 1.72099 41.185 3.84393 41.185H91.1561C93.279 41.185 95 39.464 95 37.341V22.5144C95 20.3915 93.279 18.6705 91.1561 18.6705L74.6821 18.6705C70.1329 18.6705 66.4451 14.9827 66.4451 10.4335V4.39306C66.4451 1.96684 64.4782 0 62.052 0H3.84393Z" fill="#003B50"/>
 </svg>
                 </div>
                 <div class="help__name-text relative">
@@ -1943,6 +1973,6 @@
     <script src="js/libs/nouislider.min.js"></script>
     <script src="js/libs/ScrollTrigger.min.js"></script>
     <script src="js/libs/gsap.min.js"></script>
-    <script src="js/libs/main.js?time=564575874969"></script>
+    <script src="js/libs/main.js?time=5645758749569"></script>
   </body>
 </html>

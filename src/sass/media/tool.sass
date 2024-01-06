@@ -241,7 +241,7 @@
         &__image
           img
             height: 197px
-        &__delete
+        &__delete, &__like
           width: 56px
           height: 43px
           img
@@ -443,6 +443,59 @@
               font-size: 14px
               &-link
                 gap: 13px
+  .p-select
+    &__current
+      &-item
+        font-size: 12px
+      &-arrow
+        svg
+          width: 9px
+          height: 9px
+    &__abs
+      &-item
+        font-size: 12px
+  .p-checkboxes
+    &__item
+      gap: 9px
+      width: calc(100% / 2 - 7.5px )
+    &_second
+      gap: 3px
+      .p-checkboxes
+        &__item
+          &-title
+            font-size: 16px
+            padding: 10px 24px
+  .modal
+    &_filter
+      .modal
+        &__close
+          top: 27px
+          right: 11px
+        &__content
+          padding: 61px 10px 130px
+      &__reset
+        left: 10px
+        font-size: 14px
+      &__item
+        &-title
+          margin-bottom: 14px
+      &__items
+        gap: 32px
+      &__price
+        &-row
+          flex-direction: column
+        &-item
+          padding-right: 10px
+          width: 100%
+        &-top
+          margin-bottom: 50px
+          flex-direction: column
+          gap: 17px
+        &-currency
+          .p-checkboxes
+            &__item
+              &-title
+                padding: 1px 9px
 @media screen and (max-width: 340px)
   .modal
     &_type

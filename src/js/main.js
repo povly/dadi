@@ -636,6 +636,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 end._flatpickr.set('minDate', dateStr);
                             }
                         },
+                        disableMobile: true
                     });
                     const svg = input.querySelector(".rent__input-svg");
                     svg.addEventListener('click', () => {

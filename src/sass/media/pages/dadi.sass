@@ -11,14 +11,18 @@
       padding: 10px 15px
     &__title
       left: 172px
+  .addit
+    &__els
+      flex-wrap: wrap
+      gap: 55px
+    &__el
+      width: 100%
   .help
-    &_second
-      .help
-        &__item
-          padding: 38px 28px 290px
-        &__img
-          img
-            width: 343px
+    &__item
+      padding: 38px 28px 290px
+    &__img
+      img
+        width: 343px
   .articles
     &__row
       &-item
@@ -62,6 +66,55 @@
       .swiper
         &-slide
           width: 320px
+  .rent
+    &__form
+      max-width: 100%
+    &__item
+      padding-left: 21px
+      padding-right: 21px
+    &__input
+      &:nth-child(n)
+        width: calc(100% / 4 )
+      input
+        font-size: 16px
+      .p
+        &-select
+          &__current
+            &-item
+              font-size: 16px
+      button
+        font-size: 16px
+  .filters
+    &__content
+      &-block
+        justify-content: center
+      .p-card
+        width: 353px
+      &-load
+        display: none
+  .advs
+    &__item
+      &-text
+        background: var(--c2)
+        border-radius: 14px
+        padding: 10px
+        top: 400px
+  .type
+    &_second
+      .type
+        &__item
+          &:nth-child(2)
+            img
+              height: 135px
+              width: 294px
+          &-left
+            picture
+              display: flex
+              justify-content: center
+  .modal
+    &_filter
+      padding-left: 0
+      padding-right: 0
 @media screen and (max-width: 768px)
   .main
     &_blog
@@ -134,31 +187,36 @@
   .principle
     overflow: hidden
   .help
-    &_second
-      padding-top: 43px
-      padding-bottom: 72px
+    padding-top: 43px
+    padding-bottom: 72px
+    &_rent
       .help
-        &__title
-          font-size: 19px
-          margin-bottom: 10px
-        &__img
-          right: 20px
-          img
-            width: 259px
         &__name
-          padding: 2px 7px
-          width: 102px
-          right: -13px
-          bottom: 74px
-          &-title
-            margin-bottom: 0
-            font-size: 10px
+          &-svg
+            margin-left: 0
           &-subtitle
-            font-size: 8px
-            max-width: 60px
-      .p-list
-        font-size: 13px
-        margin-bottom: 32px
+            max-width: 90px
+    &__title
+      font-size: 19px
+      margin-bottom: 10px
+    &__img
+      right: 20px
+      img
+        width: 259px
+    &__name
+      padding: 2px 7px
+      width: 102px
+      right: -13px
+      bottom: 74px
+      &-title
+        margin-bottom: 0
+        font-size: 10px
+      &-subtitle
+        font-size: 8px
+        max-width: 60px
+    .p-list
+      font-size: 13px
+      margin-bottom: 32px
     .get
       &__item
         &-text
@@ -303,3 +361,210 @@
               margin-bottom: 22px
             &-desc
               margin-bottom: 25px
+  .type
+    &_second
+      padding-bottom: 0
+      &:nth-child(n)
+        .type
+          &__desc, &__title, &__link
+            margin-left: 0!important
+      .type
+        &__item
+          &-right, &-left
+            width: 100%
+  .appartments
+    padding-bottom: 30px
+  .rent
+    padding-top: 56px
+    padding-bottom: 56px
+    &__subtitle
+      font-size: 16px
+    &__title
+      font-size: 28px
+      margin-bottom: 6px
+    &__item
+      padding: 136px 28px 97px
+      &-top
+        text-align: right
+        font-size: 14px
+        max-width: 149px
+        right: 6px
+        top: -19.5px
+      &-bg
+        img
+          height: 478px
+      &-end
+        margin-right: auto
+        margin-left: auto
+        text-align: center
+        font-size: 14px
+        color: var(--c2)
+    &__form
+      gap: 10px
+      flex-wrap: wrap
+      height: auto
+      background: transparent
+    &__input
+      &:nth-child(n)
+        width: 100%
+        border-radius: 100px
+        background: var(--c2)
+      &:nth-child(1), &:nth-child(2)
+        padding: 14px 31px 14px 24px
+      input
+        border-right: none
+      &-svg
+        svg
+          width: 15px
+          height: 16px
+      &:nth-child(4)
+        padding: 0
+      &_select
+        padding: 14px 0
+        .p-select
+          &__current
+            padding-left: 24px
+            padding-right: 31px
+          &__abs
+            top: calc(100% + 13px)
+      &_date
+        button
+          width: 100%
+          height: 100%
+          border-radius: 100px
+          padding-top: 13px
+          padding-bottom: 15px
+  .filters
+    padding-bottom: 60px
+    &__pagination
+      display: block
+    &__content
+      .p-card
+        &_filter
+          width: 100%
+    &__top
+      margin-bottom: 18px
+      gap: 0
+      &-left, &-right
+        border-radius: 9px
+        background: #F5F7F9
+        gap: 0
+    &__main
+      &-svg
+        flex-shrink: 0
+        padding: 13px 8px 13px 14px
+        border-right: 0.5px solid #CBCBCB
+        svg
+          width: 21px
+          height: 14px
+      &-title
+        display: none
+    &__currency, &__sort
+      padding: 11px 10px 12px 7px
+      .p-select
+        &__current
+          gap: 3px
+          &-item
+            font-size: 12px
+    &__currency
+      .p-select
+        width: 41px
+    &__sort
+      margin-right: 0
+    &__coub
+      padding-left: 15px
+      padding-right: 10px
+      position: relative
+      &::after
+        content: ''
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        right: 0
+        width: 1px
+        height: 41px
+        background: #CBCBCB
+      svg
+        width: 15px
+        height: 15px
+    &__map
+      padding-left: 7px
+      padding-right: 11px
+      img
+        width: 22px
+  .advs
+    .section
+      &__title
+        font-size: 30px
+    &__subtitle
+      font-size: 13px
+      margin-bottom: 22px
+    &__item
+      &-text
+        top: 160px
+      &-img
+        img
+          height: 270px
+      &-title
+        font-size: 18px
+        margin-bottom: 6px
+      &-desc
+        font-size: 12px
+  .addit
+    padding-top: 9px
+    padding-bottom: 32px
+    &__item
+      padding: 21px 17px 35px
+      margin: 0 -10px
+      border-radius: 0
+      &-title
+        font-size: 20px
+        margin-bottom: 16px
+    &__els
+      gap: 26px
+    &__el
+      gap: 14px
+      &-img
+        width: 72px
+        img
+          height: 93px
+          border-radius: 9px
+      &-text
+        width: calc(100% - 14px - 72px)
+      &-title
+        font-size: 15px
+        margin-bottom: 10px
+      &-subtitle
+        font-size: 12px
+  .appartments
+    padding-bottom: 19px
+    .why
+      &__desc
+        margin-top: 0
+        font-size: 16px
+        margin-bottom: 22px
+        &-img
+          height: 14px
+          width: 87px
+          &_2
+            display: none!important
+          &_3
+            width: 102px
+        span
+          display: inline-block
+    &__row
+      gap: 10px
+      margin-bottom: 22px
+    &__item
+      img
+        width: 129px
+        height: 132px
+        border-radius: 9px
+    &__end
+      flex-direction: column
+      gap: 10px
+      .p-btn
+        font-size: 13px
+        height: 41px
+    &__link
+      font-size: 13px
