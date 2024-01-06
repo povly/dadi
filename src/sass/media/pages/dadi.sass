@@ -1,4 +1,6 @@
 @media screen and (max-width: 1160px)
+  .blog
+    padding-top: 0
   .dadi
     overflow: hidden
     &__row
@@ -17,7 +19,47 @@
         &__img
           img
             width: 343px
+  .articles
+    &__row
+      &-item
+        display: flex
+        gap: 10px
+        flex-wrap: wrap
+        justify-content: center
+    &__item
+      width: 320px
+      &_5, &_6
+        flex-wrap: wrap
+        gap: 25px
+        padding-left: 14px
+        .articles
+          &__item
+            &-img
+              width: 100%
+              img
+                border-radius: 14px
+      &_6
+        flex-direction: column-reverse
+  .telegram
+    &__btns
+      flex-direction: column
+      padding: 0
+      gap: 20px
+    &__item
+      height: 641px
 @media screen and (max-width: 768px)
+  .main
+    &_blog
+      padding-bottom: 30px
+      .main
+        &__item
+          height: 386px
+          border-radius: 14px
+          padding-bottom: 47px
+          &-title
+            font-size: 50px
+          &-subtitle
+            font-size: 16px
   .dadi
     padding-top: 72px
     padding-bottom: 54px
@@ -116,3 +158,63 @@
       &-end
         .p-btn
           font-size: 13px
+  .articles
+    &__load
+      display: none
+    &__item
+      padding: 10px 14px 17px
+      min-height: 384px
+      .articles
+        &__item
+          &-img
+            img
+              height: 171px
+              border-radius: 14px
+      &-date
+        font-size: 12px
+        padding: 2px 13px
+      &-title
+        font-size: 19px
+        min-height: auto
+        height: auto
+      &_1
+        .articles
+          &__item
+            &-title
+              max-width: 200px
+      &_5
+        .articles
+          &__item
+            &-desc
+              margin-bottom: 25px
+      &-desc
+        font-size: 15px
+        margin-bottom: 29px
+  .telegram
+    padding-top: 60px
+    padding-bottom: 10px
+    &__item
+      padding: 37px 13px
+      height: 484px
+    &__subtitle
+      font-size: 15px
+      margin-bottom: 2px
+    .section
+      &__title
+        font-size: 27px
+        margin-bottom: 20px
+    &__btns
+      gap: 7px
+      &-link
+        font-size: 14px
+      .p-btn
+        font-size: 13px
+        width: 258px
+        height: 41px
+    &__img
+      width: max-content
+      transform: translateX(-50%)
+      left: 50%
+      bottom: 0
+      img
+        width: 600px
