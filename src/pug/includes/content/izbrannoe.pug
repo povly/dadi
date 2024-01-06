@@ -34,31 +34,13 @@ main
                         include ../../components/filterCardWithDelete
                         include ../../components/filterCardWithDelete
                         include ../../components/filterCardWithDelete
-                    .p-pagination.flex.flex-j-center
-                        .p-pagination__item.p-pagination__item_arrow.p-pagination__item_prev
-                            +picture('img/pagination/down-arrow.png', 'img/pagination/down-arrow', true, '', 13, 13, '', '')
-                        .p-pagination__item.active 1
-                        .p-pagination__item 2
-                        .p-pagination__item 3
-                        .p-pagination__item 4
-                        .p-pagination__item 5
-                        .p-pagination__item.p-pagination__item_arrow.p-pagination__item_next
-                            +picture('img/pagination/down-arrow.png', 'img/pagination/down-arrow', true, '', 13, 13, '', '')
+                    include ../../components/pagination
                 .estate_fav__item
                     .estate_fav__item-cards.flex.flex-wrap
                         include ../../components/filterCardWithDelete
                         include ../../components/filterCardWithDelete
                         include ../../components/filterCardWithDelete
-                    .p-pagination.flex.flex-j-center
-                        .p-pagination__item.p-pagination__item_arrow.p-pagination__item_prev
-                            +picture('img/pagination/down-arrow.png', 'img/pagination/down-arrow', true, '', 13, 13, '', '')
-                        .p-pagination__item.active 1
-                        .p-pagination__item 2
-                        .p-pagination__item 3
-                        .p-pagination__item 4
-                        .p-pagination__item 5
-                        .p-pagination__item.p-pagination__item_arrow.p-pagination__item_next
-                            +picture('img/pagination/down-arrow.png', 'img/pagination/down-arrow', true, '', 13, 13, '', '')
+                    include ../../components/pagination
             .estate__items.flex.flex-col
                 .estate__item.relative.w-full
                     .estate__item-title Аренда
