@@ -1,5 +1,7 @@
 .p-lang
   &_en
+    .rent-single__service-item:nth-child(1) .rent-single__service-text
+      padding-left: 0
     .header
       &__list
         gap: 60px
@@ -83,11 +85,88 @@
         max-width: 455px
     .articles__item_1, .articles__item_5
       .articles__item-title
-        max-width: 215px
+        max-width: 210px
+    .rent__item-top
+      right: 40px
+    .rent__item-end
+      margin-right: 90px
+    .rent
+      &__input
+        &_date
+          button
+            text-align: left
+            padding-left: 55px
+    .type
+      &_second
+        .type__item:nth-child(3)
+          .type__link
+            max-width: 186px
+    .help
+      &_rent
+        .help
+          &__item
+            padding-right: 395px
+    .addit__el-subtitle
+      font-size: 11.75px
+    .addit
+      &__item
+        margin: 0px -15px
+        padding-bottom: 58px
+    .appartments
+      padding-top: 25px
+      .why__desc-img
+        &_3
+          width: 102px
+      .why
+        &__desc
+          span
+            display: inline
+            &.why__desc-img
+              display: inline-block
+    .rent
+      &__title
+        margin-bottom: 39px
+      &__subtitle
+        margin-bottom: 0
+    .rent__input_date button
+      padding-left: 0
+      text-align: center
+    .addit
+      padding-bottom: 30px
+    .advs
+      &__items
+        > div
+          &:nth-child(1)
+            .advs__item-desc
+              max-width: 423px
+          &:nth-child(2)
+            .advs__item-desc
+              max-width: 462px
+          &:nth-child(3)
+            .advs__item-desc
+              max-width: 441px
+          &:nth-child(4)
+            .advs__item-desc
+              max-width: 400px
+          &:nth-child(5)
+            .advs__item-desc
+              max-width: 361px
+          &:nth-child(6)
+            .advs__item-desc
+              max-width: 437px
+    .buy-advs__circle-left, .buy-advs__circle-right
+      top: 255px
+    .buy-advs__circle-left
+      left: -66px
+    .buy-advs__circle-right
+      right: -66px
 @media screen and (max-width: 1160px)
   .p-lang_en
     .articles__item_1 .articles__item-title, .p-lang_en .articles__item_5 .articles__item-title
       max-width: 205px
+    .rent_second
+      .rent__price input
+        width: 65px
 @media screen and (max-width: 768px)
   .p-lang_en
     .main__card
@@ -163,3 +242,42 @@
     .articles__item_1 .articles__item-title, .p-lang_en .articles__item_5 .articles__item-title
       max-width: 180px
       margin-bottom: 24px
+    .article
+      &__title
+        max-width: 280px
+    .catalogs__item-title
+      max-width: 280px
+      margin-left: auto
+      margin-right: auto
+    .catalog-cons__title
+      max-width: 225px
+    .catalog-cons_catalogs
+      .catalog-cons__img-left
+        left: 0
+    .help_rent .help__item
+      padding-right: 0
+    .rent__item-end
+      margin-right: auto
+    .rent__item-top
+      right: 10px
+      top: -5px
+      max-width: 100px
+    .addit__el
+      &:nth-child(1)
+        align-items: flex-start
+        .addit__el-title
+          max-width: 140px
+    .buy-advs__circle-left, .buy-advs__circle-right
+      top: 128px
+    .buy-advs__circle-left
+      left: -42px
+    .buy-advs__circle-right
+      right: -40px
+@media screen and (max-width: 340px)
+  .p-lang_en
+    .buy-advs__circle-left, .buy-advs__circle-right
+      top: 115px
+    .buy-advs__circle-left
+      left: -52px
+    .buy-advs__circle-right
+      right: -50px

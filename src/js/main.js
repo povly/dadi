@@ -400,17 +400,25 @@ document.addEventListener("DOMContentLoaded", () => {
         return (array = array || ['товар', 'товара', 'товаров']) && array[(int % 100 > 4 && int % 100 < 20) ? 2 : [2, 0, 1, 1, 1, 2][(int % 10 < 5) ? int % 10 : 5]];
     }
 
-    const _locale = {
-        firstDayOfWeek: 1,
-        weekdays: {
-            shorthand: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
-            longhand: ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'],
-        },
-        months: {
-            shorthand: ['Янв', 'Фев', 'Март', 'Апр', 'Май', 'Июнь', 'Июль', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
-            longhand: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
-        },
-    };
+    let _locale = {};
+    let _localeLang = 'ru';
+
+    if (document.documentElement.classList.contains('p-lang_en')) {
+        _locale = {};
+        _localeLang = 'en';
+    } else {
+        _locale = {
+            firstDayOfWeek: 1,
+            weekdays: {
+                shorthand: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+                longhand: ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'],
+            },
+            months: {
+                shorthand: ['Янв', 'Фев', 'Март', 'Апр', 'Май', 'Июнь', 'Июль', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
+                longhand: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+            },
+        };
+    }
 
     const rentSingles = document.querySelectorAll('.rent-single');
     if (rentSingles[0]) {
@@ -435,15 +443,15 @@ document.addEventListener("DOMContentLoaded", () => {
                             day: "numeric"
                         };
                         if (selectedDates[0]) {
-                            startDate.textContent = selectedDates[0].toLocaleDateString('ru', _options);
-                            startDateCol.textContent = selectedDates[0].toLocaleDateString('ru');
+                            startDate.textContent = selectedDates[0].toLocaleDateString(_localeLang, _options);
+                            startDateCol.textContent = selectedDates[0].toLocaleDateString(_localeLang);
                         }
                         if (selectedDates[1]) {
-                            endDate.textContent = selectedDates[1].toLocaleDateString('ru', _options);
-                            endDateCol.textContent = selectedDates[1].toLocaleDateString('ru');
+                            endDate.textContent = selectedDates[1].toLocaleDateString(_localeLang, _options);
+                            endDateCol.textContent = selectedDates[1].toLocaleDateString(_localeLang);
                         } else {
-                            endDate.textContent = selectedDates[0].toLocaleDateString('ru', _options);
-                            endDateCol.textContent = selectedDates[0].toLocaleDateString('ru');
+                            endDate.textContent = selectedDates[0].toLocaleDateString(_localeLang, _options);
+                            endDateCol.textContent = selectedDates[0].toLocaleDateString(_localeLang);
                         }
                     },
                 });
@@ -481,15 +489,15 @@ document.addEventListener("DOMContentLoaded", () => {
                     //         day: "numeric"
                     //     };
                     //     if (selectedDates[0]) {
-                    //         startDate.textContent = selectedDates[0].toLocaleDateString('ru', _options);
-                    //         startDateCol.textContent = selectedDates[0].toLocaleDateString('ru');
+                    //         startDate.textContent = selectedDates[0].toLocaleDateString(_localeLang, _options);
+                    //         startDateCol.textContent = selectedDates[0].toLocaleDateString(_localeLang);
                     //     }
                     //     if (selectedDates[1]) {
-                    //         endDate.textContent = selectedDates[1].toLocaleDateString('ru', _options);
-                    //         endDateCol.textContent = selectedDates[1].toLocaleDateString('ru');
+                    //         endDate.textContent = selectedDates[1].toLocaleDateString(_localeLang, _options);
+                    //         endDateCol.textContent = selectedDates[1].toLocaleDateString(_localeLang);
                     //     } else {
-                    //         endDate.textContent = selectedDates[0].toLocaleDateString('ru', _options);
-                    //         endDateCol.textContent = selectedDates[0].toLocaleDateString('ru');
+                    //         endDate.textContent = selectedDates[0].toLocaleDateString(_localeLang, _options);
+                    //         endDateCol.textContent = selectedDates[0].toLocaleDateString(_localeLang);
                     //     }
                     // },
                 });
