@@ -3,13 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Dadi</title>
+    <title>عن DADI</title>
     <script src="../js/libs/lazyload.min.js"></script>
     <link rel="stylesheet" href="../css/parts/swiper.css">
     <link rel="stylesheet" href="../css/flatpickr.min.css">
     <link rel="stylesheet" href="../css/parts/nouislider.css">
     <link rel="stylesheet" href="../css/parts/main.css?time=916545954367458">
-    <link rel="stylesheet" href="../css/parts/arabic.css?time=16545954367458">
+    <link rel="stylesheet" href="../css/parts/arabic.css?time=1654595436745578">
+    <script>
+        window.addEventListener('DOMContentLoaded', function (){
+            let lazyContent = new LazyLoad({
+                use_native: true // <-- there you go
+            });
+
+            let lazyBackground = new LazyLoad({
+                // DON'T PASS use_native: true HERE
+            });
+        })
+    </script>
 </head>
 <body class="relative font-manrope text-c1 bg-c2 text-normal">
 <header class="header">
@@ -119,27 +130,24 @@
                         <img width="259" height="99" src="../img/dadi/dadi_mb.png" alt="" loading="lazy">
                     </picture>
                 </div>
-                <div class="dadi__subtitle absolute">Progressive Real Estate Agency with an emphasis on service and
-                    comfort of our customers
+                <div class="dadi__subtitle absolute">وكالة عقارية تقدمية مع التركيز على خدمة وراحة عملائنا
                 </div>
                 <div class="dadi__items flex absolute">
                     <div class="dadi__item">
                         <div class="dadi__item-title uppercase font-tenor text-c3">Dadi properties</div>
-                        <div class="dadi__item-desc">Full cycle of real estate management: القيمة, sale, purchase,
-                            rental management and service, legal support
+                        <div class="dadi__item-desc">دورة كاملة لإدارة العقارات: التقييم ، البيع ، الشراء ، إدارة الإيجار والصيانة، الدعم القانوني
                         </div>
                     </div>
                     <div class="dadi__item">
                         <div class="dadi__item-title uppercase font-tenor text-c3">DADI HOLIDAYS</div>
-                        <div class="dadi__item-desc">الإيجار apartments with 5* hotel service: booking service, personal
-                            assistant in the country, organization of excursions
+                        <div class="dadi__item-desc">الإيجار استئجار شقق فندقية 5*: خدمة الحجز ، مساعد شخصي في البلاد ، وتنظيم الرحلات
                         </div>
                     </div>
                     <div class="dadi__item">
                         <div class="dadi__item-title uppercase font-tenor text-c3">DADI DESIGN</div>
-                        <div class="dadi__item-desc">Finding repair and design team for apartments with no decoration.
+                        <div class="dadi__item-desc">اختيار فريق لإصلاح وتصميم شقة دون التشطيب
                         </div>
-                        <a class="dadi__item-link text-underline text-600 text-c3" href="#!">Case studies</a>
+                        <a class="dadi__item-link text-underline text-600 text-c3" href="#!">عرض الحالات</a>
                     </div>
                 </div>
             </div>
@@ -149,7 +157,7 @@
         <div class="container margin-center">
             <div class="service__item relative">
                 <div class="service__item-text relative">
-                    <div class="section__title font-tenor text-c3">DADI services</div>
+                    <div class="section__title font-tenor text-c3">خدمات DADI</div>
                     <div class="service__item-subtitle text-500 text-c5">الحلول الفردية</div>
                     <div class="service__item-subtitle_2">عقارات للإيجار أو الشراء حسب طلبك</div>
                     <form>

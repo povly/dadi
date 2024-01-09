@@ -8,8 +8,19 @@
     <link rel="stylesheet" href="../css/parts/swiper.css">
     <link rel="stylesheet" href="../css/flatpickr.min.css">
     <link rel="stylesheet" href="../css/parts/nouislider.css">
-    <link rel="stylesheet" href="../css/parts/en.css?time=16545954367">
     <link rel="stylesheet" href="../css/parts/main.css?time=916545954367">
+    <link rel="stylesheet" href="../css/parts/en.css?time=816545954574367">
+    <script>
+        window.addEventListener('DOMContentLoaded', function (){
+            let lazyContent = new LazyLoad({
+                use_native: true // <-- there you go
+            });
+
+            let lazyBackground = new LazyLoad({
+                // DON'T PASS use_native: true HERE
+            });
+        })
+    </script>
 </head>
 <body class="relative font-manrope text-c1 bg-c2 text-normal">
 <header class="header">

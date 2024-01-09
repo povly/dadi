@@ -3,15 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
     gsap.registerPlugin(ScrollTrigger);
 
 
-    const lazyContent = new LazyLoad({
-        use_native: true // <-- there you go
-    });
-
-    const lazyBackground = new LazyLoad({
-        // DON'T PASS use_native: true HERE
-    });
-
-
     function removeActiveElement(element, query, classes) {
         const active = element.querySelector(query);
         if (active) {
