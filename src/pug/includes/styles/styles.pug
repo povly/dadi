@@ -4,10 +4,12 @@ link(rel="stylesheet", href="css/flatpickr.min.css")
 link(rel="stylesheet", href="css/parts/nouislider.css")
 link(rel="stylesheet", href="css/parts/main.css?time=65456449")
 script.
-    let lazyContent = new LazyLoad({
-        use_native: true // <-- there you go
-    });
+    window.addEventListener('DOMContentLoaded', function () {
+        let lazyContent = new LazyLoad({
+            use_native: true // <-- there you go
+        });
 
-    let lazyBackground = new LazyLoad({
-        // DON'T PASS use_native: true HERE
-    });
+        let lazyBackground = new LazyLoad({
+            // DON'T PASS use_native: true HERE
+        });
+    })
