@@ -406,6 +406,19 @@ document.addEventListener("DOMContentLoaded", () => {
     if (document.documentElement.classList.contains('p-lang_en')) {
         _locale = {};
         _localeLang = 'en';
+    } else if (document.documentElement.classList.contains('p-lang_arabic')) {
+        _locale = {
+            firstDayOfWeek: 1,
+            weekdays: {
+                shorthand: ['الاحد', 'الاثنين', 'الثلاثاء', 'الاربعاء', 'الخميس', 'الجمعة', 'السبت'],
+                longhand: ['الاحد', 'الاثنين', 'الثلاثاء', 'الاربعاء', 'الخميس', 'الجمعة', 'السبت'],
+            },
+            months: {
+                shorthand: ['يناير', 'شهر فبراير', 'يمشي', 'أبريل', 'يمكن', 'يونيو', 'يوليو', 'أغسطس', 'سبتمبر', 'اكتوبر', 'شهر نوفمبر', 'ديسمبر'],
+                longhand: ['يناير', 'شهر فبراير', 'يمشي', 'أبريل', 'يمكن', 'يونيو', 'يوليو', 'أغسطس', 'سبتمبر', 'اكتوبر', 'شهر نوفمبر', 'ديسمبر'],
+            },
+        };
+        _localeLang = 'ar';
     } else {
         _locale = {
             firstDayOfWeek: 1,
